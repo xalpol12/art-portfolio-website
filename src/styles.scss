@@ -1,0 +1,16 @@
+/* You can add global styles to this file, and also import other style files */
+
+:root {
+  --bg-color: #fff;
+  --text-color: #1a1a1a;
+  --accent-color: #ff4081;
+  --gap-standard: 1.5rem;
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg-color: #121212;
+      --text-color: #e0e0e0;
+      --accent-color: #ff79b0;
+    }
+  }
+}

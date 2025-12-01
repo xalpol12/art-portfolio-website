@@ -1,0 +1,14 @@
+.gallery {
+  display: grid;
+  /* Magiczna linijka: Tworzy tyle kolumn ile się zmieści, każda min 300px */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--gap-standard);
+}
+
+/* Żeby zdjęcia ładnie wypełniały kafelki */
+.gallery img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Kluczowe! */
+  aspect-ratio: 4/3; /* Utrzymuje proporcje kafelka */
+}
