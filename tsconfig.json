@@ -7,6 +7,11 @@
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
     "noImplicitReturns": true,
+    "paths": {
+      "ngx-artist-portfolio": [
+        "./dist/ngx-artist-portfolio"
+      ]
+    },
     "noFallthroughCasesInSwitch": true,
     "skipLibCheck": true,
     "isolatedModules": true,
@@ -28,6 +33,18 @@
     },
     {
       "path": "./tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/ngx-artist-portfolio/tsconfig.lib.json"
+    },
+    {
+      "path": "./projects/ngx-artist-portfolio/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/showcase-app/tsconfig.app.json"
+    },
+    {
+      "path": "./projects/showcase-app/tsconfig.spec.json"
     }
   ]
 }

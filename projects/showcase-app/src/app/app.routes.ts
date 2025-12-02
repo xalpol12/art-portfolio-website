@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
-import {Bio} from './features/bio/bio';
 import {Home} from './features/home/home';
+import {Bio} from './features/bio/bio';
 import {ProjectDetails} from './features/project-details/project-details';
 
 export const routes: Routes = [
@@ -22,4 +22,5 @@ export const routes: Routes = [
     path: '**',
     redirectTo: ''
   }
+
 ];
