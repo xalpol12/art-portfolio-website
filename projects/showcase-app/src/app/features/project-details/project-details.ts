@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 
 @Component({
-  selector: `apw-project-details`,
+  selector: `app-project-details`,
   template: ``,
   styleUrl: './project-details.scss',
   standalone: true

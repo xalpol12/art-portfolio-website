@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 
 @Component({
-  selector: `apw-bio`,
+  selector: `app-bio`,
   template: ``,
   styleUrl: './bio.scss',
   standalone: true

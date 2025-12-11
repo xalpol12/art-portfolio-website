@@ -1,9 +1,14 @@
 import {Component} from '@angular/core';
+import {Navbar} from 'ngx-artist-portfolio';
 
 @Component({
-  selector: `apw-home`,
-  template: ``,
+  selector: `app-home`,
+  template: `
+  `,
   styleUrl: './home.scss',
+  imports: [
+    Navbar
+  ],
   standalone: true
 })
 export class Home {

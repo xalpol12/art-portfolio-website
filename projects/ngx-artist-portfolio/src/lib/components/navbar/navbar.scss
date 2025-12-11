@@ -1,0 +1,20 @@
+:host {
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 10rem;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+  }
+  @media only screen and (min-width 1919px) {
+    .navbar {
+      height: 80px;
+      padding: 0 4rem;
+    }
+  }
+}

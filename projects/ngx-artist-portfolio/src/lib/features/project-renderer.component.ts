@@ -1,20 +1,31 @@
-import {Component} from '@angular/core';
+import {Component, signal} from '@angular/core';
+import {ContentModel} from '../models/project.model';
+import {ContentType} from '../models/content-type';
+import {Paragraph} from '../components/paragraph/paragraph';
 
 @Component({
-  selector: `lib-project-renderer`,
+  selector: `awp-project-renderer`,
   template: `
     <div class="project-content">
-      @for (block of content; track $index) {
+      @for (block of CONTENT; track $index) {
         @switch (block.type) {
-          @case()
+          @case(ContentType.PARAGRAPH) {
+            <apw-paragraph>
+              <p>{{block.data}}</p>
+            </apw-paragraph>
+          }
         }
       }
     </div>
   `,
   standalone: true,
-  imports: []
+  imports: [
+    Paragraph
+  ]
 })
 export class ProjectRendererComponent {
-  content: ProjectModel = signal()
 
+  // protected content = signal<ContentModel[]>(this.CONTENT);
+
+  protected readonly ContentType = ContentType;
 }
