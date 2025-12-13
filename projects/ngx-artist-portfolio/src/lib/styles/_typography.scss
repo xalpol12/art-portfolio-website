@@ -1,0 +1,19 @@
+%typography-base {
+  font-family: var(--ngx-ap-font-family), sans-serif;
+  color: var(--ngx-ap-text-primary);
+  line-height: 1.5;
+  font-size: 1rem;
+}
+
+.ngx-ap-h1 {
+  @extend %typography-base;
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: var(--ngx-ap-gutter);
+}
+
+.ngx-ap-body {
+  @extend %typography-base;
+  font-size: 1rem;
+  color: var(--ngx-ap-text-secondary);
+}

@@ -1,5 +1,5 @@
-import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
-import {providePortfolio} from '../../../ngx-artist-portfolio/src/lib/provide-portfolio';
+import { ApplicationConfig } from '@angular/core';
+import { providePortfolio } from '@ngx-artist-portfolio';
 
 export const appConfig: ApplicationConfig = {
   providers: [

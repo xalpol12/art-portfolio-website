@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {LayoutComponent} from '../../../ngx-artist-portfolio/src/lib/features/layout.component';
+import {LayoutComponent} from '@ngx-artist-portfolio';
 
 @Component({
   selector: 'app-root', imports: [LayoutComponent], template: `

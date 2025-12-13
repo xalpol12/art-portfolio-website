@@ -57,7 +57,12 @@
             ],
             "styles": [
               "projects/showcase-app/src/styles.scss"
-            ]
+            ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "projects/ngx-artist-portfolio"
+              ]
+            }
           },
           "configurations": {
             "production": {

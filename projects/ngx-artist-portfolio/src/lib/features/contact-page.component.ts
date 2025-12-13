@@ -1,13 +1,13 @@
 import {Component} from '@angular/core';
 
 @Component({
-  selector: `apw-home-page`,
+  selector: `apw-contact-page`,
   template: `
-    Home Page Component Works!!!
+    Contact Page Component Works!!!
   `,
   standalone: true,
   imports: []
 })
-export class HomePageComponent {
+export class ContactPageComponent {
 
 }

@@ -8,13 +8,14 @@
     "noPropertyAccessFromIndexSignature": true,
     "noImplicitReturns": true,
     "paths": {
-      "ngx-artist-portfolio": [
-        "./dist/ngx-artist-portfolio"
+      "@ngx-artist-portfolio": [
+        "./projects/ngx-artist-portfolio/src/public-api.ts"
       ]
     },
     "noFallthroughCasesInSwitch": true,
     "skipLibCheck": true,
     "isolatedModules": true,
+    "moduleResolution": "bundler",
     "experimentalDecorators": true,
     "importHelpers": true,
     "target": "ES2022",

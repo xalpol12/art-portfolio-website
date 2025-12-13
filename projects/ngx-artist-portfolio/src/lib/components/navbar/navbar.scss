@@ -1,20 +1,29 @@
-:host {
-  .navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 10rem;
-    z-index: 1000;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+@use '../../styles/mixins' as mixins;
 
+:host {
+  position: sticky;
+  z-index: 1000;
+  top: 0;
+  .navbar {
+    @include mixins.flex-row;
+    padding: 2rem 4rem;
+    justify-content: space-between;
+    background-color: var(--ngx-ap-main);
   }
-  @media only screen and (min-width 1919px) {
-    .navbar {
-      height: 80px;
-      padding: 0 4rem;
-    }
+
+  .title {
+    font-weight: bold;
   }
+
+  .navigation {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+  }
+
+  .title,
+  .navigation li {
+    @include mixins.hover;
+  }
+//  TODO: dodać obsługę mobile (hamburger menu)
 }

@@ -6,16 +6,14 @@ import {Router} from '@angular/router';
 
 @Component({
   selector: `apw-projects-page`, template: `
-    <div>
       Projects Page Component Works!
-    </div>
-    @if (thumbnails()) {
-      @for (thumbnail of thumbnails(); track $index) {
-        <apw-thumbnail
-          (clicked)="this.onThumbnailClick($event)"
-          [thumbnail]="thumbnail"/>
+      @if (thumbnails()) {
+        @for (thumbnail of thumbnails(); track $index) {
+          <apw-thumbnail
+            (clicked)="this.onThumbnailClick($event)"
+            [thumbnail]="thumbnail"/>
+        }
       }
-    }
   `, standalone: true, imports: [Thumbnail]
 })
 export class ProjectsPageComponent implements OnInit {

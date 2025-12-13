@@ -16,7 +16,7 @@ export * from './lib/components/gallery-grid/gallery-grid';
 export * from './lib/features/home-page.component';
 export * from './lib/features/bio-page.component';
 export * from './lib/features/layout.component';
-export * from './lib/features/projects/project-page.component';
+export * from './lib/features/projects/project.component';
 export * from './lib/features/projects/projects-page.component';
 export * from './lib/features/projects/project-renderer.component';
 

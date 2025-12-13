@@ -10,7 +10,7 @@ import {Router} from '@angular/router';
     </apw-project-renderer>
   `, standalone: true, imports: [ProjectRendererComponent]
 })
-export class ProjectPageComponent implements OnInit {
+export class ProjectComponent implements OnInit {
   thumbnail: ThumbnailModel | undefined;
   project: ProjectModel | undefined;
 

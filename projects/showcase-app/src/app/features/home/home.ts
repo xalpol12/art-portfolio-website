@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {Navbar} from 'ngx-artist-portfolio';
+import {Navbar} from '@ngx-artist-portfolio';
 
 @Component({
   selector: `app-home`,
