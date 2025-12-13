@@ -1,7 +1,15 @@
 import {ContentType} from './content-type';
 
 export interface ProjectModel {
-  blocks: ContentModel[];
+  id: string;
+  content: ContentModel[];
+}
+
+export interface ThumbnailModel {
+  id: string;
+  title: string;
+  description: string;
+  imageUrl: string;
 }
 
 export interface ContentModel {

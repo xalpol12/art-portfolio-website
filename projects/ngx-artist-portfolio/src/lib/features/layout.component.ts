@@ -1,10 +1,19 @@
 import {Component} from '@angular/core';
+import {RouterOutlet} from '@angular/router';
+import {Navbar} from '../components/navbar/navbar';
+import {Footer} from '../components/footer/footer';
 
 @Component({
   selector: `apw-layout`,
-  template: `Layout Component Works!`,
+  template: `
+    <apw-navbar/>
+    <main>
+      <router-outlet/>
+    </main>
+    <apw-footer/>
+  `,
   standalone: true,
-  imports: []
+  imports: [RouterOutlet, Navbar, Footer]
 })
 export class LayoutComponent {
 

@@ -1,17 +1,10 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import {Footer, Navbar} from 'ngx-artist-portfolio';
+import {Component} from '@angular/core';
+import {LayoutComponent} from '../../../ngx-artist-portfolio/src/lib/features/layout.component';
 
 @Component({
-  selector: 'app-root',
-  imports: [RouterOutlet, Navbar, Footer],
-  template: `
-    <apw-navbar/>
-    <router-outlet></router-outlet>
-    <apw-footer/>
-  `,
-  styleUrl: './app.scss'
+  selector: 'app-root', imports: [LayoutComponent], template: `
+    <apw-layout/>
+  `, styleUrl: './app.scss'
 })
 export class App {
-  protected readonly title = signal('showcase-app');
 }

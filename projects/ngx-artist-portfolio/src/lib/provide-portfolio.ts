@@ -1,13 +1,36 @@
 import {PORTFOLIO_CONFIG, PortfolioConfig} from './portfolio.config';
 import {EnvironmentProviders, makeEnvironmentProviders} from '@angular/core';
 import {portfolioRoutes} from './lib.routes';
-import {provideRouter} from '@angular/router';
+import {provideRouter, withComponentInputBinding} from '@angular/router';
 import {ContentService} from './services/content.service';
+import {provideHttpClient} from '@angular/common/http';
 
-export function providePortfolio(config: PortfolioConfig): EnvironmentProviders {
-  return makeEnvironmentProviders([
-    {provide: PORTFOLIO_CONFIG, useValue: config},
+export interface PortfolioProviderOptions {
+  config: PortfolioConfig;
+  /**
+   * If true, the library will provide its own router configuration.
+   * If false, you need to manually add portfolioRoutes to your app routes.
+   * Default: true
+   */
+  provideRouting?: boolean;
+}
+
+export function providePortfolio(options: PortfolioProviderOptions): EnvironmentProviders {
+  // Support both old API (just config) and new API (options object)
+  const opts: PortfolioProviderOptions = options.provideRouting ? options : { config: options.config, provideRouting: true };
+
+  const providers = [
+    {
+      provide: PORTFOLIO_CONFIG,
+      useValue: opts.config
+    },
     ContentService,
-    provideRouter(portfolioRoutes)
-  ])
+    provideHttpClient()
+  ];
+
+  if (opts.provideRouting) {
+    providers.push(provideRouter(portfolioRoutes, withComponentInputBinding()) as any);
+  }
+
+  return makeEnvironmentProviders(providers);
 }

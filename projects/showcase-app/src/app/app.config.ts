@@ -1,16 +1,14 @@
-import { ApplicationConfig, provideBrowserGlobalErrorListeners } from '@angular/core';
-import { provideRouter } from '@angular/router';
-
-import { routes } from './app.routes';
+import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
 import {providePortfolio} from '../../../ngx-artist-portfolio/src/lib/provide-portfolio';
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    provideBrowserGlobalErrorListeners(),
-    provideRouter(routes),
     providePortfolio({
-      contentApiUrl: 'https://api.example.com/portfolio',
-      siteTitle: 'My Art Portfolio'
+      config: {
+        contentApiUrl: 'https://api.example.com/portfolio',
+        siteTitle: 'Showcase Portfolio App'
+      },
+      provideRouting: true // Library handles all routing
     })
   ]
 };
