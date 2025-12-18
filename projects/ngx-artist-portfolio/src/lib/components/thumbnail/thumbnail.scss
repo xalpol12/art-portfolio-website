@@ -1,0 +1,33 @@
+.thumbnail-container {
+  cursor: pointer;
+  max-width: 700px;
+  padding-bottom: 5rem;
+
+  &:hover {
+    opacity: 0.9;
+  }
+}
+
+.thumbnail-image-wrapper {
+  width: 100%;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+  }
+}
+
+.thumbnail-title {
+  margin-top: 0.5rem;
+  font-weight: 600;
+}
+
+.thumbnail-description {
+  margin-top: 0.25rem;
+  font-size: 0.875rem;
+  color: var(--ngx-ap-text-secondary);
+}
+

@@ -1,5 +1,4 @@
 import {Component} from '@angular/core';
-import {Navbar} from '@ngx-artist-portfolio';
 
 @Component({
   selector: `app-home`,
@@ -7,7 +6,6 @@ import {Navbar} from '@ngx-artist-portfolio';
   `,
   styleUrl: './home.scss',
   imports: [
-    Navbar
   ],
   standalone: true
 })

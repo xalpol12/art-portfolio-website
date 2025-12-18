@@ -14,22 +14,22 @@ export class ContentService {
    id: 'project1',
    title: 'Sample Project 1',
    description: 'This is a description for Sample Project 1.',
-   imageUrl: 'image'
+   imageUrl: 'img/image.jpg'
  }, {
    id: 'project2',
-   title: 'Sample Project 2',
-   description: 'This is a description for Sample Project 2.',
-   imageUrl: 'image 2'
+   title: 'Sample Project 2 - deluxe edition',
+   description: 'This is a description for Sample Project 2. It has a bit more text to see how it looks in the thumbnail component.',
+   imageUrl: 'img/image.jpg'
  }, {
    id: 'project3',
-   title: 'Sample Project 3',
-   description: 'This is a description for Sample Project 3.',
-   imageUrl: 'image 3'
+   title: 'Sample Project 3: The Sequel',
+   description: 'This is a description for Sample Project 3. It has a bit more text to see how it looks in the thumbnail component.',
+   imageUrl: 'img/munch.jpg'
  }, {
    id: 'project4',
-   title: 'Sample Project 4',
-   description: 'This is a description for Sample Project 4.',
-   imageUrl: 'image 4'
+   title: 'Sample Project 4: The Extended Edition',
+   description: 'This is a description for Sample Project 4. It contains a longer text to test text wrapping in the thumbnail component.',
+   imageUrl: 'img/munch.jpg'
  }
  ];
 

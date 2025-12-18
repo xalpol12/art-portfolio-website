@@ -18,8 +18,11 @@ body, .ngx-artist-portfolio-root {
 }
 
 .ngx-artist-portfolio-full-height {
-  height: 1000px;
   flex: 1 1 auto;
+}
+
+.ngx-center {
+  @include flex-column-center;
 }
 
 .debug-full-width-height {

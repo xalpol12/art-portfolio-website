@@ -6,7 +6,7 @@ import {Router} from '@angular/router';
 
 @Component({
   selector: `apw-projects-page`, template: `
-      Projects Page Component Works!
+    <div class = "ngx-center">
       @if (thumbnails()) {
         @for (thumbnail of thumbnails(); track $index) {
           <apw-thumbnail
@@ -14,6 +14,7 @@ import {Router} from '@angular/router';
             [thumbnail]="thumbnail"/>
         }
       }
+    </div>
   `, standalone: true, imports: [Thumbnail]
 })
 export class ProjectsPageComponent implements OnInit {
