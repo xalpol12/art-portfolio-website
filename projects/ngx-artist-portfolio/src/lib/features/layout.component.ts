@@ -8,14 +8,13 @@ import {Footer} from '../components/footer/footer';
   template: `
     <div class="ngx-artist-portfolio-root ngx-artist-portfolio-theme">
       <apw-navbar/>
-      <main>
+      <main class="ngx-artist-portfolio-full-height">
         <router-outlet/>
       </main>
       <apw-footer/>
     </div>
   `,
   standalone: true,
-  styleUrl: './layout.component.ts',
   imports: [RouterOutlet, Navbar, Footer]
 })
 export class LayoutComponent {
