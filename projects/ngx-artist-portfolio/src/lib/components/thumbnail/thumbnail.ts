@@ -1,6 +1,6 @@
 import {Component, Input, output} from '@angular/core';
-import {ThumbnailModel} from '../../models/project.model';
 import {NgOptimizedImage} from '@angular/common';
+import {ThumbnailModel} from "../../models/thumbnail.model";
 
 @Component({
   selector: `apw-thumbnail`, template: `

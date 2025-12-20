@@ -1,4 +1,7 @@
 export enum ContentType {
   GALLERY_GRID = 'gallery-grid',
-  PARAGRAPH = 'paragraph'
+  PARAGRAPH = 'paragraph',
+  BREAK = 'break',
+  VIDEO = 'video',
+
 }

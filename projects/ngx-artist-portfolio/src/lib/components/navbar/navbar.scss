@@ -8,7 +8,7 @@
     @include mixins.flex-row;
     padding: 2rem 4rem;
     justify-content: space-between;
-    background-color: var(--ngx-ap-main);
+    background-color: var(--ngx-ap-bg-main);
   }
 
   .title {
@@ -19,6 +19,22 @@
     display: flex;
     flex-direction: row;
     gap: 1rem;
+  }
+
+  .active {
+    position: relative;
+  }
+  .active::after{
+    content: '';
+    display: block;
+    position: absolute;
+    left: 50%;
+    bottom: -12px;
+    transform: translateX(-50%);
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--ngx-ap-accent);
   }
 
   .title,

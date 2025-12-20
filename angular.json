@@ -52,6 +52,11 @@
             "assets": [
               {
                 "glob": "**/*",
+                "input": "projects/showcase-app/src/assets",
+                "output": "/assets"
+              },
+              {
+                "glob": "**/*",
                 "input": "projects/showcase-app/public"
               }
             ],

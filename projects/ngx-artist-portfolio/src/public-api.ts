@@ -25,6 +25,7 @@ export * from './lib/services/content.service';
 
 // Models
 export * from './lib/models/project.model';
+export * from './lib/models/thumbnail.model';
 export * from './lib/models/content-type';
 
 // Configuration & Providers

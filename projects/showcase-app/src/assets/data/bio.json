@@ -1,0 +1,19 @@
+{
+  "content": [
+    {
+      "type": "PARAGRAPH",
+      "data": "This is a sample paragraph. A really long text that spans multiple rows to see how it looks in the project renderer component. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+    },
+    {
+      "type": "BREAK"
+    },
+    {
+      "type": "PARAGRAPH",
+      "data": "This is a sample paragraph 2. Tad shorter this time. Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    },
+    {
+      "type": "GALLERY_GRID",
+      "data": ""
+    }
+  ]
+}
