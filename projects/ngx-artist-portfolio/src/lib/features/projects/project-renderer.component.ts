@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {ProjectModel} from '../../models/project.model';
 import {ContentType} from '../../models/content-type';
 import {Paragraph} from '../../components/paragraph/paragraph';
@@ -19,7 +19,7 @@ import {BreakComponent} from '../../components/break/break.component';
             </apw-paragraph>
           }
           @case (ContentType.GALLERY_GRID) {
-            <apw-gallery-grid>
+            <apw-gallery-grid [data]="block">
             </apw-gallery-grid>
           }
         }
@@ -27,9 +27,13 @@ import {BreakComponent} from '../../components/break/break.component';
     </div>
   `, standalone: true, imports: [Paragraph, GalleryGrid, BreakComponent]
 })
-export class ProjectRendererComponent {
+export class ProjectRendererComponent implements OnInit {
 
   @Input() project: ProjectModel | undefined;
+
+  ngOnInit() {
+    console.error(JSON.stringify(this.project));
+  }
 
   protected readonly ContentType = ContentType;
 }

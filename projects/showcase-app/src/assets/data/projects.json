@@ -18,7 +18,7 @@
         "config": {
           "orientation": "horizontal"
         },
-        "data": ["a", "b"]
+        "data": ["img/munch.jpg", "img/image.jpg", "img/munch.jpg"]
       }
     ]
   },
@@ -26,19 +26,23 @@
     "id": "project2",
     "content": [
       {
-        "type": "PARAGRAPH",
+        "type": "paragraph",
         "data": "This is a sample paragraph. A really long text that spans multiple rows to see how it looks in the project renderer component. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
       },
       {
-        "type": "BREAK"
+        "type": "break"
       },
       {
-        "type": "PARAGRAPH",
+        "type": "paragraph",
         "data": "This is a sample paragraph 2. Tad shorter this time. Lorem ipsum dolor sit amet, consectetur adipiscing elit."
       },
       {
-        "type": "GALLERY_GRID",
-        "data": ""
+        "type": "gallery-grid",
+        "config": {
+          "orientation": "vertical",
+          "gap": 20
+        },
+        "data": ["img/munch.jpg", "img/image.jpg"]
       }
     ]
   },
@@ -46,19 +50,22 @@
     "id": "project3",
     "content": [
       {
-        "type": "PARAGRAPH",
+        "type": "paragraph",
         "data": "This is a sample paragraph. A really long text that spans multiple rows to see how it looks in the project renderer component. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
       },
       {
-        "type": "BREAK"
+        "type": "break"
       },
       {
-        "type": "PARAGRAPH",
+        "type": "paragraph",
         "data": "This is a sample paragraph 2. Tad shorter this time. Lorem ipsum dolor sit amet, consectetur adipiscing elit."
       },
       {
-        "type": "GALLERY_GRID",
-        "data": ""
+        "type": "gallery-grid",
+        "config": {
+          "orientation": "horizontal"
+        },
+        "data": ["a", "b"]
       }
     ]
   },
@@ -66,19 +73,22 @@
     "id": "project4",
     "content": [
       {
-        "type": "PARAGRAPH",
+        "type": "paragraph",
         "data": "This is a sample paragraph. A really long text that spans multiple rows to see how it looks in the project renderer component. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
       },
       {
-        "type": "BREAK"
+        "type": "break"
       },
       {
-        "type": "PARAGRAPH",
+        "type": "paragraph",
         "data": "This is a sample paragraph 2. Tad shorter this time. Lorem ipsum dolor sit amet, consectetur adipiscing elit."
       },
       {
-        "type": "GALLERY_GRID",
-        "data": ""
+        "type": "gallery-grid",
+        "config": {
+          "orientation": "horizontal"
+        },
+        "data": ["a", "b"]
       }
     ]
   }
