@@ -1,20 +1,23 @@
 import {Component, Input} from '@angular/core';
 import {GalleryGridConfig, GalleryGridModel} from '../../models/project.model';
+import {Image} from '../image/image';
 
 @Component({
   selector: `apw-gallery-grid`, template: `
     <div class="gallery"
-         [style.--ngx-ap-gap-standard.px]="config?.gap"
-         [class.vertical]="config?.orientation === 'vertical'"
+         [style.--ngx-ap-gap-standard.px]="config.gap"
+         [class.vertical]="config.orientation === 'vertical'"
     >
       @for (image of data?.data; track $index) {
-        <img [src]="image" alt="Gallery Image {{$index + 1}}"/>
+        <apw-img [image]="image" [alt]="'Gallery Image {{$index + 1}}'"/>
       }
     </div>
-    <div>
+    <div class="description">
       <span>{{ "Description" }}</span>
     </div>
-  `, styleUrl: './gallery-grid.scss', imports: []
+  `, styleUrl: './gallery-grid.scss', imports: [
+    Image
+  ]
 })
 export class GalleryGrid {
   @Input() data: GalleryGridModel | undefined;

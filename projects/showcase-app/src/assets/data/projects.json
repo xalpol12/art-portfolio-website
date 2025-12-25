@@ -16,7 +16,8 @@
       {
         "type": "gallery-grid",
         "config": {
-          "orientation": "horizontal"
+          "orientation": "horizontal",
+          "gap": 40
         },
         "data": ["img/munch.jpg", "img/image.jpg", "img/munch.jpg"]
       }
