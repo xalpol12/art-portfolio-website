@@ -1,10 +1,6 @@
-import {Component, inject, OnInit, Signal} from '@angular/core';
-import {ContentService} from '../../services/content.service';
-import {ProjectModel} from '../../models/project.model';
+import {Component} from '@angular/core';
 import {Thumbnail} from '../../components/thumbnail/thumbnail';
-import {Router} from '@angular/router';
-import {toSignal} from '@angular/core/rxjs-interop';
-import {ThumbnailModel} from '../../models/thumbnail.model';
+import {ProjectThumbnailsStore} from './project-thumbnails.store';
 
 @Component({
   selector: `apw-projects-page`, template: `
@@ -13,32 +9,20 @@ import {ThumbnailModel} from '../../models/thumbnail.model';
         @for (thumbnail of thumbnails(); track $index) {
           <apw-thumbnail
             (clicked)="this.onThumbnailClick($event)"
-            [thumbnail]="thumbnail"/>
+            [thumbnail]="thumbnail"
+            [paddingBottom]="true"/>
         }
       }
     </div>
   `, standalone: true, imports: [Thumbnail]
 })
-export class ProjectsPageComponent implements OnInit {
-  contentService = inject(ContentService);
-  router = inject(Router)
+export class ProjectsPageComponent {
+  projectThumbnailsStore = new ProjectThumbnailsStore();
 
-  thumbnails: Signal<ThumbnailModel[]> = toSignal(this.contentService.fetchThumbnails$(), {initialValue: []});
-  projects: Signal<ProjectModel[]> = toSignal(this.contentService.fetchProjects$(), {initialValue: []});
-
-
-  ngOnInit(): void {
-  }
+  thumbnails = this.projectThumbnailsStore.thumbnails;
+  projects = this.projectThumbnailsStore.projects;
 
   onThumbnailClick(id: string) {
-    const project = this.projects().find(p => p.id === id);
-    const thumbnail = this.thumbnails().find(t => t.id === id);
-
-    this.router.navigate(['/project', id], {
-      state: {
-        project: project, thumbnail: thumbnail
-      }
-    });
+    this.projectThumbnailsStore.onThumbnailClick(id);
   }
-
 }

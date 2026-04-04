@@ -1,11 +1,9 @@
-import {Component, computed, HostListener, input, Input, output} from '@angular/core';
-import {ArtworkDescriptionPipe} from '../../pipes/artwork-description-pipe';
-import {ImageDescriptionModel} from '@ngx-artist-portfolio';
+import {Component, computed, HostListener, input, output} from '@angular/core';
 import {Image} from '../image/image';
 
 @Component({
   selector: `apw-img-lightbox`, template: `
-    @if (isOpen) {
+    @if (isOpen()) {
       <div class="modal"
            (click)="onBackdropClick($event)"
            (touchstart)="onTouchStart($event)"
@@ -16,10 +14,10 @@ import {Image} from '../image/image';
           <apw-img [image]="currentImage()" [alt]="currentAlt()"></apw-img>
         </div>
 
-        @if (images && images.length > 1) {
+        @if (images() && images().length > 1) {
           <a class="prev" (click)="nextSlide(-1)">&#10094;</a>
           <a class="next" (click)="nextSlide(1)">&#10095;</a>
-          <div class="image-counter">{{currentIndex + 1}} / {{images.length}}</div>
+          <div class="image-counter">{{ currentIndex() + 1 }} / {{ images().length }}</div>
         }
       </div>
     }

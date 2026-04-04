@@ -18,8 +18,8 @@ body, .ngx-artist-portfolio-root {
   background-color: (--ngx-ap-bg-main);
 }
 
-.ngx-artist-portfolio-full-height {
-  flex: 1 1 auto;
+main, ngx-artist-portfolio-full-height {
+  @include flex-fill;
 }
 
 .ngx-center {

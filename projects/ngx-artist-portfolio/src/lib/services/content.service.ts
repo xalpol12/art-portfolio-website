@@ -14,15 +14,9 @@ export class ContentService {
 
   fetchThumbnails$(): Observable<ThumbnailModel[]> {
     return this.httpClient.get<ThumbnailModel[]>('assets/data/thumbnails.json');
-    // TODO: Caching
   }
 
   fetchProjects$(): Observable<ProjectModel[]> {
     return this.httpClient.get<ProjectModel[]>('assets/data/projects.json');
   }
-
-  fetchProjectById$(id: string): Observable<ProjectModel | undefined> {
-    return this.httpClient.get<ProjectModel[]>('assets/data/projects.json').pipe(map(projects => projects.find(p => p.id === id)));
-  }
-
 }

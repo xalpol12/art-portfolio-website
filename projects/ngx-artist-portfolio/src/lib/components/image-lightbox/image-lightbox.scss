@@ -1,0 +1,85 @@
+:host {
+  display: contents;
+}
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.92);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: zoom-out;
+}
+.modal-content {
+  position: relative;
+  max-width: 90vw;
+  max-height: 90vh;
+  cursor: default;
+  ::ng-deep .image-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  ::ng-deep img {
+    max-width: 90vw;
+    max-height: 90vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    display: block;
+    user-select: none;
+  }
+}
+.close {
+  position: fixed;
+  top: 1.25rem;
+  right: 1.75rem;
+  color: #fff;
+  font-size: 2.5rem;
+  font-weight: 300;
+  line-height: 1;
+  cursor: pointer;
+  z-index: 1001;
+  opacity: 0.8;
+  transition: opacity 0.2s;
+  user-select: none;
+  &:hover {
+    opacity: 1;
+  }
+}
+.prev,
+.next {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 300;
+  cursor: pointer;
+  padding: 1rem 1.25rem;
+  z-index: 1001;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+  user-select: none;
+  &:hover {
+    opacity: 1;
+  }
+}
+.prev {
+  left: 0.5rem;
+}
+.next {
+  right: 0.5rem;
+}
+.image-counter {
+  position: fixed;
+  bottom: 1.25rem;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+  font-size: 0.9rem;
+  opacity: 0.8;
+  letter-spacing: 0.05em;
+  user-select: none;
+}

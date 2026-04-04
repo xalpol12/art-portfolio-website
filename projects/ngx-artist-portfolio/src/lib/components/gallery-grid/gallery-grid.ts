@@ -2,6 +2,7 @@ import {Component, Input} from '@angular/core';
 import {GalleryGridConfig, GalleryGridModel} from '../../models/project.model';
 import {Image} from '../image/image';
 import {ImageDescription} from '../image-description/image-description';
+import {ImageLightbox} from '../image-lightbox/image-lightbox';
 
 @Component({
   selector: `apw-gallery-grid`, template: `
@@ -19,11 +20,17 @@ import {ImageDescription} from '../image-description/image-description';
       </apw-img-description>
     }
 
-    <apw-img-lightbox>
-    </apw-img-lightbox>
+    <apw-img-lightbox
+      [isOpen]="lightboxOpen"
+      [currentIndex]="lightboxIndex"
+      [images]="data?.data ?? []"
+      (close)="closeLightbox()"
+      (indexChanged)="onIndexChanged($event)"
+    ></apw-img-lightbox>
   `, styleUrl: './gallery-grid.scss', imports: [
     Image,
-    ImageDescription
+    ImageDescription,
+    ImageLightbox
   ]
 })
 export class GalleryGrid {

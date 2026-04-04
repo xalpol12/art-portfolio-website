@@ -17,6 +17,13 @@
   align-items: center;
 }
 
+@mixin flex-fill {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  min-height: 0;
+}
+
 @mixin mobile {
   @media (max-width: 768px) {
     @content;

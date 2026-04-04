@@ -6,3 +6,12 @@
 - [] Dark mode?
 - [] Improve SEO
 - [] Accessibility improvements
+- [] Styling for mobile page
+
+
+
+-- 
+notes:
+
+- title header - optional date of the project?
+- home page - one random project
