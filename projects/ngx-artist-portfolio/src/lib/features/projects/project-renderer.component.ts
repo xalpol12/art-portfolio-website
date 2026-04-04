@@ -14,9 +14,7 @@ import {BreakComponent} from '../../components/break/break.component';
             <apw-break></apw-break>
           }
           @case (ContentType.PARAGRAPH) {
-            <apw-paragraph>
-              <p>{{ block.data }}</p>
-            </apw-paragraph>
+            <apw-paragraph [content]="block.data"></apw-paragraph>
           }
           @case (ContentType.GALLERY_GRID) {
             <apw-gallery-grid [data]="block">

@@ -1,3 +1,5 @@
+@use '../../styles/mixins' as mixins;
+
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -16,8 +18,8 @@
   aspect-ratio: 4/3;
 }
 
-.description {
-  margin-top: 0.5rem;
-  font-size: 0.9rem;
-  color: var(--ngx-ap-text-secondary);
+@include mixins.mobile {
+  .gallery {
+    grid-template-columns: 1fr;
+  }
 }

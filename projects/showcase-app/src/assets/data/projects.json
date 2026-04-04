@@ -4,7 +4,7 @@
     "content": [
       {
         "type": "paragraph",
-        "data": "This is a sample paragraph. A really long text that spans multiple rows to see how it looks in the project renderer component. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+        "data": "This is a <i>sample paragraph</i>. <br/> A really long text <b>BOLD</b> <h3>that</h3> spans multiple rows to see how it looks in the project renderer component. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
       },
       {
         "type": "break"
@@ -19,7 +19,14 @@
           "orientation": "horizontal",
           "gap": 40
         },
-        "data": ["img/munch.jpg", "img/image.jpg", "img/munch.jpg"]
+        "data": ["img/munch.jpg", "img/image.jpg", "img/munch.jpg"],
+        "description": {
+          "title": "Artwork title",
+          "medium": "Oil on canvas",
+          "size": "100 x 150 cm",
+          "year": "2023",
+          "additionalInfo": "This is some additional info about the artwork."
+        }
       }
     ]
   },

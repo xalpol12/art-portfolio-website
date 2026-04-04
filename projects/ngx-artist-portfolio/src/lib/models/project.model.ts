@@ -18,14 +18,22 @@ export interface ParagraphModel {
 
 export interface GalleryGridModel {
   type: ContentType.GALLERY_GRID;
+  data: GalleryGridDataModel;
+  description?: ImageDescriptionModel;
   config?: GalleryGridConfig;
-  data?: GalleryGridDataModel;
 }
 
-export interface GalleryGridConfig {
+export type GalleryGridConfig = {
   orientation: 'horizontal' | 'vertical';
   gap?: number;
 }
 
 export type ParagraphDataModel = string;
 export type GalleryGridDataModel = string[];
+export type ImageDescriptionModel = {
+  title?: string;
+  medium?: string;
+  size?: string;
+  year?: string;
+  additionalInfo?: string;
+}

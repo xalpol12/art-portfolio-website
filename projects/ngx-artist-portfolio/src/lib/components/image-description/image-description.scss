@@ -1,0 +1,14 @@
+@use '../../styles/mixins' as mixins;
+
+.description {
+  margin-top: 0.5rem;
+  font-style: italic;
+  font-size: 0.9rem;
+  color: var(--ngx-ap-text-secondary);
+}
+
+@include mixins.mobile {
+  .description {
+    text-align: center;
+  }
+}
