@@ -12,6 +12,12 @@ export * from './lib/components/thumbnail/thumbnail';
 export * from './lib/components/paragraph/paragraph';
 export * from './lib/components/gallery-grid/gallery-grid';
 
+// Icons
+export * from './lib/components/icons/email-icon';
+export * from './lib/components/icons/instagram-icon';
+export * from './lib/components/icons/facebook-icon';
+export * from './lib/components/icons/twitter-icon';
+
 // Feature Components (Pages)
 export * from './lib/features/home-page.component';
 export * from './lib/features/bio-page.component';

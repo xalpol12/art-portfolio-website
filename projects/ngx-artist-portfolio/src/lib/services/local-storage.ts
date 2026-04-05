@@ -5,7 +5,9 @@ interface LocalStorageItem {
   value: object;
   timestamp: number;
 }
-const EXPIRATION_TIME_MS = 5 * 60 * 1000; // 5 minutes
+// const EXPIRATION_TIME_MS = 5 * 60 * 1000; // 5 minutes
+
+const EXPIRATION_TIME_MS = 1;
 
 @Injectable({
   providedIn: 'root'

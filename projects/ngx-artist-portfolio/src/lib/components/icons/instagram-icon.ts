@@ -1,0 +1,19 @@
+import {Component} from '@angular/core';
+
+@Component({
+  selector: 'apw-instagram-icon',
+  standalone: true,
+  template: `
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+         stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+      <circle cx="12" cy="12" r="4"/>
+      <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/>
+    </svg>
+  `,
+  styles: [`
+    :host { display: contents; }
+    svg { width: 1.25em; height: 1.25em; }
+  `]
+})
+export class InstagramIcon {}

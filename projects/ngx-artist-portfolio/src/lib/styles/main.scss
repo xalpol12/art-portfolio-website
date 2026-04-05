@@ -26,6 +26,14 @@ main, ngx-artist-portfolio-full-height {
   @include flex-column-center;
 }
 
+.ngx-page-padding {
+  padding: var(--ngx-ap-gutter) var(--ngx-ap-content-gutter);
+}
+
+.ngx-page-padding-large {
+  padding: var(--ngx-ap-gutter) var(--ngx-ap-content-gutter-extra-large);
+}
+
 .debug-full-width-height {
   @include debug;
 

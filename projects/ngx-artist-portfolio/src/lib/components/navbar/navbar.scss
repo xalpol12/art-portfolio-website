@@ -6,7 +6,7 @@
   top: 0;
   .navbar {
     @include mixins.flex-row;
-    padding: 2rem 4rem;
+    padding: var(--ngx-ap-gutter) var(--ngx-ap-content-gutter);
     justify-content: space-between;
     background-color: var(--ngx-ap-bg-main);
   }

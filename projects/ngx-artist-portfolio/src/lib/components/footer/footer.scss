@@ -5,8 +5,12 @@
     @include mixins.flex-row;
     justify-content: space-between;
     font-size: 0.8rem;
-    padding: 1rem 1rem;
+    padding: var(--ngx-ap-gutter-small) var(--ngx-ap-content-gutter);
     color: var(--ngx-ap-text-tertiary);
+
+    .creator {
+      color: var(--ngx-ap-text-tertiary-opaque);
+    }
   }
 
   .contact {

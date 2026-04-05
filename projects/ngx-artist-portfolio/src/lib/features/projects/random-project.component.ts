@@ -8,7 +8,7 @@ import {ProjectThumbnailsStore} from './project-thumbnails.store';
     @if (thumbnail) {
       <apw-thumbnail class="ngx-center"
                      [thumbnail]="thumbnail"
-                      [paddingBottom]="false"
+                     [paddingBottom]="false"
                      (clicked)="projectThumbnailsStore.onThumbnailClick(thumbnail.id)"
       />
     }

@@ -5,7 +5,7 @@ export interface ProjectModel {
   content: ContentModel[];
 }
 
-export type ContentModel = BasicModel | ParagraphModel | GalleryGridModel;
+export type ContentModel = BasicModel | ParagraphModel | ImageModel | GalleryGridModel;
 
 export interface BasicModel {
   type: ContentType.BREAK;
@@ -14,6 +14,12 @@ export interface BasicModel {
 export interface ParagraphModel {
   type: ContentType.PARAGRAPH;
   data: ParagraphDataModel;
+}
+
+export interface ImageModel {
+  type: ContentType.IMAGE;
+  image: string;
+  description?: ImageDescriptionModel;
 }
 
 export interface GalleryGridModel {

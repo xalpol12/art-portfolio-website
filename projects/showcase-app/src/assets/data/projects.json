@@ -16,7 +16,7 @@
       {
         "type": "gallery-grid",
         "config": {
-          "orientation": "horizontal",
+          "orientation": "vertical",
           "gap": 40
         },
         "data": ["img/munch.jpg", "img/image.jpg", "img/munch.jpg"],
@@ -26,6 +26,17 @@
           "size": "100 x 150 cm",
           "year": "2023",
           "additionalInfo": "This is some additional info about the artwork."
+        }
+      },
+      {
+        "type": "image",
+        "image": "img/cezanne.jpg",
+        "description": {
+          "title": "Cezanne's Lake",
+          "medium": "Oil on canvas",
+          "size": "80 x 120 cm",
+          "year": "2022",
+          "additionalInfo": "This is some additional info about Cezanne's Lake."
         }
       }
     ]
@@ -71,9 +82,21 @@
       {
         "type": "gallery-grid",
         "config": {
-          "orientation": "horizontal"
+          "orientation": "vertical"
         },
-        "data": ["a", "b"]
+        "data": [
+          "img/munch.jpg",
+          "img/image.jpg",
+          "img/munch.jpg",
+          "img/image.jpg"
+        ],
+        "description": {
+          "title": "Artwork title",
+          "medium": "Oil on canvas",
+          "size": "100 x 150 cm",
+          "year": "2023",
+          "additionalInfo": "This is some additional info about the artwork."
+        }
       }
     ]
   },
@@ -96,7 +119,10 @@
         "config": {
           "orientation": "horizontal"
         },
-        "data": ["a", "b"]
+        "data": [
+          "img/munch.jpg",
+          "img/image.jpg"
+        ]
       }
     ]
   }

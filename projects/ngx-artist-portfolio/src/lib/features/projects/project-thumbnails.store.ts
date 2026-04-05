@@ -1,15 +1,14 @@
 import {inject, Signal} from '@angular/core';
 import {Router} from '@angular/router';
-import {toSignal} from '@angular/core/rxjs-interop';
-import {ContentStore} from '../../services/content.store';
+import {ContentSignalStore} from '../../services/content-signal-store.service';
 import {ProjectModel, ThumbnailModel} from '@ngx-artist-portfolio';
 
 export class ProjectThumbnailsStore {
-  store = inject(ContentStore);
+  store = inject(ContentSignalStore);
   router = inject(Router);
 
-  thumbnails: Signal<ThumbnailModel[]> = toSignal(this.store.getThumbnails$(), {initialValue: []});
-  projects: Signal<ProjectModel[]> = toSignal(this.store.getProjects$(), {initialValue: []});
+  thumbnails: Signal<ThumbnailModel[]> = this.store.thumbnails();
+  projects: Signal<ProjectModel[]> = this.store.projects();
 
   onThumbnailClick(id: string) {
     const project = this.projects().find(p => p.id === id);

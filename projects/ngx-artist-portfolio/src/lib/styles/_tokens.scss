@@ -3,18 +3,23 @@
   --ngx-ap-primary: ;
   --ngx-ap-secondary: ;
   --ngx-ap-accent: #62a4ff;
+  --ngx-ap-accent-opaque: rgba(98, 164, 255, 0.05);
   --ngx-ap-bg-main: #fafafa;
 
   /* Text colors */
   --ngx-ap-text-primary: #000;
   --ngx-ap-text-secondary: #808080;
   --ngx-ap-text-tertiary: #a0a0a0;
+  --ngx-ap-text-tertiary-opaque: rgba(160, 160, 160, 0.5);
   --ngx-ap-text-on-primary: #0047ab;
 
   /* Spacing and layout */
+  --ngx-ap-width: 200px;
   --ngx-ap-gutter-small: 1rem;
   --ngx-ap-gutter: 1.5rem;
   --ngx-ap-content-gutter: 4rem;
+  --ngx-ap-content-gutter-large: 8rem;
+  --ngx-ap-content-gutter-extra-large: 16rem;
   --ngx-ap-gap-standard: 8px;
   //--ngx-ap-border-radius: 8px;
   //--ngx-ap-transition-speed: 0.3s;

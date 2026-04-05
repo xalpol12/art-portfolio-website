@@ -4,6 +4,7 @@ import {ContentType} from '../../models/content-type';
 import {Paragraph} from '../../components/paragraph/paragraph';
 import {GalleryGrid} from '../../components/gallery-grid/gallery-grid';
 import {BreakComponent} from '../../components/break/break.component';
+import {Image} from '../../components/image/image';
 
 @Component({
   selector: `apw-project-renderer`, template: `
@@ -16,6 +17,9 @@ import {BreakComponent} from '../../components/break/break.component';
           @case (ContentType.PARAGRAPH) {
             <apw-paragraph [content]="block.data"></apw-paragraph>
           }
+          @case (ContentType.IMAGE) {
+            <apw-img [image]="block.image"/>
+          }
           @case (ContentType.GALLERY_GRID) {
             <apw-gallery-grid [data]="block">
             </apw-gallery-grid>
@@ -23,7 +27,7 @@ import {BreakComponent} from '../../components/break/break.component';
         }
       }
     </div>
-  `, standalone: true, imports: [Paragraph, GalleryGrid, BreakComponent]
+  `, standalone: true, imports: [Paragraph, GalleryGrid, BreakComponent, Image]
 })
 export class ProjectRendererComponent implements OnInit {
 

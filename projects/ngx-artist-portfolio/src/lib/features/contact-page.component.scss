@@ -1,0 +1,22 @@
+@use '../styles/mixins' as mixins;
+
+.contact-list {
+  @include mixins.flex-column-center;
+
+  margin-top: var(--ngx-ap-content-gutter);
+  gap: var(--ngx-ap-gutter);
+}
+
+.contact-link {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  width: var(--ngx-ap-width);
+  height: 50px;
+
+  @include mixins.hover {
+    background-color: var(--ngx-ap-accent-opaque);
+  }
+}

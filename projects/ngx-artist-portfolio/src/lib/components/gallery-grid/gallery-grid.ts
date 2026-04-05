@@ -14,11 +14,11 @@ import {ImageLightbox} from '../image-lightbox/image-lightbox';
                  (click)="openLightbox($index)"
         />
       }
+      @if (data?.description) {
+        <apw-img-description [description]="data?.description">
+        </apw-img-description>
+      }
     </div>
-    @if (data?.description) {
-      <apw-img-description [description]="data?.description">
-      </apw-img-description>
-    }
 
     <apw-img-lightbox
       [isOpen]="lightboxOpen"

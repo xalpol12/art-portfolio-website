@@ -1,19 +1,46 @@
 {
+  "id": "bio",
   "content": [
     {
-      "type": "PARAGRAPH",
-      "data": "This is a sample paragraph. A really long text that spans multiple rows to see how it looks in the project renderer component. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+      "type": "paragraph",
+      "data": "<b>Education</b>"
     },
     {
-      "type": "BREAK"
+      "type": "paragraph",
+      "data": "1995–1998 <b>Diplôme National d'Arts Plastiques, École Européenne Supérieure d'Art de Bretagne,</b> Brest, France"
     },
     {
-      "type": "PARAGRAPH",
-      "data": "This is a sample paragraph 2. Tad shorter this time. Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+      "type": "break"
     },
     {
-      "type": "GALLERY_GRID",
-      "data": ""
+      "type": "paragraph",
+      "data": "<b>Selected Exhibitions</b>"
+    },
+    {
+      "type": "paragraph",
+      "data": "2025 ARTPHILE, Group Show, OCT LOFT Contemporary Art Terminal, Shenzhen, China</br>2024 HOLY-WOOOD, Group Show, ROYALCLUB, Shanghai, China</br>2024 Yо́umu Jǐng Tú, Solo Show, Tidewave, Huizhou, China</br>2010 Belvedere International Art Book Festival, Group Show, Istituto Europeo di Design, Rome, Italy"
+    },
+    {
+      "type": "break"
+    },
+    {
+      "type": "paragraph",
+      "data": "<b>Teaching Posts</b>"
+    },
+    {
+      "type": "paragraph",
+      "data": "2024–2025 Visiting Professor, School of Design, The Hong Kong Polytechnic University, Hong Kong SAR, China</br>2019–2024 Associate Professor, School of Design, The Hong Kong Polytechnic University, Hong Kong SAR, China</br>2013–2019 Assistant Professor, School of Design, The Hong Kong Polytechnic University, Hong Kong SAR, China</br>2008–2013 Lecturer, School of Design, The Hong Kong Polytechnic University, Hong Kong SAR, China"
+    },
+    {
+      "type": "break"
+    },
+    {
+      "type": "paragraph",
+      "data": "<b>Selected Publications</b>"
+    },
+    {
+      "type": "paragraph",
+      "data": "2024 <i>Holy-Wooood</i>, ROYALCLUB, Shanghai, China</br>2024 <i>Yо́umu Jǐng Tú</i>, Tidewave, Huizhou, China</br>2019 <i>Designing for the Future: A Guide to Sustainable Design Practices</i>, Green Press, Hong Kong SAR, China</br>2015 <i>The Art of User Experience: A Comprehensive Guide to UX Design</i>, UX Books, Hong Kong SAR, China"
     }
   ]
 }
