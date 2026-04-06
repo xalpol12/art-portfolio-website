@@ -1,6 +1,6 @@
-@import '../styles/mixins';
+@use '../styles/mixins';
 
 :host {
-  @include flex-fill;
+  @include mixins.flex-fill;
   justify-content: center;
 }

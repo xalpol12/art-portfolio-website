@@ -7,7 +7,7 @@ import {ThumbnailModel} from '../../models/thumbnail.model';
 @Component({
   selector: `apw-project-page`,
   template: `
-    <div class="ngx-page-padding-large">
+    <div class="page-wrapper">
       <div class="ngx-ap-h1">{{ thumbnail?.title }}</div>
       <apw-project-renderer [project]="project"/>
     </div>

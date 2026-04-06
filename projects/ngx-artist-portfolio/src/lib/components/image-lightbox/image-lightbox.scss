@@ -10,12 +10,24 @@
   align-items: center;
   justify-content: center;
   cursor: zoom-out;
+  overflow: hidden;
 }
 .modal-content {
   position: relative;
   max-width: 90vw;
   max-height: 90vh;
   cursor: default;
+  transition: transform 0.15s ease-out;
+  transform-origin: center center;
+
+  &.zoomed {
+    cursor: grab;
+
+    &:active {
+      cursor: grabbing;
+    }
+  }
+
   ::ng-deep .image-wrapper {
     display: flex;
     align-items: center;
@@ -29,6 +41,7 @@
     object-fit: contain;
     display: block;
     user-select: none;
+    pointer-events: none;
   }
 }
 .close {

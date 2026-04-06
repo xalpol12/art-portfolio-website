@@ -6,7 +6,7 @@ import {ArtworkDescriptionPipe} from '../../pipes/artwork-description-pipe';
   selector: `apw-img-description`, template: `
     @if (description) {
       <div class="description">
-        <span>{{description | artworkDescription}}</span>
+        <span>{{ description | artworkDescription }}</span>
       </div>
     }
   `, standalone: true, imports: [
@@ -15,9 +15,4 @@ import {ArtworkDescriptionPipe} from '../../pipes/artwork-description-pipe';
 })
 export class ImageDescription {
   @Input() description: ImageDescriptionModel | undefined;
-
-  get descriptionString(): string {
-    return JSON.stringify(this.description);
-
-  }
 }

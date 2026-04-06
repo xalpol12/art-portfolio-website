@@ -1,4 +1,4 @@
-import {Component, computed, HostListener, input, output} from '@angular/core';
+import {Component, computed, effect, HostListener, input, output, signal} from '@angular/core';
 import {Image} from '../image/image';
 
 @Component({
@@ -6,11 +6,21 @@ import {Image} from '../image/image';
     @if (isOpen()) {
       <div class="modal"
            (click)="onBackdropClick($event)"
+           (wheel)="onWheel($event)"
            (touchstart)="onTouchStart($event)"
            (touchend)="onTouchEnd()"
            (touchmove)="onTouchMove($event)">
         <span class="close" (click)="closeModal()">&times;</span>
-        <div class="modal-content">
+
+        <div class="modal-content"
+             [class.zoomed]="isZoomed()"
+             [style.transform]="imageTransform()"
+             [style.cursor]="isZoomed() ? 'grab' : 'default'"
+             (mousedown)="onPanStart($event)"
+             (mousemove)="onPanMove($event)"
+             (mouseup)="onPanEnd()"
+             (mouseleave)="onPanEnd()"
+             (dblclick)="onDoubleClick()">
           <apw-img [image]="currentImage()" [alt]="currentAlt()"></apw-img>
         </div>
 
@@ -33,21 +43,55 @@ export class ImageLightbox {
   close = output<void>();
   indexChanged = output<number>();
 
-  private touchStartX: number = 0;
-  private touchEndX: number = 0;
+  // Zoom state
+  protected zoom = signal(1);
+  protected panX = signal(0);
+  protected panY = signal(0);
+
+  private readonly MIN_ZOOM = 1;
+  private readonly MAX_ZOOM = 5;
+  private readonly ZOOM_STEP = 0.5;
+
+  // Pan state
+  private isPanning = false;
+  private panStartX = 0;
+  private panStartY = 0;
+  private panOriginX = 0;
+  private panOriginY = 0;
+
+  // Swipe state
+  private touchStartX = 0;
+  private touchEndX = 0;
   private readonly SWIPE_THRESHOLD = 50;
+
+  protected isZoomed = computed(() => this.zoom() > 1);
+
+  protected imageTransform = computed(() => {
+    const z = this.zoom();
+    const x = this.panX();
+    const y = this.panY();
+    return `scale(${z}) translate(${x}px, ${y}px)`;
+  });
+
+  constructor() {
+    // Reset zoom when slide changes
+    effect(() => {
+      this.currentIndex();
+      this.resetZoom();
+    });
+  }
 
   currentImage = computed(() => {
     const imgs = this.images();
     const idx = this.currentIndex();
     return imgs[idx] || '';
-  })
+  });
 
   currentAlt = computed(() => {
     const idx = this.currentIndex();
     const total = this.images().length;
     return `Image ${idx + 1} of ${total}`;
-  })
+  });
 
   @HostListener('document:keydown', ['$event'])
   handleKeyboardEvent(event: KeyboardEvent): void {
@@ -58,54 +102,128 @@ export class ImageLightbox {
         this.closeModal();
         break;
       case 'ArrowLeft':
-        this.nextSlide(-1);
+        if (!this.isZoomed()) this.nextSlide(-1);
         event.preventDefault();
         break;
       case 'ArrowRight':
-        this.nextSlide(1);
+        if (!this.isZoomed()) this.nextSlide(1);
+        event.preventDefault();
+        break;
+      case '+':
+      case '=':
+        this.zoomIn();
+        event.preventDefault();
+        break;
+      case '-':
+        this.zoomOut();
+        event.preventDefault();
+        break;
+      case '0':
+        this.resetZoom();
         event.preventDefault();
         break;
     }
   }
 
   closeModal(): void {
+    this.resetZoom();
     this.close.emit();
   }
 
-  nextSlide(step: number) {
+  nextSlide(step: number): void {
     const imgs = this.images();
     if (!imgs || imgs.length === 0) return;
 
-    const currentIndex = this.currentIndex();
-    const total = this.images().length;
-    const newIndex = (currentIndex + step + total) % total;
+    const total = imgs.length;
+    const newIndex = (this.currentIndex() + step + total) % total;
     this.indexChanged.emit(newIndex);
   }
 
-  onBackdropClick(event: MouseEvent) {
+  // --- Zoom ---
+
+  zoomIn(): void {
+    this.zoom.update(z => Math.min(z + this.ZOOM_STEP, this.MAX_ZOOM));
+    if (!this.isZoomed()) this.resetPan();
+  }
+
+  zoomOut(): void {
+    this.zoom.update(z => Math.max(z - this.ZOOM_STEP, this.MIN_ZOOM));
+    if (!this.isZoomed()) this.resetPan();
+  }
+
+  resetZoom(): void {
+    this.zoom.set(1);
+    this.resetPan();
+  }
+
+  onWheel(event: WheelEvent): void {
+    event.preventDefault();
+    if (event.deltaY < 0) {
+      this.zoomIn();
+    } else {
+      this.zoomOut();
+    }
+  }
+
+  onDoubleClick(): void {
+    if (this.isZoomed()) {
+      this.resetZoom();
+    } else {
+      this.zoom.set(2.5);
+    }
+  }
+
+  // --- Pan (drag while zoomed) ---
+
+  onPanStart(event: MouseEvent): void {
+    if (!this.isZoomed()) return;
+    this.isPanning = true;
+    this.panStartX = event.clientX;
+    this.panStartY = event.clientY;
+    this.panOriginX = this.panX();
+    this.panOriginY = this.panY();
+    event.preventDefault();
+  }
+
+  onPanMove(event: MouseEvent): void {
+    if (!this.isPanning) return;
+    const dx = (event.clientX - this.panStartX) / this.zoom();
+    const dy = (event.clientY - this.panStartY) / this.zoom();
+    this.panX.set(this.panOriginX + dx);
+    this.panY.set(this.panOriginY + dy);
+  }
+
+  onPanEnd(): void {
+    this.isPanning = false;
+  }
+
+  private resetPan(): void {
+    this.panX.set(0);
+    this.panY.set(0);
+  }
+
+  // --- Touch swipe / pinch ---
+
+  onBackdropClick(event: MouseEvent): void {
     if ((<HTMLElement>event.target).classList.contains('modal')) {
       this.closeModal();
     }
   }
 
-  onTouchStart(event: TouchEvent) {
+  onTouchStart(event: TouchEvent): void {
     this.touchStartX = event.changedTouches[0].screenX;
   }
 
-  onTouchMove(event: TouchEvent) {
+  onTouchMove(event: TouchEvent): void {
     this.touchEndX = event.changedTouches[0].screenX;
-
   }
 
   onTouchEnd(): void {
-    const swipeDistance = this.touchStartX - this.touchEndX;
+    if (this.isZoomed()) return; // don't swipe while zoomed
 
+    const swipeDistance = this.touchStartX - this.touchEndX;
     if (Math.abs(swipeDistance) > this.SWIPE_THRESHOLD) {
-      if (swipeDistance > 0) {
-        this.nextSlide(1);
-      } else {
-        this.nextSlide(-1);
-      }
+      this.nextSlide(swipeDistance > 0 ? 1 : -1);
     }
     this.touchStartX = 0;
     this.touchEndX = 0;

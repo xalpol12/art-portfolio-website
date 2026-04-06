@@ -1,8 +1,7 @@
-import {Component, Input} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {GalleryGridConfig, GalleryGridModel} from '../../models/project.model';
 import {Image} from '../image/image';
 import {ImageDescription} from '../image-description/image-description';
-import {ImageLightbox} from '../image-lightbox/image-lightbox';
 
 @Component({
   selector: `apw-gallery-grid`, template: `
@@ -10,53 +9,31 @@ import {ImageLightbox} from '../image-lightbox/image-lightbox';
          [style.--ngx-ap-gap-standard.px]="config.gap"
          [class.vertical]="config.orientation === 'vertical'">
       @for (image of data?.data; track $index) {
-        <apw-img [image]="image" [alt]="'Gallery Image {{$index + 1}}'"
-                 (click)="openLightbox($index)"
-        />
+        <apw-img [image]="image" [alt]="'Gallery Image ' + ($index + 1)"
+                 (click)="onImageClick($index)"
+                 />
       }
       @if (data?.description) {
-        <apw-img-description [description]="data?.description">
+        <apw-img-description class="gallery-description" [description]="data?.description">
         </apw-img-description>
       }
     </div>
-
-    <apw-img-lightbox
-      [isOpen]="lightboxOpen"
-      [currentIndex]="lightboxIndex"
-      [images]="data?.data ?? []"
-      (close)="closeLightbox()"
-      (indexChanged)="onIndexChanged($event)"
-    ></apw-img-lightbox>
   `, styleUrl: './gallery-grid.scss', imports: [
     Image,
-    ImageDescription,
-    ImageLightbox
+    ImageDescription
   ]
 })
 export class GalleryGrid {
   @Input() data: GalleryGridModel | undefined;
-
-  lightboxOpen: boolean = false;
-  lightboxIndex: number = 0;
-
-  static DEFAULT_CONFIG = {orientation: 'horizontal', gap: 8};
-  // TODO: optimize images (dont display full res if not needed)
-  // TODO: create image wrapper - each image click should open "modal" with zoomed image full screen and ability to swipe left/right to see other images"
+  static readonly DEFAULT_CONFIG = {orientation: 'horizontal', gap: 8};
+  @Input() startIndex: number = 0;
+  @Output() imageClicked = new EventEmitter<number>();
 
   get config(): GalleryGridConfig {
     return <GalleryGridConfig>this.data?.config || GalleryGrid.DEFAULT_CONFIG;
   }
 
-  openLightbox(index: number): void {
-    this.lightboxIndex = index;
-    this.lightboxOpen = true;
-  }
-
-  closeLightbox(): void {
-    this.lightboxOpen = false;
-  }
-
-  onIndexChanged(index: number): void {
-    this.lightboxIndex = index;
+  onImageClick(localIndex: number): void {
+    this.imageClicked.emit(this.startIndex + localIndex);
   }
 }

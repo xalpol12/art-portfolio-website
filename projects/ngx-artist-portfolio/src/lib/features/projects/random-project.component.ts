@@ -1,15 +1,15 @@
-import {Component, OnInit} from '@angular/core';
-import {ProjectModel, Thumbnail, ThumbnailModel} from '@ngx-artist-portfolio';
+import {Component, computed, Signal} from '@angular/core';
+import {Thumbnail, ThumbnailModel} from '@ngx-artist-portfolio';
 import {ProjectThumbnailsStore} from './project-thumbnails.store';
 
 @Component({
   selector: `apw-random-project`,
   template: `
-    @if (thumbnail) {
+    @if (thumbnail()) {
       <apw-thumbnail class="ngx-center"
-                     [thumbnail]="thumbnail"
+                     [thumbnail]="thumbnail()"
                      [paddingBottom]="false"
-                     (clicked)="projectThumbnailsStore.onThumbnailClick(thumbnail.id)"
+                     (clicked)="projectThumbnailsStore.onThumbnailClick(thumbnail().id)"
       />
     }
   `,
@@ -18,18 +18,13 @@ import {ProjectThumbnailsStore} from './project-thumbnails.store';
     Thumbnail
   ]
 })
-export class RandomProjectComponent implements OnInit {
+export class RandomProjectComponent {
   projectThumbnailsStore = new ProjectThumbnailsStore();
 
-  thumbnails = this.projectThumbnailsStore.thumbnails;
-  projects = this.projectThumbnailsStore.projects;
-
-  project: ProjectModel = {} as ProjectModel;
-  thumbnail: ThumbnailModel = {} as ThumbnailModel;
-
-  ngOnInit(): void {
-    const randomIndex = Math.floor(Math.random() * this.projects().length);
-    this.project = this.projects()[randomIndex];
-    this.thumbnail = this.thumbnails().find(t => t.id === this.project.id)!;
-  }
+  thumbnail: Signal<ThumbnailModel> = computed(() => {
+    const projects = this.projectThumbnailsStore.projects;
+    const thumbnails = this.projectThumbnailsStore.thumbnails;
+    const randomIndex = Math.floor(Math.random() * projects().length);
+    return thumbnails().find(t => t.id === projects()[randomIndex].id)!;
+  });
 }

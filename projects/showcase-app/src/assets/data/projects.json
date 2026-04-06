@@ -17,7 +17,7 @@
         "type": "gallery-grid",
         "config": {
           "orientation": "vertical",
-          "gap": 40
+          "gap": 20
         },
         "data": ["img/munch.jpg", "img/image.jpg", "img/munch.jpg"],
         "description": {

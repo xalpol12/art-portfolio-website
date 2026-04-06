@@ -6,7 +6,7 @@
   top: 0;
   .navbar {
     @include mixins.flex-row;
-    padding: var(--ngx-ap-gutter) var(--ngx-ap-content-gutter);
+    padding: var(--ngx-ap-gutter) var(--ngx-ap-content-gutter) var(--ngx-ap-gutter-small) var(--ngx-ap-content-gutter);
     justify-content: space-between;
     background-color: var(--ngx-ap-bg-main);
   }
@@ -37,9 +37,73 @@
     background: var(--ngx-ap-accent);
   }
 
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 28px;
+    height: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+
+    span {
+      display: block;
+      width: 100%;
+      height: 2px;
+      background-color: currentColor;
+      border-radius: 2px;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+      transform-origin: center;
+    }
+
+    &.open span:nth-child(1) {
+      transform: translateY(9px) rotate(45deg);
+    }
+    &.open span:nth-child(2) {
+      opacity: 0;
+      transform: scaleX(0);
+    }
+    &.open span:nth-child(3) {
+      transform: translateY(-9px) rotate(-45deg);
+    }
+  }
+
   .title,
   .navigation li {
     @include mixins.hover;
   }
-//  TODO: dodać obsługę mobile (hamburger menu)
+
+  @include mixins.mobile {
+    .navbar {
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      flex-direction: row;
+    }
+
+    .hamburger {
+      display: flex;
+    }
+
+    .navigation {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      gap: 0.5rem;
+      padding: 0.5rem 0 1rem;
+
+      .active::after {
+        right: -18px;
+        top: 50%;
+        bottom: auto;
+        left: auto;
+        transform: translateY(-50%);
+      }
+      &.open {
+        display: flex;
+      }
+    }
+  }
 }

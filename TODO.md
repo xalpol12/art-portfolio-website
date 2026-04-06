@@ -1,21 +1,25 @@
+MVP: 
 - [x] Image lightbox
 - [x] Painting extended info (dimensions, medium, year, etc.)
 - [x] Vertical images do not work
-- [] Cache
+- [x] Image spotlight for single image
+- [x] Extend gallery-model to support image metadata (dimensions, medium, year, etc.)
+- [x] Cache
 - [] Parametrization of site (artist name etc)
-- [] Improve SEO
-- [] Optimize image and thumbnail loading
 - [] Responsive for currently existing components
-- [] Styling for mobile page
+- [] Optimize image and thumbnail loading
+- [] npm release
+- [] test deployment
+- [] automated gitops deployment
+
+---
+NTH:
+- [] Documentation
+- [] Improve SEO
 - [] Quote element
 - [] Video element
-- [] Image spotlight for single image
-- [] Extend gallery-model to support image metadata (dimensions, medium, year, etc.)
+- [] Next/Previous project
 
-
-
--- 
-notes:
-
-- title header - optional date of the project?
-~~- home page - one random project~~
+---
+TO FIX:
+- [] Navbar - gallery indicator not showing when inside project view
