@@ -23,6 +23,6 @@ export class ContentService {
   }
 
   fetchBio$(): Observable<ProjectModel> {
-    return this.httpClient.get<ProjectModel>(this.apiUrl + 'assets/data/bio.json');
+    return this.httpClient.get<ProjectModel>(this.apiUrl + '/bio.json');
   }
 }

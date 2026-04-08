@@ -1,5 +1,8 @@
 {
-  "name": "ngx-artist-portfolio",
+  "name": "@xalpol12/artist-portfolio",
+  "publishConfig": {
+    "access": "public"
+  },
   "version": "0.0.1",
   "peerDependencies": {
     "@angular/common": "^21.0.0",
