@@ -3,7 +3,6 @@ import {ContentService, ProjectModel, ThumbnailModel} from '@ngx-artist-portfoli
 import {LocalStorageService} from './local-storage';
 import {Observable, of, switchMap, tap} from 'rxjs';
 import {toSignal} from '@angular/core/rxjs-interop';
-import {ContactModel} from '../models/contact.model';
 
 @Injectable({
   providedIn: 'root'
@@ -25,10 +24,6 @@ export class ContentSignalStore {
 
   bio(): Signal<ProjectModel> {
     return toSignal(this.getContent<ProjectModel>('bio', () => this.contentService.fetchBio$()), {initialValue: {} as ProjectModel});
-  }
-
-  contact(): Signal<ContactModel> {
-    return toSignal(this.getContent<ContactModel>('contact', () => this.contentService.fetchContact$()), {initialValue: {} as ContactModel});
   }
 
   private getContent<T>(key: string, fetchFn: () => Observable<T>): Observable<T> {

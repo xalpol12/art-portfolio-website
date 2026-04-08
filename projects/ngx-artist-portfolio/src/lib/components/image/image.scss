@@ -2,4 +2,20 @@
 
 .image-wrapper {
   @include hover;
+  @include flex-column-center;
+
+  img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+
+  &.fill-mode {
+    position: relative;
+    width: 100%;
+
+    img {
+      object-fit: cover;
+    }
+  }
 }

@@ -27,22 +27,17 @@
       cursor: grabbing;
     }
   }
+}
 
-  ::ng-deep .image-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  ::ng-deep img {
-    max-width: 90vw;
-    max-height: 90vh;
-    width: auto;
-    height: auto;
-    object-fit: contain;
-    display: block;
-    user-select: none;
-    pointer-events: none;
-  }
+.lightbox-img {
+  display: block;
+  max-width: 90vw;
+  max-height: 90vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  user-select: none;
+  pointer-events: none;
 }
 .close {
   position: fixed;

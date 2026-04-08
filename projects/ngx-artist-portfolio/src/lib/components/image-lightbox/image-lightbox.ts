@@ -1,5 +1,4 @@
 import {Component, computed, effect, HostListener, input, output, signal} from '@angular/core';
-import {Image} from '../image/image';
 
 @Component({
   selector: `apw-img-lightbox`, template: `
@@ -21,7 +20,7 @@ import {Image} from '../image/image';
              (mouseup)="onPanEnd()"
              (mouseleave)="onPanEnd()"
              (dblclick)="onDoubleClick()">
-          <apw-img [image]="currentImage()" [alt]="currentAlt()"></apw-img>
+          <img [src]="currentImage()" [alt]="currentAlt()" class="lightbox-img"/>
         </div>
 
         @if (images() && images().length > 1) {
@@ -31,16 +30,14 @@ import {Image} from '../image/image';
         }
       </div>
     }
-  `, standalone: true, imports: [
-    Image
-  ], styleUrl: 'image-lightbox.scss'
+  `, standalone: true, imports: [], styleUrl: 'image-lightbox.scss'
 })
 export class ImageLightbox {
   images = input<string[]>([]);
   currentIndex = input<number>(0);
   isOpen = input<boolean>(false);
 
-  close = output<void>();
+  closeOutput = output<void>();
   indexChanged = output<number>();
 
   // Zoom state
@@ -127,7 +124,7 @@ export class ImageLightbox {
 
   closeModal(): void {
     this.resetZoom();
-    this.close.emit();
+    this.closeOutput.emit();
   }
 
   nextSlide(step: number): void {
@@ -173,7 +170,7 @@ export class ImageLightbox {
     }
   }
 
-  // --- Pan (drag while zoomed) ---
+  // --- Pan ---
 
   onPanStart(event: MouseEvent): void {
     if (!this.isZoomed()) return;
@@ -219,7 +216,7 @@ export class ImageLightbox {
   }
 
   onTouchEnd(): void {
-    if (this.isZoomed()) return; // don't swipe while zoomed
+    if (this.isZoomed()) return;
 
     const swipeDistance = this.touchStartX - this.touchEndX;
     if (Math.abs(swipeDistance) > this.SWIPE_THRESHOLD) {

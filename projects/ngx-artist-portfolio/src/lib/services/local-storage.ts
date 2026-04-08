@@ -1,20 +1,18 @@
-import {Injectable} from '@angular/core';
+import {inject, Injectable} from '@angular/core';
 import {Observable, of} from 'rxjs';
+import {Store} from '../store.service';
 
 interface LocalStorageItem {
   value: object;
   timestamp: number;
 }
-// const EXPIRATION_TIME_MS = 5 * 60 * 1000; // 5 minutes
-
-const EXPIRATION_TIME_MS = 1;
-
 @Injectable({
   providedIn: 'root'
 })
 export class LocalStorageService {
-
-  private localStorage: Storage = window.localStorage;
+  private readonly store = inject(Store);
+  private readonly localStorage: Storage = globalThis.localStorage;
+  private readonly expirationTimeMs = this.store.config.cacheExpirationTimeMs;
 
   save<T>(key: string, value: T): void {
     this.localStorage.setItem(key, JSON.stringify({
@@ -30,7 +28,7 @@ export class LocalStorageService {
     }
     try {
       const parsed: LocalStorageItem = JSON.parse(item);
-      if (Date.now() - parsed.timestamp < EXPIRATION_TIME_MS) {
+      if (Date.now() - parsed.timestamp < this.expirationTimeMs) {
         return of(parsed.value as T);
       } else {
         this.localStorage.removeItem(key);

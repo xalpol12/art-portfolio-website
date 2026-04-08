@@ -5,8 +5,15 @@ export const appConfig: ApplicationConfig = {
   providers: [
     providePortfolio({
       config: {
-        contentApiUrl: 'https://api.example.com/portfolio',
-        siteTitle: 'Showcase Portfolio App'
+        contentApiUrl: 'assets/data',
+        name: 'Artist Name',
+        contact: {
+          email: 'example@gmail.com',
+          instagram: 'artistprofile'
+        },
+        cacheExpirationTimeMs: 60 * 60 * 1000, // 1 hour
+        siteTitle: 'Showcase Portfolio App',
+        // cloudinaryCloudName: 'your-cloud-name'
       },
       provideRouting: true // Library handles all routing
     })

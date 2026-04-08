@@ -31,6 +31,8 @@
       {
         "type": "image",
         "image": "img/cezanne.jpg",
+        "width": 1200,
+        "height": 800,
         "description": {
           "title": "Cezanne's Lake",
           "medium": "Oil on canvas",

@@ -1,4 +1,5 @@
-import {Component} from '@angular/core';
+import {Component, inject} from '@angular/core';
+import {Store} from '../../store.service';
 
 @Component({
   selector: `apw-footer`,
@@ -6,14 +7,18 @@ import {Component} from '@angular/core';
     <footer>
       <div class="contact">
         <div class="name">
-          {{'Artist Name'}}
+          {{ store.config.name }}
         </div>
-        <div class="email">
-          <a href="mailto:mail@mail.com">mail</a>
-        </div>
-        <div class="instagram">
-          <a href="https://www.instagram.com/artistprofile" target="_blank">{{"@artistprofile"}}</a>
-        </div>
+        @if (contacts.email; as email) {
+          <div class="email">
+            <a href="mailto:{{email}}">mail</a>
+          </div>
+        }
+        @if (contacts.instagram; as ig) {
+          <div class="instagram">
+            <a href="https://www.instagram.com/{{ig}}" target="_blank">{{ '@' + ig }}</a>
+          </div>
+        }
       </div>
       <div class="creator">{{"Website by"}} <a href="https://www.instagram.com/stawido/" target="_blank">{{"@stawido"}}</a></div>
     </footer>
@@ -21,4 +26,7 @@ import {Component} from '@angular/core';
   styleUrl: './footer.scss',
   standalone: true
 })
-export class Footer { }
+export class Footer {
+  store = inject(Store);
+  contacts = this.store.config.contact;
+}

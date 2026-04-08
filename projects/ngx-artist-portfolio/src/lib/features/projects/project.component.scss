@@ -12,7 +12,7 @@
 
 @include mixins.mobile {
   .page-wrapper {
-    padding: var(--ngx-ap-gutter) var(--ngx-ap-content-gutter);
+    padding: var(--ngx-ap-gutter) 0 0 0;
   }
 
 }

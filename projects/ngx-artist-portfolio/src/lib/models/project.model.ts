@@ -20,6 +20,8 @@ export interface ImageModel {
   type: ContentType.IMAGE;
   image: string;
   description?: ImageDescriptionModel;
+  width?: number;
+  height?: number;
 }
 
 export interface GalleryGridModel {

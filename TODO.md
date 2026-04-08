@@ -5,9 +5,9 @@ MVP:
 - [x] Image spotlight for single image
 - [x] Extend gallery-model to support image metadata (dimensions, medium, year, etc.)
 - [x] Cache
-- [] Parametrization of site (artist name etc)
-- [] Responsive for currently existing components
-- [] Optimize image and thumbnail loading
+- [x] Parametrization of site (artist name etc.)
+- [x] Responsive for currently existing components
+- [x] Optimize image and thumbnail loading
 - [] npm release
 - [] test deployment
 - [] automated gitops deployment
@@ -16,6 +16,7 @@ MVP:
 NTH:
 - [] Documentation
 - [] Improve SEO
+- [] Configurable routes
 - [] Quote element
 - [] Video element
 - [] Next/Previous project

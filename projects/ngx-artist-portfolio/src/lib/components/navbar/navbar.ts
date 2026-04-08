@@ -1,10 +1,11 @@
 import {Component, inject, signal} from '@angular/core';
 import {ActivatedRoute, RouterLink, RouterLinkActive} from '@angular/router';
+import {Store} from '../../store.service';
 
 @Component({
   selector: `apw-navbar`, template: `
     <nav class="navbar">
-      <div class="title"><a routerLink="">{{ 'Artist Name' }}</a></div>
+      <div class="title"><a routerLink="">{{ store.config.name }}</a></div>
       <button class="hamburger" [class.open]="menuOpen()" (click)="toggleMenu()" aria-label="Toggle navigation">
         <span></span>
         <span></span>
@@ -22,6 +23,7 @@ import {ActivatedRoute, RouterLink, RouterLinkActive} from '@angular/router';
 export class Navbar {
   // TODO: make routerLink generic // configurable
   activatedRoute: ActivatedRoute = inject(ActivatedRoute);
+  store = inject(Store);
   menuOpen = signal(false);
 
   constructor() {
