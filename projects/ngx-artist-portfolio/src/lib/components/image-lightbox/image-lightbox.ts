@@ -21,7 +21,13 @@ import {NgOptimizedImage} from '@angular/common';
              (mouseup)="onPanEnd()"
              (mouseleave)="onPanEnd()"
              (dblclick)="onDoubleClick()">
-          <img [ngSrc]="currentImage()" [alt]="currentAlt()" class="lightbox-img" fill/>
+          @if (loading()) {
+            <div class="spinner-wrapper">
+              <div class="spinner"></div>
+            </div>
+          }
+          <img [ngSrc]="currentImage()" [alt]="currentAlt()" class="lightbox-img"
+               [class.loaded]="!loading()" (load)="onImageLoaded()" fill/>
         </div>
 
         @if (images() && images().length > 1) {
@@ -43,6 +49,9 @@ export class ImageLightbox {
 
   closeOutput = output<void>();
   indexChanged = output<number>();
+
+  // Loading state
+  protected loading = signal(true);
 
   // Zoom state
   protected zoom = signal(1);
@@ -75,9 +84,10 @@ export class ImageLightbox {
   });
 
   constructor() {
-    // Reset zoom when slide changes
+    // Reset zoom and loading state when slide changes
     effect(() => {
       this.currentIndex();
+      this.loading.set(true);
       this.resetZoom();
     });
   }
@@ -129,6 +139,10 @@ export class ImageLightbox {
   closeModal(): void {
     this.resetZoom();
     this.closeOutput.emit();
+  }
+
+  onImageLoaded(): void {
+    this.loading.set(false);
   }
 
   nextSlide(step: number): void {

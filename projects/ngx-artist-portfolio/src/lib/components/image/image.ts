@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, signal} from '@angular/core';
 import {ImageDescriptionModel} from '@ngx-artist-portfolio';
 import {ImageDescription} from '../image-description/image-description';
 import {NgOptimizedImage} from '@angular/common';
@@ -9,15 +9,24 @@ import {NgOptimizedImage} from '@angular/common';
       <div class="image-wrapper" [class.fill-mode]="!width || !height"
            [style.aspect-ratio]="(!width || !height) ? aspectRatio : null"
            [class.bottom-margin]="!galleryMode">
+        @if (loading()) {
+          <div class="spinner-wrapper">
+            <div class="spinner"></div>
+          </div>
+        }
         @if (width && height) {
           <img [ngSrc]="image"
                [width]="width"
                [height]="height"
-               [alt]="alt ?? ''"/>
+               [alt]="alt ?? ''"
+               [class.loaded]="!loading()"
+               (load)="loading.set(false)"/>
         } @else {
           <img [ngSrc]="image"
                [fill]="true"
-               [alt]="alt ?? ''"/>
+               [alt]="alt ?? ''"
+               [class.loaded]="!loading()"
+               (load)="loading.set(false)"/>
         }
         @if (description) {
           <apw-img-description [description]="description"></apw-img-description>
@@ -37,4 +46,6 @@ export class Image {
   @Input() height: number | undefined;
   @Input() aspectRatio: string = '4/3';
   @Input() galleryMode: boolean = false;
+
+  protected loading = signal(true);
 }
