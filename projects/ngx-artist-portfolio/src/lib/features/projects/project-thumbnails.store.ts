@@ -13,7 +13,7 @@ export class ProjectThumbnailsStore {
   onThumbnailClick(id: string) {
     const project = this.projects().find(p => p.id === id);
     const thumbnail = this.thumbnails().find(t => t.id === id);
-    this.router.navigate(['/project', id], {
+    this.router.navigate(['/projects', id], {
       state: {
         project: project, thumbnail: thumbnail
       }

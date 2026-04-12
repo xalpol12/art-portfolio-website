@@ -1,26 +1,32 @@
 [
   {
-    "id": "project1",
-    "title": "Sample Project 1",
-    "description": "This is a description for Sample Project 1.",
-    "imageUrl": "img/image.jpg"
+    "id": "1",
+    "title": "CONTINUUM",
+    "imageUrl": "v1776006506/Bandosz_Zuzanna_01_jednak_nie_msd66x.jpg"
   },
   {
-    "id": "project2",
-    "title": "Sample Project 2 - deluxe edition",
-    "description": "This is a description for Sample Project 2. It has a bit more text to see how it looks in the thumbnail component.",
-    "imageUrl": "img/image.jpg"
+    "id": "2",
+    "title": "Bez tytułu",
+    "imageUrl": "v1776006503/2_Podstawy_zarz%C4%85dzania_2024_akryl_na_p%C5%82%C3%B3tnie_70x50_cm_qgasgn.jpg"
   },
   {
-    "id": "project3",
-    "title": "Sample Project 3: The Sequel",
-    "description": "This is a description for Sample Project 3. It has a bit more text to see how it looks in the thumbnail component.",
-    "imageUrl": "img/munch.jpg"
+    "id": "3",
+    "title": "Pojedynek",
+    "imageUrl": "v1776009059/pojedynek_1_qtpocx.jpg"
   },
   {
-    "id": "project4",
-    "title": "Sample Project 4: The Extended Edition",
-    "description": "This is a description for Sample Project 4. It contains a longer text to test text wrapping in the thumbnail component.",
-    "imageUrl": "img/munch.jpg"
+    "id": "4",
+    "title": "O szczęściu",
+    "imageUrl": "v1776006506/Bandosz_Zuzanna_03_cnguyx.jpg"
+  },
+  {
+    "id": "5",
+    "title": "Rysunki uziemione",
+    "imageUrl": "v1776006504/1_1_fs9z4x.jpg"
+  },
+  {
+    "id": "6",
+    "title": "Buty dla mojej prababci",
+    "imageUrl": "v1776006509/buty2_defova.jpg"
   }
 ]

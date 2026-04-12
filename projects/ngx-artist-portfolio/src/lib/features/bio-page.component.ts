@@ -5,11 +5,12 @@ import {ContentSignalStore} from '../services/content-signal-store.service';
 @Component({
   selector: `apw-bio-page`,
   template: `
-    <div class="ngx-page-padding">
+    <div class="page-wrapper">
       <apw-project-renderer [project]="bio()"/>
     </div>
   `,
   standalone: true,
+  styleUrl: 'bio-page.component.scss',
   imports: [
     ProjectRendererComponent
   ]

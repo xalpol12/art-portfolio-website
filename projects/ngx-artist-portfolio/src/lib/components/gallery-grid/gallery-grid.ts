@@ -5,14 +5,17 @@ import {ImageDescription} from '../image-description/image-description';
 
 @Component({
   selector: `apw-gallery-grid`, template: `
-    <div class="gallery"
-         [style.--ngx-ap-gap-standard.px]="config.gap"
-         [class.vertical]="config.orientation === 'vertical'">
-      @for (image of data?.data; track $index) {
-        <apw-img [image]="image" [alt]="'Gallery Image ' + ($index + 1)"
-                 (click)="onImageClick($index)"
-                 />
-      }
+    <div class="gallery-wrapper">
+      <div class="gallery"
+           [style.--ngx-ap-gap-standard.px]="config.gap"
+           [class.vertical]="config.orientation === 'vertical'">
+        @for (image of data?.data; track $index) {
+          <apw-img [image]="image" [alt]="'Gallery Image ' + ($index + 1)"
+                   [galleryMode]="true"
+                   (click)="onImageClick($index)"
+          />
+        }
+      </div>
       @if (data?.description) {
         <apw-img-description class="gallery-description" [description]="data?.description">
         </apw-img-description>

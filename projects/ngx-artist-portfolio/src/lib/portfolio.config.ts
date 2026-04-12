@@ -8,6 +8,7 @@ export interface PortfolioConfig {
   cacheExpirationTimeMs: number,
   siteTitle?: string,
   cloudinaryCloudName?: string,
+  disableLightboxZoom?: boolean
 }
 
 export const PORTFOLIO_CONFIG = new InjectionToken<PortfolioConfig>('PORTFOLIO_CONFIG');

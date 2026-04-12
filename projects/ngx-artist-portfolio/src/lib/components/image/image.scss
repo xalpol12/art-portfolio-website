@@ -4,6 +4,10 @@
   @include hover;
   @include flex-column-center;
 
+  &.bottom-margin {
+    margin-bottom: var(--ngx-ap-gutter-large);
+  }
+
   img {
     display: block;
     max-width: 100%;

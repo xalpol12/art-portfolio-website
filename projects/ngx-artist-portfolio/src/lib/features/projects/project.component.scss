@@ -1,18 +1,9 @@
 @use '../../styles/mixins' as mixins;
 
-.page-wrapper {
-  padding: var(--ngx-ap-gutter) var(--ngx-ap-content-gutter-extra-large);
-}
-
-@include mixins.tablet {
-  .page-wrapper {
-    padding: var(--ngx-ap-gutter) var(--ngx-ap-content-gutter-large);
-  }
-}
+@include mixins.page-wrapper-padding;
 
 @include mixins.mobile {
-  .page-wrapper {
-    padding: var(--ngx-ap-gutter) 0 0 0;
+  .ngx-ap-h1 {
+    text-align: center;
   }
-
 }

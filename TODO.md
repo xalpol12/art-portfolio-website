@@ -8,19 +8,23 @@ MVP:
 - [x] Parametrization of site (artist name etc.)
 - [x] Responsive for currently existing components
 - [x] Optimize image and thumbnail loading
-- [] npm release
-- [] test deployment
-- [] automated gitops deployment
+- [ ] npm release
+- [ ] test deployment
+- [ ] automated gitops deployment
 
 ---
 NTH:
-- [] Documentation
-- [] Improve SEO
-- [] Configurable routes
-- [] Quote element
-- [] Video element
-- [] Next/Previous project
+- [ ] Documentation
+- [ ] Improve SEO
+- [ ] Configurable routes
+- [ ] Quote element
+- [ ] Video element
+- [ ] Next/Previous project
 
 ---
 TO FIX:
-- [] Navbar - gallery indicator not showing when inside project view
+- [x] Navbar - gallery indicator not showing when inside project view
+- [x] Mobile padding
+- [x] Image description
+- [ ] Sample Zuzia data
+- [x] Config disable zooming when lightbox

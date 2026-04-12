@@ -8,7 +8,7 @@ import { ContactPageComponent } from "./features/contact-page.component";
 export const portfolioRoutes: Routes = [
   { path: '', component: HomePageComponent },
   { path: 'projects', component: ProjectsPageComponent },
-  { path: 'project/:id', component: ProjectComponent },
+  { path: 'projects/:id', component: ProjectComponent },
   { path: 'bio', component: BioPageComponent },
   { path: 'contact', component: ContactPageComponent},
 ]

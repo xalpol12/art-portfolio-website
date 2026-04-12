@@ -7,7 +7,7 @@ import {ThumbnailModel} from "../../models/thumbnail.model";
     @if (thumbnail) {
       <div class="thumbnail-container" (click)="clicked.emit(thumbnail.id)" [class.padding-bottom]="paddingBottom">
         <div class="thumbnail-image-wrapper">
-          <img ngSrc="{{thumbnail.imageUrl}}" width="300" height="300" [alt]="thumbnail.title"/>
+          <img ngSrc="{{thumbnail.imageUrl}}" width="500" height="500" [alt]="thumbnail.title"/>
         </div>
         <div class="thumbnail-title">{{ thumbnail.title }}</div>
         <div class="thumbnail-description">{{ thumbnail.description }}</div>

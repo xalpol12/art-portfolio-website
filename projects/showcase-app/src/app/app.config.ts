@@ -6,14 +6,15 @@ export const appConfig: ApplicationConfig = {
     providePortfolio({
       config: {
         contentApiUrl: 'assets/data',
-        name: 'Artist Name',
+        name: 'Zuzanna Bandosz',
         contact: {
-          email: 'example@gmail.com',
-          instagram: 'artistprofile'
+          email: 'zuzia.bandosz@gmail.com',
+          instagram: 'zbandosz'
         },
-        cacheExpirationTimeMs: 60 * 60 * 1000, // 1 hour
-        siteTitle: 'Showcase Portfolio App',
-        // cloudinaryCloudName: 'your-cloud-name'
+        cacheExpirationTimeMs: 1,
+        siteTitle: 'Zuzanna Bandosz',
+        disableLightboxZoom: true,
+        cloudinaryCloudName: 'drtnqrawh'
       },
       provideRouting: true // Library handles all routing
     })

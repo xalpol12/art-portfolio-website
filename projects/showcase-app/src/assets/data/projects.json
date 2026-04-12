@@ -1,130 +1,196 @@
 [
   {
-    "id": "project1",
+    "id": "1",
     "content": [
       {
-        "type": "paragraph",
-        "data": "This is a <i>sample paragraph</i>. <br/> A really long text <b>BOLD</b> <h3>that</h3> spans multiple rows to see how it looks in the project renderer component. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-      },
-      {
-        "type": "break"
-      },
-      {
-        "type": "paragraph",
-        "data": "This is a sample paragraph 2. Tad shorter this time. Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-      },
-      {
-        "type": "gallery-grid",
-        "config": {
-          "orientation": "vertical",
-          "gap": 20
-        },
-        "data": ["img/munch.jpg", "img/image.jpg", "img/munch.jpg"],
+        "type": "image",
+        "image": "v1776006506/Bandosz_Zuzanna_01_jednak_nie_msd66x.jpg",
+        "width": 1200,
+        "height": 800,
         "description": {
-          "title": "Artwork title",
-          "medium": "Oil on canvas",
-          "size": "100 x 150 cm",
-          "year": "2023",
-          "additionalInfo": "This is some additional info about the artwork."
+          "title": "CONTINUUM",
+          "medium": "akryl, farba tablicowa, kreda na płótnie",
+          "size": "120 x 80 cm, 160 x 180 cm",
+          "year": "2025"
+        }
+      }
+    ]
+  },
+  {
+    "id": "2",
+    "content": [
+      {
+        "type": "image",
+        "image": "v1776006505/Bandosz_Zuzanna_01_cdwydj.jpg",
+        "width": 1200,
+        "height": 800,
+        "description": {
+          "title": "Bez tytułu",
+          "medium": "akryl na płótnie",
+          "size": "50 x 70 cm",
+          "year": "2025"
         }
       },
       {
         "type": "image",
-        "image": "img/cezanne.jpg",
+        "image": "v1776006506/Bandosz_Zuzanna_01_detal_ttgzaz.jpg",
         "width": 1200,
         "height": 800,
         "description": {
-          "title": "Cezanne's Lake",
-          "medium": "Oil on canvas",
-          "size": "80 x 120 cm",
-          "year": "2022",
-          "additionalInfo": "This is some additional info about Cezanne's Lake."
+          "title": "Bez tytułu",
+          "medium": "akryl na płótnie",
+          "size": "50 x 70 cm",
+          "year": "2025",
+          "additionalInfo": "(detal)"
         }
       }
     ]
   },
   {
-    "id": "project2",
+    "id": "3",
     "content": [
-      {
-        "type": "paragraph",
-        "data": "This is a sample paragraph. A really long text that spans multiple rows to see how it looks in the project renderer component. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-      },
-      {
-        "type": "break"
-      },
-      {
-        "type": "paragraph",
-        "data": "This is a sample paragraph 2. Tad shorter this time. Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-      },
       {
         "type": "gallery-grid",
         "config": {
-          "orientation": "vertical",
-          "gap": 20
-        },
-        "data": ["img/munch.jpg", "img/image.jpg"]
-      }
-    ]
-  },
-  {
-    "id": "project3",
-    "content": [
-      {
-        "type": "paragraph",
-        "data": "This is a sample paragraph. A really long text that spans multiple rows to see how it looks in the project renderer component. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-      },
-      {
-        "type": "break"
-      },
-      {
-        "type": "paragraph",
-        "data": "This is a sample paragraph 2. Tad shorter this time. Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-      },
-      {
-        "type": "gallery-grid",
-        "config": {
-          "orientation": "vertical"
+          "orientation": "horizontal",
+          "gap": 0
         },
         "data": [
-          "img/munch.jpg",
-          "img/image.jpg",
-          "img/munch.jpg",
-          "img/image.jpg"
+          "v1776009059/pojedynek_1_qtpocx.jpg",
+          "v1776009059/pojedynek_2_gxe4ar.jpg",
+          "v1776009058/pojedynek_3_xbrdu7.jpg"
         ],
         "description": {
-          "title": "Artwork title",
-          "medium": "Oil on canvas",
-          "size": "100 x 150 cm",
-          "year": "2023",
-          "additionalInfo": "This is some additional info about the artwork."
+          "title": "Pojedynek",
+          "medium": "akryl na płótnie",
+          "size": "210 x 60 cm",
+          "year": "2026"
+        }
+      },
+      {
+        "type": "image",
+        "image": "v1776006506/Bandosz_Zuzanna_02_detal_gxivfc.jpg",
+        "width": 1772,
+        "height": 1181,
+        "description": {
+          "title": "Pojedynek",
+          "medium": "akryl na płótnie",
+          "size": "x cm (detale)",
+          "year": "2026"
         }
       }
     ]
   },
   {
-    "id": "project4",
+    "id": "4",
     "content": [
       {
-        "type": "paragraph",
-        "data": "This is a sample paragraph. A really long text that spans multiple rows to see how it looks in the project renderer component. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-      },
-      {
-        "type": "break"
-      },
-      {
-        "type": "paragraph",
-        "data": "This is a sample paragraph 2. Tad shorter this time. Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+        "type": "image",
+        "image": "v1776006506/Bandosz_Zuzanna_03_cnguyx.jpg",
+        "width": 2656,
+        "height": 1770,
+        "description": {
+          "title": "O szczęściu",
+          "medium": "akryl na płótnie",
+          "size": "40 x 50 cm każdy",
+          "year": "2026"
+        }
       },
       {
         "type": "gallery-grid",
         "config": {
-          "orientation": "horizontal"
+          "orientation": "horizontal",
+          "gap": 20
         },
         "data": [
-          "img/munch.jpg",
-          "img/image.jpg"
-        ]
+          "v1776006506/Bandosz_Zuzanna_03_detal1_a1hjjt.jpg",
+          "v1776006507/Bandosz_Zuzanna_03_detal2_heno3e.jpg",
+          "v1776006507/Bandosz_Zuzanna_03_detal3_mnnuu3.jpg"
+        ],
+        "description": {
+          "title": "O szczęściu",
+          "medium": "akryl na płótnie",
+          "size": "40 x 50 cm każdy (detale)",
+          "year": "2026"
+        }
+      },
+      {
+        "type": "image",
+        "image": "v1776006507/Bandosz_Zuzanna_03_detal4_lfxg7u.jpg",
+        "width": 1500,
+        "height": 1000,
+        "description": {
+          "title": "O szczęściu",
+          "medium": "akryl na płótnie",
+          "size": "40 x 50 cm (detal)",
+          "year": "2026"
+        }
+      }
+    ]
+  },
+  {
+    "id": "5",
+    "content": [
+      {
+        "type": "image",
+        "image": "v1776006504/1_1_fs9z4x.jpg",
+        "width": 1846,
+        "height": 1230,
+        "description": {
+          "title": "Rysunki uziemione",
+          "medium": "technika własna",
+          "size": "x cm",
+          "year": "2026"
+        }
+      },
+      {
+        "type": "paragraph",
+        "data": "Punktem wyjścia do powstania obiektów rysunkowych stały się schematy ze starej instrukcji obsługi centrali telefonicznej. Fascynowało mnie, co może się zdarzyć, gdy zmienię tradycyjne rozumienie rysunku jako dwuwymiarowej reprezentacji trójwymiarowej rzeczywistości. W mojej pracy postanowiłam odwrócić tę sytuację, pokazując, że ten transfer nie musi być jednokierunkowy. Nadaję schematom ze starej instrukcji formę przestrzenną według własnej interpretacji, zupełnie zmieniając ich przeznaczenie oraz podważając utylitarny charakter. W ten sposób ponownie przetwarzam coś, co samo w sobie jest już interpretacją rzeczywistości. Tym samym poddaję w wątpliwość obiektywność i jednoznaczność procesu poznawczego. Chociaż wykonane przeze mnie obiekty odbiegają od pierwowzorów, nie uważam, aby były od nich mniej prawdziwe. Takim działaniem daję wyraz swojemu przekonaniu, że rysunek jest procesem polegającym na ciągłej, wielowymiarowej reinterpretacji. <i>Rysunki uziemione</i> to rysunki sprowadzone na ziemię, wychodzące w przestrzeń i nierozerwalnie z nią związane."
+      },
+      {
+        "type": "gallery-grid",
+        "config": {
+          "orientation": "horizontal",
+          "gap": 20
+        },
+        "data": [
+          "v1776006505/6_bksmzj.jpg",
+          "v1776006504/5_fsk964.jpg",
+          "v1776006505/2_kguvm2.jpg"
+        ],
+        "description": {
+          "title": "Rysunki uziemione",
+          "medium": "technika własna",
+          "size": "x cm",
+          "year": "2026"
+        }
+      }
+    ]
+  },
+  {
+    "id": "6",
+    "content": [
+      {
+        "type": "paragraph",
+        "data": "Praca jest inspirowana książką „Chłopki” J. Kuciel-Frydryszak, w której autorka podkreśla rolę, jaką buty odgrywały w życiu wiejskich kobiet. Choć szewców we wsiach nie brakowało, na buty stać było niewielu. Dla chłopów były one symbolem godności. W przypadku kobiet, dodatkowo, oznaczały wolność. Posiadanie ich otwierało kobiecie drogę do nowych możliwości – zdobycia edukacji lub pójścia do pracy. Teraz, kiedy paradoksalnie każdy może mieć buty, zawód szewca jest wymierający. Tworząc cykl, artystka chciała w metaforyczny sposób ofiarować niezależność swoim przodkiniom, które nie mogły sobie pozwolić na taki przywilej. Buty stanowią tu podróż do niewidzialnej historii kobiet, które były pomijane w dostępie do tego dobra. Jednocześnie jest to próba przywrócenia butom ich pierwotnego znaczenia, które przez\nkonsumpcjonistyczne społeczeństwo zostało zdegradowane i uczynione niewidzialnym. Zwróćmy uwagę, z jaką łatwością coś będącego kiedyś dobrem nieosiągalnym, obecnie nic nie znaczy."
+      },
+      {
+        "type": "gallery-grid",
+        "config": {
+          "orientation": "horizontal",
+          "gap": 20
+        },
+        "data": [
+          "v1776006509/buty2_defova.jpg",
+          "v1776006512/buty4_thvyzi.jpg",
+          "v1776006509/buty3_g2ls9b.jpg"
+        ],
+        "description": {
+          "title": "Buty dla mojej prababci",
+          "medium": "technika własna",
+          "size": "20 x 25 cm",
+          "year": "2025"
+        }
       }
     ]
   }

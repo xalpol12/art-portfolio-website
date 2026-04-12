@@ -1,10 +1,13 @@
 @use '../../styles/mixins' as mixins;
 
+.gallery-wrapper {
+  margin-bottom: var(--ngx-ap-gutter-large);
+}
+
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: var(--ngx-ap-gap-standard);
-  margin-bottom: var(--ngx-ap-gutter-large);
 
   &.vertical {
     display: flex;

@@ -1,4 +1,5 @@
 import {Component, computed, effect, HostListener, input, output, signal} from '@angular/core';
+import {NgOptimizedImage} from '@angular/common';
 
 @Component({
   selector: `apw-img-lightbox`, template: `
@@ -20,7 +21,7 @@ import {Component, computed, effect, HostListener, input, output, signal} from '
              (mouseup)="onPanEnd()"
              (mouseleave)="onPanEnd()"
              (dblclick)="onDoubleClick()">
-          <img [src]="currentImage()" [alt]="currentAlt()" class="lightbox-img"/>
+          <img [ngSrc]="currentImage()" [alt]="currentAlt()" class="lightbox-img" fill/>
         </div>
 
         @if (images() && images().length > 1) {
@@ -30,12 +31,15 @@ import {Component, computed, effect, HostListener, input, output, signal} from '
         }
       </div>
     }
-  `, standalone: true, imports: [], styleUrl: 'image-lightbox.scss'
+  `, standalone: true, imports: [
+    NgOptimizedImage
+  ], styleUrl: 'image-lightbox.scss'
 })
 export class ImageLightbox {
   images = input<string[]>([]);
   currentIndex = input<number>(0);
   isOpen = input<boolean>(false);
+  zoomDisabled = input<boolean>(false);
 
   closeOutput = output<void>();
   indexChanged = output<number>();
@@ -61,7 +65,7 @@ export class ImageLightbox {
   private touchEndX = 0;
   private readonly SWIPE_THRESHOLD = 50;
 
-  protected isZoomed = computed(() => this.zoom() > 1);
+  protected isZoomed = computed(() => !this.zoomDisabled && this.zoom() > 1);
 
   protected imageTransform = computed(() => {
     const z = this.zoom();
@@ -139,21 +143,25 @@ export class ImageLightbox {
   // --- Zoom ---
 
   zoomIn(): void {
+    if (this.zoomDisabled()) return;
     this.zoom.update(z => Math.min(z + this.ZOOM_STEP, this.MAX_ZOOM));
     if (!this.isZoomed()) this.resetPan();
   }
 
   zoomOut(): void {
+    if (this.zoomDisabled()) return;
     this.zoom.update(z => Math.max(z - this.ZOOM_STEP, this.MIN_ZOOM));
     if (!this.isZoomed()) this.resetPan();
   }
 
   resetZoom(): void {
+    if (this.zoomDisabled()) return;
     this.zoom.set(1);
     this.resetPan();
   }
 
   onWheel(event: WheelEvent): void {
+    if (this.zoomDisabled()) return;
     event.preventDefault();
     if (event.deltaY < 0) {
       this.zoomIn();
@@ -163,6 +171,7 @@ export class ImageLightbox {
   }
 
   onDoubleClick(): void {
+    if (this.zoomDisabled()) return;
     if (this.isZoomed()) {
       this.resetZoom();
     } else {

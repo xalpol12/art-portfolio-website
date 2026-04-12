@@ -12,9 +12,12 @@ import {Store} from '../../store.service';
         <span></span>
       </button>
       <ul class="navigation" [class.open]="menuOpen()">
-        <li><a routerLink="projects" routerLinkActive="active" (click)="closeMenu()">Gallery</a></li>
+        <li><a routerLink="projects"
+               routerLinkActive="active"
+               [routerLinkActiveOptions]="{exact: false}"
+               (click)="closeMenu()">Galeria</a></li>
         <li><a routerLink="bio" routerLinkActive="active" (click)="closeMenu()">Bio</a></li>
-        <li><a routerLink="contact" routerLinkActive="active" (click)="closeMenu()">Contact</a></li>
+        <li><a routerLink="contact" routerLinkActive="active" (click)="closeMenu()">Kontakt</a></li>
       </ul>
     </nav>
   `, styleUrl: './navbar.scss', standalone: true,
@@ -22,15 +25,8 @@ import {Store} from '../../store.service';
 })
 export class Navbar {
   // TODO: make routerLink generic // configurable
-  activatedRoute: ActivatedRoute = inject(ActivatedRoute);
   store = inject(Store);
   menuOpen = signal(false);
-
-  constructor() {
-    this.activatedRoute.data.subscribe(data => {
-
-    })
-  }
 
   toggleMenu(): void {
     this.menuOpen.update(v => !v);

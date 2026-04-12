@@ -19,9 +19,9 @@ export interface ParagraphModel {
 export interface ImageModel {
   type: ContentType.IMAGE;
   image: string;
-  description?: ImageDescriptionModel;
   width?: number;
   height?: number;
+  description?: ImageDescriptionModel;
 }
 
 export interface GalleryGridModel {
@@ -39,6 +39,7 @@ export type GalleryGridConfig = {
 export type ParagraphDataModel = string;
 export type GalleryGridDataModel = string[];
 export type ImageDescriptionModel = {
+  justify?: 'left' | 'center' | 'right';
   title?: string;
   medium?: string;
   size?: string;

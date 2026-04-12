@@ -1,8 +1,11 @@
-import {computed, Injectable, signal} from '@angular/core';
+import {computed, inject, Injectable, Signal, signal} from '@angular/core';
 import {ContentModel, ContentType, GalleryGridModel, ImageModel} from '@ngx-artist-portfolio';
+import {Store} from '../store.service';
 
 @Injectable()
 export class LightboxService {
+  private store: Store = inject(Store);
+  readonly zoomDisabled = signal(this.store.config.disableLightboxZoom ?? false);
   private readonly _isOpen = signal(false);
   readonly isOpen = this._isOpen.asReadonly();
   private readonly _currentIndex = signal(0);

@@ -24,6 +24,7 @@ import {LightboxService} from '../../services/lightbox.service';
             <apw-img [image]="block.image"
                      [width]="block.width"
                      [height]="block.height"
+                     [description]="block.description"
                      (click)="lightbox.open(lightbox.getStartIndexFor(block, project!.content))"/>
           }
           @case (ContentType.GALLERY_GRID) {
@@ -41,6 +42,7 @@ import {LightboxService} from '../../services/lightbox.service';
       [isOpen]="lightbox.isOpen()"
       [currentIndex]="lightbox.currentIndex()"
       [images]="lightbox.images()"
+      [zoomDisabled]="lightbox.zoomDisabled()"
       (closeOutput)="lightbox.close()"
       (indexChanged)="lightbox.goTo($event)">
     </apw-img-lightbox>

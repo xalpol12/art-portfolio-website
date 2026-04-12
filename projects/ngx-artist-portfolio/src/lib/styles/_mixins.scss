@@ -47,3 +47,21 @@
 @mixin debug {
   border: 1px solid red !important;
 }
+
+@mixin page-wrapper-padding {
+  .page-wrapper {
+    padding: var(--ngx-ap-gutter) var(--ngx-ap-content-gutter-extra-large);
+  }
+
+  @include tablet {
+    .page-wrapper {
+      padding: var(--ngx-ap-gutter) var(--ngx-ap-content-gutter-large);
+    }
+  }
+
+  @include mobile {
+    .page-wrapper {
+      padding: var(--ngx-ap-gutter) var(--ngx-ap-gutter) 0;
+    }
+  }
+}

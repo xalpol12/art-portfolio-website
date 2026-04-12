@@ -14,8 +14,8 @@
 }
 .modal-content {
   position: relative;
-  max-width: 90vw;
-  max-height: 90vh;
+  width: 90vw;
+  height: 90vh;
   cursor: default;
   transition: transform 0.15s ease-out;
   transform-origin: center center;
@@ -30,11 +30,6 @@
 }
 
 .lightbox-img {
-  display: block;
-  max-width: 90vw;
-  max-height: 90vh;
-  width: auto;
-  height: auto;
   object-fit: contain;
   user-select: none;
   pointer-events: none;

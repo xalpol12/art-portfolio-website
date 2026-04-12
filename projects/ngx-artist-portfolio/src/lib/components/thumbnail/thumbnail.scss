@@ -1,3 +1,5 @@
+@use '../../styles/mixins';
+
 .thumbnail-container {
   cursor: pointer;
   max-width: 700px;
@@ -36,3 +38,8 @@
   color: var(--ngx-ap-text-secondary);
 }
 
+@include mixins.mobile {
+  .thumbnail-title {
+    text-align: center;
+  }
+}
