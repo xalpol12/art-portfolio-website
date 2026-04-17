@@ -9,8 +9,8 @@ import {ProjectThumbnailsStore} from './project-thumbnails.store';
       <apw-thumbnail class="ngx-center"
                      [thumbnail]="thumbnail()"
                      [paddingBottom]="false"
-                     (clicked)="projectThumbnailsStore.onThumbnailClick(thumbnail().id)"
-      />
+                     [isPriority]="true"
+                     (clicked)="projectThumbnailsStore.onThumbnailClick(thumbnail().id)"/>
     }
   `,
   standalone: true,

@@ -11,4 +11,5 @@ export const portfolioRoutes: Routes = [
   { path: 'projects/:id', component: ProjectComponent },
   { path: 'bio', component: BioPageComponent },
   { path: 'contact', component: ContactPageComponent},
+  { path: '**', component: HomePageComponent }
 ]

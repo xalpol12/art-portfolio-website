@@ -7,7 +7,13 @@ import {ThumbnailModel} from "../../models/thumbnail.model";
     @if (thumbnail) {
       <div class="thumbnail-container" (click)="clicked.emit(thumbnail.id)" [class.padding-bottom]="paddingBottom">
         <div class="thumbnail-image-wrapper">
-          <img ngSrc="{{thumbnail.imageUrl}}" width="500" height="500" [alt]="thumbnail.title"/>
+          <img [ngSrc]="thumbnail.imageUrl"
+               [width]="thumbnail.width"
+               [height]="thumbnail.height"
+               [priority]="isPriority"
+               [alt]="thumbnail.title"
+               placeholder
+          />
         </div>
         <div class="thumbnail-title">{{ thumbnail.title }}</div>
         <div class="thumbnail-description">{{ thumbnail.description }}</div>
@@ -22,5 +28,6 @@ import {ThumbnailModel} from "../../models/thumbnail.model";
 export class Thumbnail {
   @Input() thumbnail: ThumbnailModel | undefined;
   @Input() paddingBottom = false;
+  @Input() isPriority = false;
   clicked = output<string>();
 }

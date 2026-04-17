@@ -2,7 +2,8 @@
 
 .thumbnail-container {
   cursor: pointer;
-  max-width: 700px;
+  width: 100%;
+  max-width: 1000px;
 
   &:hover {
     opacity: 0.9;
@@ -22,14 +23,12 @@
   img {
     width: 100%;
     height: auto;
-    object-fit: cover;
     display: block;
   }
 }
 
 .thumbnail-title {
   margin-top: 0.5rem;
-  font-weight: 600;
 }
 
 .thumbnail-description {

@@ -6,14 +6,11 @@ import {Pipe, PipeTransform} from '@angular/core';
   standalone: true
 })
 export class ArtworkDescriptionPipe implements PipeTransform {
-  transform(description: ImageDescriptionModel | undefined): string {
+  transform(description: ImageDescriptionModel | undefined): string[] {
     if (!description) {
-      return '';
+      return [];
     }
-    const parts: string[] = [];
-    if (description.title) {
-      parts.push(description.title);
-    }
+    const parts: string[] = [''];
     if (description.medium) {
       parts.push(description.medium);
     }
@@ -26,6 +23,6 @@ export class ArtworkDescriptionPipe implements PipeTransform {
     if (description.additionalInfo) {
       parts.push(description.additionalInfo);
     }
-    return parts.join(', ');
+    return [description.title ?? '', parts.join(', ')];
   }
 }

@@ -20,12 +20,15 @@ import {NgOptimizedImage} from '@angular/common';
                [height]="height"
                [alt]="alt ?? ''"
                [class.loaded]="!loading()"
-               (load)="loading.set(false)"/>
+               placeholder
+               (load)="loading.set(false)"
+          />
         } @else {
           <img [ngSrc]="image"
                [fill]="true"
                [alt]="alt ?? ''"
                [class.loaded]="!loading()"
+               placeholder
                (load)="loading.set(false)"/>
         }
         @if (description) {
