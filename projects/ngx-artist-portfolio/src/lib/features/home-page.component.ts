@@ -4,7 +4,7 @@ import {RandomProjectComponent} from './projects/random-project.component';
 @Component({
   selector: `apw-home-page`,
   template: `
-    <div class="page-wrapper">
+    <div class="ngx-page-padding-sides-only">
       <apw-random-project/>
     </div>
   `,
@@ -15,5 +15,4 @@ import {RandomProjectComponent} from './projects/random-project.component';
   ]
 })
 export class HomePageComponent {
-
 }

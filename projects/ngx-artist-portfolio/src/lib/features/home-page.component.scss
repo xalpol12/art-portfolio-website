@@ -4,9 +4,3 @@
   @include mixins.flex-fill;
   justify-content: center;
 }
-
-@include mixins.mobile {
-  .page-wrapper {
-    padding: 0 var(--ngx-ap-gutter);
-  }
-}

@@ -1,6 +1,6 @@
-@import './tokens';
-@import './mixins';
-@import './resets';
+@use './tokens';
+@use './mixins';
+@use './resets';
 @import './typography';
 
 .ngx-artist-portfolio-theme {
@@ -19,11 +19,11 @@ body, .ngx-artist-portfolio-root {
 }
 
 main, ngx-artist-portfolio-full-height {
-  @include flex-fill;
+  @include mixins.flex-fill;
 }
 
 .ngx-center {
-  @include flex-column-center;
+  @include mixins.flex-column-center;
 }
 
 .ngx-page-padding {
@@ -34,8 +34,16 @@ main, ngx-artist-portfolio-full-height {
   padding: var(--ngx-ap-gutter) var(--ngx-ap-content-gutter-extra-large);
 }
 
+.ngx-page-padding-sides-only {
+  padding: 0 var(--ngx-ap-content-gutter);
+
+  @include mixins.mobile {
+    padding: 0 var(--ngx-ap-gutter);
+  }
+}
+
 .debug-full-width-height {
-  @include debug;
+  @include mixins.debug;
 
   width: 100%;
   height: 100px;

@@ -2,31 +2,43 @@
   {
     "id": "1",
     "title": "CONTINUUM",
-    "imageUrl": "v1776006506/Bandosz_Zuzanna_01_jednak_nie_msd66x.jpg"
+    "imageUrl": "v1776006506/Bandosz_Zuzanna_01_jednak_nie_msd66x.jpg",
+    "width": 1627,
+    "height": 1890
   },
   {
     "id": "2",
     "title": "Bez tytułu",
-    "imageUrl": "v1776006503/2_Podstawy_zarz%C4%85dzania_2024_akryl_na_p%C5%82%C3%B3tnie_70x50_cm_qgasgn.jpg"
+    "imageUrl": "v1776006503/2_Podstawy_zarz%C4%85dzania_2024_akryl_na_p%C5%82%C3%B3tnie_70x50_cm_qgasgn.jpg",
+    "width": 1417,
+    "height": 1890
   },
   {
     "id": "3",
     "title": "Pojedynek",
-    "imageUrl": "v1776009059/pojedynek_1_qtpocx.jpg"
+    "imageUrl": "v1776009059/pojedynek_1_qtpocx.jpg",
+    "width": 1013,
+    "height": 1349
   },
   {
     "id": "4",
     "title": "O szczęściu",
-    "imageUrl": "v1776006506/Bandosz_Zuzanna_03_cnguyx.jpg"
+    "imageUrl": "v1776006506/Bandosz_Zuzanna_03_cnguyx.jpg",
+    "width": 2656,
+    "height": 1770
   },
   {
     "id": "5",
     "title": "Rysunki uziemione",
-    "imageUrl": "v1776006504/1_1_fs9z4x.jpg"
+    "imageUrl": "v1776006504/1_1_fs9z4x.jpg",
+    "width": 2769,
+    "height": 1846
   },
   {
     "id": "6",
     "title": "Buty dla mojej prababci",
-    "imageUrl": "v1776006509/buty2_defova.jpg"
+    "imageUrl": "v1776006509/buty2_defova.jpg",
+    "width": 2412,
+    "height": 1563
   }
 ]

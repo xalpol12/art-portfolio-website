@@ -1,9 +1,14 @@
-import {Injectable, Inject, Optional} from '@angular/core';
+import {Injectable, Inject, Optional, signal} from '@angular/core';
 import {PortfolioConfig, PORTFOLIO_CONFIG} from '@ngx-artist-portfolio';
 
 @Injectable({providedIn: 'root'})
 export class Store {
   config: PortfolioConfig;
+  readonly homeClicks = signal(0);
+
+  onHomeClick(): void {
+    this.homeClicks.update(v => v + 1);
+  }
 
   constructor(@Optional() @Inject(PORTFOLIO_CONFIG) config: PortfolioConfig | null) {
     if (!config) {

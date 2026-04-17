@@ -1,6 +1,7 @@
-import {Component, computed, Signal} from '@angular/core';
+import {ChangeDetectorRef, Component, computed, effect, inject, signal, Signal} from '@angular/core';
 import {Thumbnail, ThumbnailModel} from '@ngx-artist-portfolio';
 import {ProjectThumbnailsStore} from './project-thumbnails.store';
+import {Store} from '../../store.service';
 
 @Component({
   selector: `apw-random-project`,
@@ -20,11 +21,27 @@ import {ProjectThumbnailsStore} from './project-thumbnails.store';
 })
 export class RandomProjectComponent {
   projectThumbnailsStore = new ProjectThumbnailsStore();
+  cdr = inject(ChangeDetectorRef);
+  private readonly store = inject(Store);
+
+  private readonly randomIndex = signal(Math.floor(Math.random() * 1000));
 
   thumbnail: Signal<ThumbnailModel> = computed(() => {
     const projects = this.projectThumbnailsStore.projects;
     const thumbnails = this.projectThumbnailsStore.thumbnails;
-    const randomIndex = Math.floor(Math.random() * projects().length);
-    return thumbnails().find(t => t.id === projects()[randomIndex].id)!;
+    const index = this.randomIndex() % projects().length;
+    return thumbnails().find(t => t.id === projects()[index].id)!;
   });
+
+  constructor() {
+    effect(() => {
+      this.store.homeClicks();
+      this.rerollProject();
+      this.cdr.markForCheck();
+    });
+  }
+
+  rerollProject() {
+    this.randomIndex.set(Math.floor(Math.random() * 1000));
+  }
 }
