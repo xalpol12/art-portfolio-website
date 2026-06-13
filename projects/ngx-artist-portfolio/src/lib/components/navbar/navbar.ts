@@ -10,6 +10,7 @@ import {Store} from '../../store.service';
         <span></span>
         <span></span>
         <span></span>
+        <span></span>
       </button>
       <ul class="navigation" [class.open]="menuOpen()">
         <li><a routerLink="projects"

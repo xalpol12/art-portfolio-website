@@ -26,5 +26,5 @@ TO FIX:
 - [x] Navbar - gallery indicator not showing when inside project view
 - [x] Mobile padding
 - [x] Image description
-- [ ] Sample Zuzia data
+- [x] Sample Zuzia data
 - [x] Config disable zooming when lightbox

@@ -15,7 +15,6 @@ export interface PortfolioConfig {
   siteTitle?: string,
   cloudinaryCloudName?: string,
   disableLightboxZoom?: boolean,
-  /** Static data baked in at build time. If provided, no HTTP calls are made. */
   data: PortfolioStaticData
 }
 
