@@ -1,5 +1,5 @@
 import {Injectable, Inject, Optional, signal} from '@angular/core';
-import {PortfolioConfig, PORTFOLIO_CONFIG} from '@ngx-artist-portfolio';
+import {PortfolioConfig, PORTFOLIO_CONFIG} from './portfolio.config';
 
 @Injectable({providedIn: 'root'})
 export class Store {

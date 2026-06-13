@@ -1,32 +1,25 @@
-import {Component, inject, OnInit} from '@angular/core';
+import {Component, computed, inject, input} from '@angular/core';
 import {ProjectRendererComponent} from './project-renderer.component';
-import {ProjectModel} from '../../models/project.model';
-import {Router} from '@angular/router';
-import {ThumbnailModel} from '../../models/thumbnail.model';
+import {ContentSignalStore} from '../../services/content-signal-store.service';
 
 @Component({
   selector: `apw-project-page`,
   template: `
     <div class="page-wrapper">
-      <div class="ngx-ap-h1">{{ thumbnail?.title }}</div>
-      <apw-project-renderer [project]="project"/>
+      <div class="ngx-ap-h1">{{ thumbnail()?.title }}</div>
+      <apw-project-renderer [project]="project()"/>
     </div>
   `,
   styleUrl: 'project.component.scss',
   standalone: true,
   imports: [ProjectRendererComponent]
 })
-export class ProjectComponent implements OnInit {
-  thumbnail: ThumbnailModel | undefined;
-  project: ProjectModel | undefined;
+export class ProjectComponent {
+  /** Bound from route param :id via withComponentInputBinding() */
+  id = input.required<string>();
 
-  private router = inject(Router);
+  private readonly store = inject(ContentSignalStore);
 
-  ngOnInit(): void {
-    const navigation = this.router.getCurrentNavigation();
-    const state = navigation?.extras.state || history.state;
-
-    this.project = state?.['project'];
-    this.thumbnail = state?.['thumbnail'];
-  }
+  project = computed(() => this.store.getProjectById(this.id()));
+  thumbnail = computed(() => this.store.getThumbnailById(this.id()));
 }

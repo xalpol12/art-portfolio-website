@@ -17,6 +17,6 @@ import {ContentSignalStore} from '../services/content-signal-store.service';
 })
 export class BioPageComponent {
   private readonly store = inject(ContentSignalStore);
-  bio = this.store.bio();
+  bio = this.store.bio;
 
 }

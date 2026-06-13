@@ -28,6 +28,7 @@ export * from './lib/features/projects/project-renderer.component';
 
 // Services
 export * from './lib/services/content.service';
+export * from './lib/services/content-signal-store.service';
 
 // Models
 export * from './lib/models/project.model';

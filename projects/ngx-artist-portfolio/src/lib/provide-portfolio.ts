@@ -3,7 +3,6 @@ import {EnvironmentProviders, makeEnvironmentProviders} from '@angular/core';
 import {portfolioRoutes} from './lib.routes';
 import {provideRouter, withComponentInputBinding} from '@angular/router';
 import {ContentService} from './services/content.service';
-import {provideHttpClient} from '@angular/common/http';
 import {provideCloudinaryLoader} from '@angular/common';
 
 export interface PortfolioProviderOptions {
@@ -18,7 +17,7 @@ export interface PortfolioProviderOptions {
 
 export function providePortfolio(options: PortfolioProviderOptions): EnvironmentProviders {
   // Support both old API (just config) and new API (options object)
-  const opts: PortfolioProviderOptions = options.provideRouting ? options : { config: options.config, provideRouting: true };
+  const opts: PortfolioProviderOptions = { config: options.config, provideRouting: options.provideRouting ?? true };
 
   const providers: any[] = [
     {
@@ -26,7 +25,6 @@ export function providePortfolio(options: PortfolioProviderOptions): Environment
       useValue: opts.config
     },
     ContentService,
-    provideHttpClient()
   ];
 
   if (opts.config.cloudinaryCloudName) {
