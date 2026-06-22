@@ -1,5 +1,5 @@
 import {Component, Input, signal} from '@angular/core';
-import {ImageDescriptionModel} from '@ngx-artist-portfolio';
+import {ImageDescriptionModel} from '../../models/project.model';
 import {ImageDescription} from '../image-description/image-description';
 import {NgOptimizedImage} from '@angular/common';
 

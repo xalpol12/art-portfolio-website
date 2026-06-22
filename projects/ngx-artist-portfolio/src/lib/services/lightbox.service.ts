@@ -1,5 +1,6 @@
-import {computed, inject, Injectable, Signal, signal} from '@angular/core';
-import {ContentModel, ContentType, GalleryGridModel, ImageModel} from '@ngx-artist-portfolio';
+import {computed, inject, Injectable, signal} from '@angular/core';
+import {ContentModel, GalleryGridModel, ImageModel} from '../models/project.model';
+import {ContentType} from '../models/content-type';
 import {Store} from '../store.service';
 
 @Injectable()

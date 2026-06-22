@@ -1,5 +1,6 @@
 import {ChangeDetectorRef, Component, computed, effect, inject, signal, Signal} from '@angular/core';
-import {Thumbnail, ThumbnailModel} from '@ngx-artist-portfolio';
+import {ThumbnailModel} from '../../models/thumbnail.model';
+import {Thumbnail} from '../../components/thumbnail/thumbnail';
 import {ProjectThumbnailsStore} from './project-thumbnails.store';
 import {Store} from '../../store.service';
 

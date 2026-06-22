@@ -1,5 +1,5 @@
 import {Component, inject, Input, OnInit} from '@angular/core';
-import {ImageDescriptionModel} from '@ngx-artist-portfolio';
+import {ImageDescriptionModel} from '../../models/project.model';
 import {ArtworkDescriptionPipe} from '../../pipes/artwork-description-pipe';
 
 @Component({

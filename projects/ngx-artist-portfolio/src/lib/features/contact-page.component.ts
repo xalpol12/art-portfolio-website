@@ -1,5 +1,8 @@
 import {Component, inject} from '@angular/core';
-import {EmailIcon, FacebookIcon, InstagramIcon, TwitterIcon} from '@ngx-artist-portfolio';
+import {TwitterIcon} from '../components/icons/twitter-icon';
+import {FacebookIcon} from '../components/icons/facebook-icon';
+import {EmailIcon} from '../components/icons/email-icon';
+import {InstagramIcon} from '../components/icons/instagram-icon';
 import {Store} from '../store.service';
 
 @Component({

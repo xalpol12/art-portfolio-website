@@ -1,4 +1,4 @@
-import {ImageDescriptionModel} from '@ngx-artist-portfolio';
+import {ImageDescriptionModel} from '../models/project.model';
 import {Pipe, PipeTransform} from '@angular/core';
 
 @Pipe({
