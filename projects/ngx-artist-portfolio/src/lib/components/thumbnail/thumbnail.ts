@@ -5,7 +5,9 @@ import {ThumbnailModel} from "../../models/thumbnail.model";
 @Component({
   selector: `apw-thumbnail`, template: `
     @if (thumbnail) {
-      <div class="thumbnail-container" (click)="clicked.emit(thumbnail.id)" [class.padding-bottom]="paddingBottom">
+      <div class="thumbnail-container" (click)="clicked.emit(thumbnail.id)"
+           [class.padding-bottom]="paddingBottom"
+           [class.constrain-to-viewport]="constrainToViewport">
         <div class="thumbnail-image-wrapper">
           <img [ngSrc]="thumbnail.imageUrl"
                [width]="thumbnail.width"
@@ -15,8 +17,8 @@ import {ThumbnailModel} from "../../models/thumbnail.model";
                placeholder
           />
         </div>
-        <div class="thumbnail-title">{{ thumbnail.title }}</div>
-        <div class="thumbnail-description">{{ thumbnail.description }}</div>
+        <div class="thumbnail-title ngx-ap-title">{{ thumbnail.title }}</div>
+        <div class="">{{ thumbnail.description }}</div>
       </div>
     }
   `, standalone: true,
@@ -29,5 +31,6 @@ export class Thumbnail {
   @Input() thumbnail: ThumbnailModel | undefined;
   @Input() paddingBottom = false;
   @Input() isPriority = false;
+  @Input() constrainToViewport = false;
   clicked = output<string>();
 }

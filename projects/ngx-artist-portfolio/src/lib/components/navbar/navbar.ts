@@ -4,7 +4,7 @@ import {Store} from '../../store.service';
 
 @Component({
   selector: `apw-navbar`, template: `
-    <nav class="navbar">
+    <nav class="navbar ngx-ap-body">
       <div class="title"><a routerLink="" (click)="store.onHomeClick()">{{ store.config.name }}</a></div>
       <button class="hamburger" [class.open]="menuOpen()" (click)="toggleMenu()" aria-label="Toggle navigation">
         <span></span>

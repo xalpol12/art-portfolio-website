@@ -1,26 +1,44 @@
 %typography-base {
   font-family: var(--ngx-ap-font-family), sans-serif;
   color: var(--ngx-ap-text-primary);
-  line-height: 1.5;
-  font-size: 1rem;
+  line-height: 1.6;
+  font-size: var(--ngx-ap-font-size-base);
 }
 
 .ngx-ap-h1 {
   @extend %typography-base;
-  font-size: 2rem;
-  font-weight: bold;
+  font-size: var(--ngx-ap-font-size-h1);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  line-height: 1.15;
   margin-bottom: var(--ngx-ap-gutter);
 }
 
 .ngx-ap-h2 {
   @extend %typography-base;
-  font-size: 1.5rem;
-  font-weight: bold;
+  font-size: var(--ngx-ap-font-size-h2);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  line-height: 1.25;
   margin-bottom: var(--ngx-ap-gutter-small);
+}
+
+.ngx-ap-title {
+  @extend %typography-base;
+  font-size: var(--ngx-ap-font-size-h3);
+  color: var(--ngx-ap-text-secondary);
+  letter-spacing: 0.02em;
+  font-weight: 500;
 }
 
 .ngx-ap-body {
   @extend %typography-base;
-  font-size: 1rem;
+  font-size: var(--ngx-ap-font-size-base);
   color: var(--ngx-ap-text-primary);
+}
+
+.ngx-ap-small {
+  @extend %typography-base;
+  font-size: var(--ngx-ap-font-size-small);
+  color: var(--ngx-ap-text-secondary);
 }

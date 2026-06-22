@@ -25,8 +25,14 @@
   //--ngx-ap-border-radius: 8px;
   //--ngx-ap-transition-speed: 0.3s;
 
-  --ngx-ap-font-family: 'Helvetica Neue', Arial
+  --ngx-ap-font-family: 'Helvetica Neue', Arial, sans-serif;
 
+  /* Font sizes */
+  --ngx-ap-font-size-base: 1.25rem;   /* 18px */
+  --ngx-ap-font-size-h1: 2.5rem;       /* 40px */
+  --ngx-ap-font-size-h2: 1.875rem;     /* 30px */
+  --ngx-ap-font-size-h3: 1.25rem;
+  --ngx-ap-font-size-small: 1.125rem;
 
   /* Component specific */
 }

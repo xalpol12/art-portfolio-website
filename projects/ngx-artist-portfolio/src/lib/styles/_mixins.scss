@@ -48,6 +48,10 @@
   border: 1px solid red !important;
 }
 
+@mixin underscore {
+  border-bottom: 1px solid black;
+}
+
 @mixin page-wrapper-padding {
   .page-wrapper {
     padding: var(--ngx-ap-gutter) var(--ngx-ap-content-gutter-extra-large);

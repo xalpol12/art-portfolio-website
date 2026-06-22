@@ -5,7 +5,7 @@ import {ArtworkDescriptionPipe} from '../../pipes/artwork-description-pipe';
 @Component({
   selector: `apw-img-description`, template: `
     @if (description) {
-      <div class="description">
+      <div class="description ngx-ap-small">
         <span class="title">{{ descriptionParts[0] }}</span>
         <span class="details">{{ descriptionParts[1] }}</span>
       </div>

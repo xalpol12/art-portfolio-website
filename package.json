@@ -32,6 +32,7 @@
     "@angular/platform-server": "^21.0.0",
     "@angular/router": "^21.0.0",
     "@angular/ssr": "^21.0.1",
+    "@angular/youtube-player": "^22.0.1",
     "@xalpol12/eslint-config": "file:../eslint-config",
     "express": "^5.1.0",
     "rxjs": "~7.8.0",

@@ -11,15 +11,15 @@ MVP:
 - [ ] npm release
 - [ ] test deployment
 - [ ] automated gitops deployment
+- [ ] Quote element
+- [ ] Video element
+- [ ] Next/Previous project
 
 ---
 NTH:
 - [ ] Documentation
 - [ ] Improve SEO
 - [ ] Configurable routes
-- [ ] Quote element
-- [ ] Video element
-- [ ] Next/Previous project
 
 ---
 TO FIX:

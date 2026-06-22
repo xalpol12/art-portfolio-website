@@ -11,6 +11,7 @@ import {Store} from '../../store.service';
                      [thumbnail]="thumbnail()"
                      [paddingBottom]="false"
                      [isPriority]="true"
+                     [constrainToViewport]="true"
                      (clicked)="projectThumbnailsStore.onThumbnailClick(thumbnail().id)"/>
     }
   `,
@@ -21,7 +22,7 @@ import {Store} from '../../store.service';
 })
 export class RandomProjectComponent {
   projectThumbnailsStore = new ProjectThumbnailsStore();
-  cdr = inject(ChangeDetectorRef);
+  cdr = inject(ChangeDetectorRef); // TODO fix random project refresh
   private readonly store = inject(Store);
 
   private readonly randomIndex = signal(Math.floor(Math.random() * 1000));
