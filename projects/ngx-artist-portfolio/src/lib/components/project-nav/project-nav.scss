@@ -1,9 +1,8 @@
 @use '../../styles/mixins' as mixins;
 
 .project-nav {
-  margin-top: var(--ngx-ap-content-gutter-large);
+  margin-top: var(--ngx-ap-content-gutter);
   padding-top: var(--ngx-ap-gutter);
-  //padding-bottom: var(--ngx-ap-gutter-small);
   border-top: 1px solid var(--ngx-ap-text-tertiary-opaque);
   display: flex;
   justify-content: space-between;

@@ -50,20 +50,14 @@
     "id": "3",
     "content": [
       {
-        "type": "gallery-grid",
-        "config": {
-          "orientation": "horizontal",
-          "gap": 0
-        },
-        "data": [
-          "v1776009059/pojedynek_1_qtpocx.jpg",
-          "v1776009059/pojedynek_2_gxe4ar.jpg",
-          "v1776009058/pojedynek_3_xbrdu7.jpg"
-        ],
+        "type": "image",
+        "image": "v1776006506/Bandosz_Zuzanna_02_mrtu7u.jpg",
+        "width": 2717,
+        "height": 1811,
         "description": {
           "title": "Pojedynek",
           "medium": "akryl na płótnie",
-          "size": "210 x 60 cm",
+          "size": "x cm",
           "year": "2026"
         }
       },
@@ -148,19 +142,6 @@
         "data": "Punktem wyjścia do powstania obiektów rysunkowych stały się schematy ze starej instrukcji obsługi centrali telefonicznej. Fascynowało mnie, co może się zdarzyć, gdy zmienię tradycyjne rozumienie rysunku jako dwuwymiarowej reprezentacji trójwymiarowej rzeczywistości. W mojej pracy postanowiłam odwrócić tę sytuację, pokazując, że ten transfer nie musi być jednokierunkowy. Nadaję schematom ze starej instrukcji formę przestrzenną według własnej interpretacji, zupełnie zmieniając ich przeznaczenie oraz podważając utylitarny charakter. W ten sposób ponownie przetwarzam coś, co samo w sobie jest już interpretacją rzeczywistości. Tym samym poddaję w wątpliwość obiektywność i jednoznaczność procesu poznawczego. Chociaż wykonane przeze mnie obiekty odbiegają od pierwowzorów, nie uważam, aby były od nich mniej prawdziwe. Takim działaniem daję wyraz swojemu przekonaniu, że rysunek jest procesem polegającym na ciągłej, wielowymiarowej reinterpretacji. <i>Rysunki uziemione</i> to rysunki sprowadzone na ziemię, wychodzące w przestrzeń i nierozerwalnie z nią związane."
       },
       {
-        "type": "quote",
-        "text": "Rysunek jest procesem polegającym na ciągłej, wielowymiarowej reinterpretacji.",
-        "author": "Zuzanna Bandosz",
-        "cite": "Rysunki uziemione"
-      },
-      {
-        "type": "video",
-        "src": "https://www.youtube.com/watch?v=aqz-KE-bpKQ",
-        "title": "Dokumentacja procesu",
-        "aspectRatio": "16 / 9",
-        "controls": true
-      },
-      {
         "type": "gallery-grid",
         "config": {
           "orientation": "horizontal",
@@ -203,6 +184,134 @@
           "medium": "technika własna",
           "size": "20 x 25 cm",
           "year": "2025"
+        }
+      }
+    ]
+  },
+  {
+    "id": "7",
+    "content": [
+      {
+        "type": "gallery-grid",
+        "config": {
+          "orientation": "horizontal",
+          "gap": 20
+        },
+        "data": [
+          "v1782161076/3_cxmquc.jpg",
+          "v1782161076/5_d1nl9i.jpg",
+          "v1782161076/1_iitwji.jpg"
+        ]
+      },
+      {
+        "type": "image",
+        "image": "v1782161076/4_psubn0.jpg",
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "type": "image",
+        "image": "v1782161076/2_n3bh2d.jpg",
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "type": "video",
+        "src": "https://youtu.be/KxctungyYhA?si=VlirqRE1Hp4M8481",
+        "title": "Alea iacta sunt (2025)",
+        "aspectRatio": "16 / 9",
+        "controls": true
+      }
+    ]
+  },
+  {
+    "id": "8",
+    "content": [
+      {
+        "type": "image",
+        "image": "v1776006505/4_Bez_tytu%C5%82u_2026_akryl_na_p%C5%82%C3%B3tnie_200x100_wrybze.jpg",
+        "width": 2362,
+        "height": 1575,
+        "description": {
+          "title": "Bez tytułu (model ciała doskonale czarnego)",
+          "medium": "akryle na płótnie",
+          "size": "x cm",
+          "year": "2026"
+        }
+      }
+    ]
+  },
+  {
+    "id": "9",
+    "content": [
+      {
+        "type": "paragraph",
+        "data": "Głusi próbując dopasować się do świata słyszących są skazani na naukę języka, który nie jest dla nich naturalny. Podczas tworzenia mojej pracy postanowiłam postawić siebie w podobnej sytuacji. Zapisuję dźwięk w sposób, który jest dla mnie samej niezrozumiały. Używam do tego soku z cytryny – medium przezroczystego, niepozostawiającego na podłożu trwałego, widocznego śladu poza chwilową mokrą plamą. Kolejne linie staram się stawiać precyzyjnie, konsekwentnie, jedna przy drugiej, tak jakbym przepisywała nowo poznane wyrazy, których znaczenia jednak nie znam. Na koniec ujawniam efekt mojej pracy. Niewidoczne wcześniej medium pod wpływem procesów termicznych odzyskuje swoją sprawczą moc. W ten metaforyczny sposób chcę oddać głos Głuchym, daję wyraz pragnieniu, by ich potrzeby wyraźniej zaistniały w naszym społeczeństwie."
+      },
+      {
+        "type": "quote",
+        "text": "„Nauczyciele w szkole mówili do nas, mówili, mówili… Nic nie rozumieliśmy. Potem pisali\njakieś słowa na tablicy, a my je przepisywaliśmy. (…) Potem uczyliśmy się tych słów na\npamięć, choć nie wiedzieliśmy, co znaczą.”\n„Kiedy jesteśmy sami ze sobą, głusi z głuchymi, możemy do siebie migać, nie czujemy się\ninni. (…) Jesteśmy niepełnosprawni tylko wtedy, gdy jesteśmy między wami, słyszącymi.”\n",
+        "author": "Anna Goc",
+        "cite": "Głusza - fragment książki"
+      },
+      {
+        "type": "image",
+        "image": "v1782161916/_DSF5002_dqczus.jpg",
+        "width": 6000,
+        "height": 4000,
+        "description": {
+          "title": "Bieguny",
+          "medium": "tkanina barwiona",
+          "size": "x cm",
+          "year": "2024"
+        }
+      },
+      {
+        "type": "image",
+        "image": "v1782161918/_DSF5003_hftvdv.jpg",
+        "width": 6000,
+        "height": 4000,
+        "description": {
+          "title": "Bieguny",
+          "medium": "tkanina barwiona",
+          "size": "x cm",
+          "year": "2024"
+        }
+      },
+      {
+        "type": "image",
+        "image": "v1782161922/_DSF5004_bhutyn.jpg",
+        "width": 6000,
+        "height": 4000,
+        "description": {
+          "title": "Bieguny",
+          "medium": "tkanina barwiona",
+          "size": "x cm",
+          "year": "2024"
+        }
+      },
+      {
+        "type": "image",
+        "image": "v1782161920/_DSF5007_xjvmna.jpg",
+        "width": 6000,
+        "height": 4000,
+        "description": {
+          "title": "Bieguny",
+          "medium": "tkanina barwiona",
+          "size": "x cm",
+          "year": "2024"
+        }
+      },
+      {
+        "type": "image",
+        "image": "v1782161684/_DSF5016_umgzu7.jpg",
+        "width": 6000,
+        "height": 4000,
+        "description": {
+          "title": "Bieguny",
+          "medium": "tkanina barwiona",
+          "size": "x cm",
+          "year": "2024"
         }
       }
     ]

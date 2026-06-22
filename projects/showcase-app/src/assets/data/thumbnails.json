@@ -16,9 +16,9 @@
   {
     "id": "3",
     "title": "Pojedynek",
-    "imageUrl": "v1776009059/pojedynek_1_qtpocx.jpg",
-    "width": 1013,
-    "height": 1349
+    "imageUrl": "v1776006506/Bandosz_Zuzanna_02_mrtu7u.jpg",
+    "width": 2717,
+    "height": 1811
   },
   {
     "id": "4",
@@ -40,5 +40,26 @@
     "imageUrl": "v1776006509/buty2_defova.jpg",
     "width": 2412,
     "height": 1563
+  },
+  {
+    "id": "7",
+    "title": "Alea iacta sunt",
+    "imageUrl": "v1782161076/3_cxmquc.jpg",
+    "width": 1920,
+    "height": 1080
+  },
+  {
+    "id": "8",
+    "title": "Bez tytułu (model ciała doskonale czarnego)",
+    "imageUrl": "v1776006505/4_Bez_tytu%C5%82u_2026_akryl_na_p%C5%82%C3%B3tnie_200x100_wrybze.jpg",
+    "width": 2362,
+    "height": 1575
+  },
+  {
+    "id": "9",
+    "title": "Bieguny",
+    "imageUrl": "v1782161916/_DSF5002_dqczus.jpg",
+    "width": 6000,
+    "height": 4000
   }
 ]
