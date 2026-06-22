@@ -20,4 +20,18 @@ export class ContentSignalStore {
   getThumbnailById(id: string): ThumbnailModel | undefined {
     return this.thumbnails().find(t => t.id === id);
   }
+
+  getAdjacentProjectIds(id: string): { prev?: string; next?: string } {
+    const orderedIds = this.thumbnails().map(thumbnail => thumbnail.id);
+    const currentIndex = orderedIds.indexOf(id);
+
+    if (currentIndex < 0) {
+      return {};
+    }
+
+    return {
+      prev: orderedIds[currentIndex - 1],
+      next: orderedIds[currentIndex + 1]
+    };
+  }
 }

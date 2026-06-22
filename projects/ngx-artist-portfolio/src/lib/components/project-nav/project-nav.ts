@@ -1,0 +1,45 @@
+import {Component, Input} from '@angular/core';
+import {RouterLink} from '@angular/router';
+import {ThumbnailModel} from '../../models/thumbnail.model';
+
+@Component({
+  selector: `apw-project-nav`,
+  template: `
+    @if (previous || next) {
+      <nav class="project-nav" aria-label="Project navigation">
+        @if (previous) {
+          <a class="project-link align-left" [routerLink]="['/projects', previous.id]" aria-label="Previous project">
+            <svg class="project-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                 stroke-width="1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="19" y1="12" x2="5" y2="12"/>
+              <polyline points="12 19 5 12 12 5"/>
+            </svg>
+            <span class="project-link-label ngx-ap-small">Poprzedni</span>
+          </a>
+        }
+
+        @if (next) {
+          <a class="project-link align-right" [routerLink]="['/projects', next.id]" aria-label="Next project">
+            <span class="project-link-label ngx-ap-small">Następny</span>
+            <svg class="project-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                 stroke-width="1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="5" y1="12" x2="19" y2="12"/>
+              <polyline points="12 5 19 12 12 19"/>
+            </svg>
+          </a>
+        }
+      </nav>
+    }
+  `,
+  standalone: true,
+  imports: [RouterLink],
+  styleUrl: 'project-nav.scss'
+})
+export class ProjectNav {
+  @Input() previous: ThumbnailModel | undefined;
+  @Input() next: ThumbnailModel | undefined;
+}
+
+
+
+

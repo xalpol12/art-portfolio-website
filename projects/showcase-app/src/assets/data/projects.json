@@ -148,6 +148,19 @@
         "data": "Punktem wyjścia do powstania obiektów rysunkowych stały się schematy ze starej instrukcji obsługi centrali telefonicznej. Fascynowało mnie, co może się zdarzyć, gdy zmienię tradycyjne rozumienie rysunku jako dwuwymiarowej reprezentacji trójwymiarowej rzeczywistości. W mojej pracy postanowiłam odwrócić tę sytuację, pokazując, że ten transfer nie musi być jednokierunkowy. Nadaję schematom ze starej instrukcji formę przestrzenną według własnej interpretacji, zupełnie zmieniając ich przeznaczenie oraz podważając utylitarny charakter. W ten sposób ponownie przetwarzam coś, co samo w sobie jest już interpretacją rzeczywistości. Tym samym poddaję w wątpliwość obiektywność i jednoznaczność procesu poznawczego. Chociaż wykonane przeze mnie obiekty odbiegają od pierwowzorów, nie uważam, aby były od nich mniej prawdziwe. Takim działaniem daję wyraz swojemu przekonaniu, że rysunek jest procesem polegającym na ciągłej, wielowymiarowej reinterpretacji. <i>Rysunki uziemione</i> to rysunki sprowadzone na ziemię, wychodzące w przestrzeń i nierozerwalnie z nią związane."
       },
       {
+        "type": "quote",
+        "text": "Rysunek jest procesem polegającym na ciągłej, wielowymiarowej reinterpretacji.",
+        "author": "Zuzanna Bandosz",
+        "cite": "Rysunki uziemione"
+      },
+      {
+        "type": "video",
+        "src": "https://www.youtube.com/watch?v=aqz-KE-bpKQ",
+        "title": "Dokumentacja procesu",
+        "aspectRatio": "16 / 9",
+        "controls": true
+      },
+      {
         "type": "gallery-grid",
         "config": {
           "orientation": "horizontal",

@@ -1,0 +1,52 @@
+@use '../../styles/mixins' as mixins;
+
+.project-nav {
+  margin-top: var(--ngx-ap-content-gutter-large);
+  padding-top: var(--ngx-ap-gutter);
+  //padding-bottom: var(--ngx-ap-gutter-small);
+  border-top: 1px solid var(--ngx-ap-text-tertiary-opaque);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--ngx-ap-gutter);
+}
+
+.project-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--ngx-ap-gap-standard);
+  text-decoration: none;
+  color: inherit;
+
+  @include mixins.hover {
+    .project-arrow,
+    .project-link-label {
+      color: var(--ngx-ap-accent);
+    }
+  }
+}
+
+.project-link.align-right {
+  margin-left: auto;
+}
+
+.project-arrow {
+  width: 1.4em;
+  height: 1.4em;
+  flex: 0 0 auto;
+  display: block;
+  color: var(--ngx-ap-text-secondary);
+}
+
+.project-link-label {
+  display: block;
+  line-height: 1;
+  color: var(--ngx-ap-text-secondary);
+}
+
+@include mixins.mobile {
+  .project-nav {
+    padding-top: var(--ngx-ap-gutter);
+  }
+
+}

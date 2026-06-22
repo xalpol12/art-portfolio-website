@@ -25,6 +25,8 @@ export class LightboxService {
       }
     }
     this._images.set(images);
+    this._currentIndex.set(0);
+    this._isOpen.set(false);
   }
 
   getStartIndexFor(block: ContentModel, content: ContentModel[]): number {

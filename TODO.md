@@ -11,9 +11,9 @@ MVP:
 - [ ] npm release
 - [ ] test deployment
 - [ ] automated gitops deployment
-- [ ] Quote element
-- [ ] Video element
-- [ ] Next/Previous project
+- [x] Quote element
+- [x] Video element
+- [x] Next/Previous project
 
 ---
 NTH:

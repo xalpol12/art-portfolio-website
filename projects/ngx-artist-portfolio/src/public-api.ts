@@ -11,6 +11,9 @@ export * from './lib/components/navbar/navbar';
 export * from './lib/components/thumbnail/thumbnail';
 export * from './lib/components/paragraph/paragraph';
 export * from './lib/components/gallery-grid/gallery-grid';
+export * from './lib/components/quote/quote';
+export * from './lib/components/video/video';
+export * from './lib/components/project-nav/project-nav';
 
 // Icons
 export * from './lib/components/icons/email-icon';

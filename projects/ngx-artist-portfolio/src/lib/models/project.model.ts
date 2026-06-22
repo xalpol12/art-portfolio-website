@@ -5,7 +5,7 @@ export interface ProjectModel {
   content: ContentModel[];
 }
 
-export type ContentModel = BasicModel | ParagraphModel | ImageModel | GalleryGridModel;
+export type ContentModel = BasicModel | ParagraphModel | QuoteModel | ImageModel | VideoModel | GalleryGridModel;
 
 export interface BasicModel {
   type: ContentType.BREAK;
@@ -16,12 +16,32 @@ export interface ParagraphModel {
   data: ParagraphDataModel;
 }
 
+export interface QuoteModel {
+  type: ContentType.QUOTE;
+  text: string;
+  author?: string;
+  cite?: string;
+}
+
 export interface ImageModel {
   type: ContentType.IMAGE;
   image: string;
   width?: number;
   height?: number;
   description?: ImageDescriptionModel;
+}
+
+export interface VideoModel {
+  type: ContentType.VIDEO;
+  src: string;
+  provider?: 'youtube' | 'vimeo' | 'file';
+  poster?: string;
+  title?: string;
+  aspectRatio?: string;
+  controls?: boolean;
+  autoplay?: boolean;
+  loop?: boolean;
+  muted?: boolean;
 }
 
 export interface GalleryGridModel {

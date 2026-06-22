@@ -1,0 +1,30 @@
+.quote-wrapper {
+  margin: 0 0 var(--ngx-ap-gutter-large);
+  padding: 0 var(--ngx-ap-gutter);
+  border-left: 2px solid var(--ngx-ap-text-tertiary);
+}
+
+.quote-text {
+  margin: 0;
+  font-style: italic;
+}
+
+.quote-caption {
+  margin-top: var(--ngx-ap-gutter-small);
+  display: flex;
+  gap: 0.5rem;
+}
+
+.quote-author {
+  color: var(--ngx-ap-text-secondary);
+}
+
+.quote-author::before {
+  content: '\2014\00A0';
+}
+
+.quote-cite {
+  font-style: normal;
+  color: var(--ngx-ap-text-tertiary);
+}
+
