@@ -72,6 +72,7 @@ export class ImageLightbox {
   // Swipe state
   private touchStartX = 0;
   private touchEndX = 0;
+  private touchStartedOnControl = false;
   private readonly SWIPE_THRESHOLD = 50;
 
   protected isZoomed = computed(() => !this.zoomDisabled && this.zoom() > 1);
@@ -232,6 +233,7 @@ export class ImageLightbox {
 
   onTouchStart(event: TouchEvent): void {
     this.touchStartX = event.changedTouches[0].screenX;
+    this.touchStartedOnControl = this.isInteractiveTouchTarget(event.target);
   }
 
   onTouchMove(event: TouchEvent): void {
@@ -239,6 +241,13 @@ export class ImageLightbox {
   }
 
   onTouchEnd(): void {
+    if (this.touchStartedOnControl) {
+      this.touchStartedOnControl = false;
+      this.touchStartX = 0;
+      this.touchEndX = 0;
+      return;
+    }
+
     if (this.isZoomed()) return;
 
     const swipeDistance = this.touchStartX - this.touchEndX;
@@ -247,6 +256,12 @@ export class ImageLightbox {
     }
     this.touchStartX = 0;
     this.touchEndX = 0;
+  }
+
+  private isInteractiveTouchTarget(target: EventTarget | null): boolean {
+    if (!(target instanceof HTMLElement)) return false;
+
+    return Boolean(target.closest('.close, .prev, .next'));
   }
 
 }

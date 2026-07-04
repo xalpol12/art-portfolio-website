@@ -19,6 +19,5 @@ export class ImageDescription implements OnInit {
 
   ngOnInit() {
     this.descriptionParts = this.pipe.transform(this.description);
-    console.error('ImageDescription constructor called with description:', this.description);
   }
 }
