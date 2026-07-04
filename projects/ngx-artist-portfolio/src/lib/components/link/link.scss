@@ -1,0 +1,12 @@
+.ngx-ap-body {
+  margin-bottom: var(--ngx-ap-gutter-large);
+
+  .link {
+    color: var(--ngx-ap-accent);
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+

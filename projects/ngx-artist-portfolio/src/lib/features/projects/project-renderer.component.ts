@@ -9,6 +9,7 @@ import {ImageLightbox} from '../../components/image-lightbox/image-lightbox';
 import {LightboxService} from '../../services/lightbox.service';
 import {Quote} from '../../components/quote/quote';
 import {Video} from '../../components/video/video';
+import {LinkComponent} from '../../components/link/link';
 
 @Component({
   selector: `apw-project-renderer`,
@@ -20,7 +21,7 @@ import {Video} from '../../components/video/video';
             <apw-break></apw-break>
           }
           @case (ContentType.PARAGRAPH) {
-            <apw-paragraph [content]="block.data"></apw-paragraph>
+            <apw-paragraph [content]="block.data" [config]="block.config"></apw-paragraph>
           }
           @case (ContentType.QUOTE) {
             <apw-quote [text]="block.text" [author]="block.author" [cite]="block.cite"></apw-quote>
@@ -52,6 +53,12 @@ import {Video} from '../../components/video/video';
               [muted]="block.muted ?? false">
             </apw-video>
           }
+          @case (ContentType.LINK) {
+            <apw-link
+              [text]="block.data.text"
+              [link]="block.data.link"
+            ></apw-link>
+          }
         }
       }
     </div>
@@ -66,7 +73,7 @@ import {Video} from '../../components/video/video';
     </apw-img-lightbox>
   `,
   standalone: true,
-  imports: [Paragraph, GalleryGrid, BreakComponent, Image, ImageLightbox, Quote, Video],
+  imports: [Paragraph, GalleryGrid, BreakComponent, Image, ImageLightbox, Quote, Video, LinkComponent],
   providers: [LightboxService]
 })
 export class ProjectRendererComponent {

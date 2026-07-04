@@ -3,15 +3,15 @@
     "id": "1",
     "title": "CONTINUUM",
     "imageUrl": "v1776006506/Bandosz_Zuzanna_01_jednak_nie_msd66x.jpg",
-    "width": 1627,
-    "height": 1890
+    "width": 1890,
+    "height": 1627
   },
   {
     "id": "2",
-    "title": "Bez tytułu",
-    "imageUrl": "v1776006503/2_Podstawy_zarz%C4%85dzania_2024_akryl_na_p%C5%82%C3%B3tnie_70x50_cm_qgasgn.jpg",
-    "width": 1417,
-    "height": 1890
+    "title": "Podstawy zarządzania",
+    "imageUrl": "v1776006505/Bandosz_Zuzanna_01_cdwydj.jpg",
+    "width": 979,
+    "height": 1305
   },
   {
     "id": "3",
@@ -50,16 +50,44 @@
   },
   {
     "id": "8",
-    "title": "Bez tytułu (model ciała doskonale czarnego)",
+    "title": "Bez tytułu",
     "imageUrl": "v1776006505/4_Bez_tytu%C5%82u_2026_akryl_na_p%C5%82%C3%B3tnie_200x100_wrybze.jpg",
     "width": 2362,
     "height": 1575
   },
   {
     "id": "9",
-    "title": "Bieguny",
+    "title": "Bez tytułu",
     "imageUrl": "v1782161916/_DSF5002_dqczus.jpg",
-    "width": 6000,
-    "height": 4000
+    "width": 1500,
+    "height": 1000
+  },
+  {
+    "id": "10",
+    "title": "Zarządzanie ryzykiem",
+    "imageUrl": "v1782161604/1.1_ietak7.jpg",
+    "width": 1500,
+    "height": 1000
+  },
+  {
+    "id": "11",
+    "title": "Cykl Próby Funkcjonalne",
+    "imageUrl": "v1776006528/pudelkaobrobione_an1buo.jpg",
+    "width": 1500,
+    "height": 1000
+  },
+  {
+    "id": "12",
+    "title": "Cykl Słowa Klucze",
+    "imageUrl": "v1782162053/2_zoafef.jpg",
+    "width": 1500,
+    "height": 1000
+  },
+  {
+    "id": "13",
+    "title": "Bez tytułu",
+    "imageUrl": "v1782161342/IMG_7311_1_mbau3m.jpg",
+    "width": 1500,
+    "height": 1000
   }
 ]

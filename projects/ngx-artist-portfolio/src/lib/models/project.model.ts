@@ -5,7 +5,7 @@ export interface ProjectModel {
   content: ContentModel[];
 }
 
-export type ContentModel = BasicModel | ParagraphModel | QuoteModel | ImageModel | VideoModel | GalleryGridModel;
+export type ContentModel = BasicModel | ParagraphModel | QuoteModel | ImageModel | VideoModel | GalleryGridModel | LinkModel;
 
 export interface BasicModel {
   type: ContentType.BREAK;
@@ -14,6 +14,7 @@ export interface BasicModel {
 export interface ParagraphModel {
   type: ContentType.PARAGRAPH;
   data: ParagraphDataModel;
+  config?: ParagraphConfig;
 }
 
 export interface QuoteModel {
@@ -51,11 +52,21 @@ export interface GalleryGridModel {
   config?: GalleryGridConfig;
 }
 
+export interface LinkModel {
+  type: ContentType.LINK;
+  data: LinkDataModel;
+}
+
+// Config models
 export type GalleryGridConfig = {
   orientation: 'horizontal' | 'vertical';
   gap?: number;
 }
+export type ParagraphConfig = {
+  noBottomMargin?: boolean;
+}
 
+// Data models
 export type ParagraphDataModel = string;
 export type GalleryGridDataModel = string[];
 export type ImageDescriptionModel = {
@@ -65,4 +76,8 @@ export type ImageDescriptionModel = {
   size?: string;
   year?: string;
   additionalInfo?: string;
+}
+export type LinkDataModel = {
+  link: string;
+  text: string;
 }

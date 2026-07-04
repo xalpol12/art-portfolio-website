@@ -7,7 +7,7 @@ import {ArtworkDescriptionPipe} from '../../pipes/artwork-description-pipe';
     @if (description) {
       <div class="description ngx-ap-small">
         <span class="title">{{ descriptionParts[0] }}</span>
-        <span class="details">{{ descriptionParts[1] }}</span>
+        <span class="details" [innerHTML]="descriptionParts[1]"></span>
       </div>
     }
   `, standalone: true, providers: [ArtworkDescriptionPipe], styleUrl: 'image-description.scss'

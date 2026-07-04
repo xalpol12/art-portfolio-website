@@ -5,8 +5,8 @@
       {
         "type": "image",
         "image": "v1776006506/Bandosz_Zuzanna_01_jednak_nie_msd66x.jpg",
-        "width": 1200,
-        "height": 800,
+        "width": 1890,
+        "height": 1627,
         "description": {
           "title": "CONTINUUM",
           "medium": "akryl, farba tablicowa, kreda na płótnie",
@@ -22,11 +22,11 @@
       {
         "type": "image",
         "image": "v1776006505/Bandosz_Zuzanna_01_cdwydj.jpg",
-        "width": 1200,
-        "height": 800,
+        "width": 979,
+        "height": 1305,
         "description": {
-          "title": "Bez tytułu",
-          "medium": "akryl na płótnie",
+          "title": "Podstawy zarządzania",
+          "medium": "akryl na płótnie, obiekty",
           "size": "50 x 70 cm",
           "year": "2025"
         }
@@ -34,14 +34,13 @@
       {
         "type": "image",
         "image": "v1776006506/Bandosz_Zuzanna_01_detal_ttgzaz.jpg",
-        "width": 1200,
-        "height": 800,
+        "width": 1418,
+        "height": 1063,
         "description": {
-          "title": "Bez tytułu",
+          "title": "Podstawy zarządzania",
           "medium": "akryl na płótnie",
           "size": "50 x 70 cm",
-          "year": "2025",
-          "additionalInfo": "(detal)"
+          "year": "2025"
         }
       }
     ]
@@ -57,7 +56,7 @@
         "description": {
           "title": "Pojedynek",
           "medium": "akryl na płótnie",
-          "size": "x cm",
+          "size": "210 x 60 cm",
           "year": "2026"
         }
       },
@@ -69,7 +68,7 @@
         "description": {
           "title": "Pojedynek",
           "medium": "akryl na płótnie",
-          "size": "x cm (detale)",
+          "size": "210 x 60 cm (detal)",
           "year": "2026"
         }
       }
@@ -85,7 +84,7 @@
         "height": 1770,
         "description": {
           "title": "O szczęściu",
-          "medium": "akryl na płótnie",
+          "medium": "akryl na płótnie, druk cyfrowy na papierze",
           "size": "40 x 50 cm każdy",
           "year": "2026"
         }
@@ -103,7 +102,7 @@
         ],
         "description": {
           "title": "O szczęściu",
-          "medium": "akryl na płótnie",
+          "medium": "akryl na płótnie, druk cyfrowy na papierze",
           "size": "40 x 50 cm każdy (detale)",
           "year": "2026"
         }
@@ -115,8 +114,7 @@
         "height": 1000,
         "description": {
           "title": "O szczęściu",
-          "medium": "akryl na płótnie",
-          "size": "40 x 50 cm (detal)",
+          "size": "detal (cytat z <i>O szczęściu</i> W. Tatarkiewicza)",
           "year": "2026"
         }
       }
@@ -133,7 +131,7 @@
         "description": {
           "title": "Rysunki uziemione",
           "medium": "technika własna",
-          "size": "x cm",
+          "size": "280 x 100 x 200 cm",
           "year": "2026"
         }
       },
@@ -155,7 +153,7 @@
         "description": {
           "title": "Rysunki uziemione",
           "medium": "technika własna",
-          "size": "x cm",
+          "size": "280 x 100 x 200 cm",
           "year": "2026"
         }
       }
@@ -233,9 +231,9 @@
         "width": 2362,
         "height": 1575,
         "description": {
-          "title": "Bez tytułu (model ciała doskonale czarnego)",
-          "medium": "akryle na płótnie",
-          "size": "x cm",
+          "title": "Bez tytułu",
+          "medium": "akryl na płótnie",
+          "size": "100 x 100 cm, 40 x 30 cm, 25 x 15 cm",
           "year": "2026"
         }
       }
@@ -244,6 +242,20 @@
   {
     "id": "9",
     "content": [
+      {
+        "type": "paragraph",
+        "data": "W ramach 8. edycji projektu „Bieguny. Dialogi młodych: INNY” organizowanego przez Galerię Miejską Arsenał w Poznaniu stworzyłam pracę dedykowaną społeczności Głuchych.",
+        "config": {
+          "noBottomMargin": true
+        }
+      },
+      {
+        "type": "link",
+        "data": {
+          "text": "Link do strony 8. edycji projektu „Bieguny. Dialogi młodych: INNY” Galerii Miejskiej Arsenał w Poznaniu",
+          "url": "https://arsenal.art.pl/exhibition/bieguny-dialogi-mlodych-inny-edycja-8/"
+        }
+      },
       {
         "type": "paragraph",
         "data": "Głusi próbując dopasować się do świata słyszących są skazani na naukę języka, który nie jest dla nich naturalny. Podczas tworzenia mojej pracy postanowiłam postawić siebie w podobnej sytuacji. Zapisuję dźwięk w sposób, który jest dla mnie samej niezrozumiały. Używam do tego soku z cytryny – medium przezroczystego, niepozostawiającego na podłożu trwałego, widocznego śladu poza chwilową mokrą plamą. Kolejne linie staram się stawiać precyzyjnie, konsekwentnie, jedna przy drugiej, tak jakbym przepisywała nowo poznane wyrazy, których znaczenia jednak nie znam. Na koniec ujawniam efekt mojej pracy. Niewidoczne wcześniej medium pod wpływem procesów termicznych odzyskuje swoją sprawczą moc. W ten metaforyczny sposób chcę oddać głos Głuchym, daję wyraz pragnieniu, by ich potrzeby wyraźniej zaistniały w naszym społeczeństwie."
@@ -257,61 +269,214 @@
       {
         "type": "image",
         "image": "v1782161916/_DSF5002_dqczus.jpg",
-        "width": 6000,
-        "height": 4000,
+        "width": 1500,
+        "height": 1000,
         "description": {
-          "title": "Bieguny",
-          "medium": "tkanina barwiona",
-          "size": "x cm",
+          "title": "Bez tytułu",
+          "medium": "sok z cytryny, tkanina barwiona",
+          "size": "1,5 x 10 m",
           "year": "2024"
         }
       },
       {
         "type": "image",
         "image": "v1782161918/_DSF5003_hftvdv.jpg",
-        "width": 6000,
-        "height": 4000,
+        "width": 1500,
+        "height": 1000,
         "description": {
-          "title": "Bieguny",
-          "medium": "tkanina barwiona",
-          "size": "x cm",
+          "title": "Bez tytułu",
+          "medium": "sok z cytryny, tkanina barwiona",
+          "size": "1,5 x 10 m",
           "year": "2024"
         }
       },
       {
         "type": "image",
         "image": "v1782161922/_DSF5004_bhutyn.jpg",
-        "width": 6000,
-        "height": 4000,
+        "width": 1500,
+        "height": 1000,
         "description": {
-          "title": "Bieguny",
-          "medium": "tkanina barwiona",
-          "size": "x cm",
+          "title": "Bez tytułu",
+          "medium": "sok z cytryny, tkanina barwiona",
+          "size": "1,5 x 10 m",
           "year": "2024"
         }
       },
       {
         "type": "image",
         "image": "v1782161920/_DSF5007_xjvmna.jpg",
-        "width": 6000,
-        "height": 4000,
+        "width": 1500,
+        "height": 1000,
         "description": {
-          "title": "Bieguny",
-          "medium": "tkanina barwiona",
-          "size": "x cm",
+          "title": "Bez tytułu",
+          "medium": "sok z cytryny, tkanina barwiona",
+          "size": "1,5 x 10 m",
           "year": "2024"
         }
       },
       {
         "type": "image",
         "image": "v1782161684/_DSF5016_umgzu7.jpg",
-        "width": 6000,
-        "height": 4000,
+        "width": 1500,
+        "height": 1000,
         "description": {
-          "title": "Bieguny",
-          "medium": "tkanina barwiona",
-          "size": "x cm",
+          "title": "Bez tytułu",
+          "medium": "sok z cytryny, tkanina barwiona",
+          "size": "1,5 x 10 m",
           "year": "2024"
+        }
+      }
+    ]
+  },
+  {
+    "id": "10",
+    "content": [
+      {
+        "type": "image",
+        "image": "v1782161604/1.1_ietak7.jpg",
+        "width": 3000,
+        "height": 2000,
+        "description": {
+          "title": "Zarządzanie ryzykiem",
+          "medium": "książki artystyczne",
+          "size": "24 x 16 cm",
+          "year": "2025"
+        }
+      },
+      {
+        "type": "image",
+        "image": "v1782161603/2.2_tmxelf.jpg",
+        "width": 1300,
+        "height": 867,
+        "description": {
+          "title": "Zarządzanie ryzykiem",
+          "medium": "książki artystyczne",
+          "size": "24 x 16 cm",
+          "year": "2025"
+        }
+      },
+      {
+        "type": "gallery-grid",
+        "config": {
+          "orientation": "horizontal",
+          "gap": 20
+        },
+        "data": [
+          "v1782161605/5_cjg2v2.jpg",
+          "v1782161606/4_w4k9cz.jpg"
+        ],
+        "description": {
+          "title": "Zarządzanie ryzykiem",
+          "medium": "książki artystyczne",
+          "size": "24 x 16 cm",
+          "year": "2025"
+        }
+      }
+    ]
+  },
+  {
+    "id": "11",
+    "content": [
+      {
+        "type": "image",
+        "image": "v1776006528/pudelkaobrobione_an1buo.jpg",
+        "width": 3000,
+        "height": 2000,
+        "description": {
+          "title": "Przekaźnik z cyklu Próby Funkcjonalne",
+          "medium": "obiekty z papieru",
+          "year": "2025"
+        }
+      },
+      {
+        "type": "gallery-grid",
+        "config": {
+          "orientation": "horizontal",
+          "gap": 20
+        },
+        "data": [
+          "v1776006520/pudelka_a24lk3.jpg",
+          "v1776006521/pudelko_zgtsgw.jpg"
+        ],
+        "description": {
+          "title": "? z cyklu Próby Funkcjonalne",
+          "medium": "obiekty z papieru",
+          "year": "2025"
+        }
+      }
+    ]
+  },
+  {
+    "id": "12",
+    "content": [
+      {
+        "type": "image",
+        "image": "v1782162053/2_zoafef.jpg",
+        "width": 3000,
+        "height": 2000,
+        "description": {
+          "title": "Cykl Słowa Klucze",
+          "medium": "książki artystyczne",
+          "year": "2026"
+        }
+      },
+      {
+        "type": "image",
+        "image": "v1782162054/1_xylg11.jpg",
+        "width": 3000,
+        "height": 2000,
+        "description": {
+          "title": "Cykl Słowa Klucze",
+          "medium": "książki artystyczne",
+          "year": "2026"
+        }
+      },
+      {
+        "type": "gallery-grid",
+        "config": {
+          "orientation": "vertical"
+        },
+        "data": [
+          "v1782162050/3_whgomj.jpg",
+          "v1782162049/4_dyuudt.jpg",
+          "v1782162050/5_ocb39k.jpg"
+        ],
+        "description": {
+          "title": "Cykl Słowa Klucze",
+          "medium": "książki artystyczne",
+          "year": "2026"
+        }
+      }
+    ]
+  },
+  {
+    "id": "13",
+    "content": [
+      {
+        "type": "image",
+        "image": "v1782161342/IMG_7311_1_mbau3m.jpg",
+        "width": 3000,
+        "height": 2000,
+        "description": {
+          "title": "Bez tytułu",
+          "medium": "technika własna",
+          "year": "2026"
+        }
+      },
+      {
+        "type": "gallery-grid",
+        "config": {
+          "orientation": "horizontal",
+          "gap": 20
+        },
+        "data": [
+          "v1782161342/IMG_7317_1_ajlysq.jpg",
+          "v1782161345/IMG_7346_1_f20db0.jpg"
+        ],
+        "description": {
+          "title": "Bez tytułu (detale)",
+          "medium": "technika własna",
+          "year": "2026"
         }
       }
     ]
