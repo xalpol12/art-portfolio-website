@@ -8,6 +8,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: var(--ngx-ap-gap-standard);
+  align-items: start;
 
   &.vertical {
     display: flex;
@@ -22,9 +23,7 @@
 
 .gallery img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  aspect-ratio: 4/3;
+  height: auto;
 }
 
 @include mixins.mobile {

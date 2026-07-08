@@ -12,6 +12,8 @@ import {ImageDescription} from '../image-description/image-description';
         @for (image of data?.data; track $index) {
           <apw-img [image]="image" [alt]="'Gallery Image ' + ($index + 1)"
                    [galleryMode]="true"
+                   [width]="config.width"
+                   [height]="config.height"
                    (click)="onImageClick($index)"
           />
         }

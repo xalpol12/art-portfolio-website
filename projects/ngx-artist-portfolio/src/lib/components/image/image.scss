@@ -28,6 +28,20 @@
       object-fit: cover;
     }
   }
+
+  &.gallery-mode {
+    width: 100%;
+
+    &:has(img:not(.loaded)) {
+      min-height: 200px;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  }
 }
 
 .spinner-wrapper {

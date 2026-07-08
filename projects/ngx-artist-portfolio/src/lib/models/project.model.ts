@@ -61,6 +61,8 @@ export interface LinkModel {
 export type GalleryGridConfig = {
   orientation: 'horizontal' | 'vertical';
   gap?: number;
+  width?: number;
+  height?: number;
 }
 export type ParagraphConfig = {
   noBottomMargin?: boolean;

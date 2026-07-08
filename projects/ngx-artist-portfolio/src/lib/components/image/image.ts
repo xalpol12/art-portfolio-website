@@ -6,8 +6,10 @@ import {NgOptimizedImage} from '@angular/common';
 @Component({
   selector: `apw-img`, template: `
     @if (image) {
-      <div class="image-wrapper" [class.fill-mode]="!width || !height"
-           [style.aspect-ratio]="(!width || !height) ? aspectRatio : null"
+      <div class="image-wrapper"
+           [class.fill-mode]="!galleryMode && (!width || !height)"
+           [class.gallery-mode]="galleryMode"
+           [style.aspect-ratio]="!galleryMode && (!width || !height) ? aspectRatio : null"
            [class.bottom-margin]="!galleryMode">
         @if (loading()) {
           <div class="spinner-wrapper">
@@ -23,6 +25,12 @@ import {NgOptimizedImage} from '@angular/common';
                placeholder
                (load)="loading.set(false)"
           />
+        } @else if (galleryMode) {
+          <img [ngSrc]="image"
+               [alt]="alt ?? ''"
+               [class.loaded]="!loading()"
+               loading="lazy"
+               (load)="loading.set(false)" fill/>
         } @else {
           <img [ngSrc]="image"
                [fill]="true"
