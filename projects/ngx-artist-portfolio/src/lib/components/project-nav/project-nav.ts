@@ -1,6 +1,7 @@
 import {Component, Input} from '@angular/core';
 import {RouterLink} from '@angular/router';
 import {ThumbnailModel} from '../../models/thumbnail.model';
+import {ScrollToTopOnNavigationEndDirective} from '../../directives/scroll-to-top-on-navigation-end-directive';
 
 @Component({
   selector: `apw-project-nav`,
@@ -8,7 +9,7 @@ import {ThumbnailModel} from '../../models/thumbnail.model';
     @if (previous || next) {
       <nav class="project-nav" aria-label="Project navigation">
         @if (previous) {
-          <a class="project-link align-left" [routerLink]="['/projects', previous.id]" aria-label="Previous project">
+          <a class="project-link align-left" [routerLink]="['/projects', previous.id]" aria-label="Previous project" scrollToTopOnNavigationEnd>
             <svg class="project-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                  stroke-width="1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <line x1="19" y1="12" x2="5" y2="12"/>
@@ -19,7 +20,7 @@ import {ThumbnailModel} from '../../models/thumbnail.model';
         }
 
         @if (next) {
-          <a class="project-link align-right" [routerLink]="['/projects', next.id]" aria-label="Next project">
+          <a class="project-link align-right" [routerLink]="['/projects', next.id]" aria-label="Next project" scrollToTopOnNavigationEnd>
             <span class="project-link-label ngx-ap-small">Następny</span>
             <svg class="project-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                  stroke-width="1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -32,7 +33,7 @@ import {ThumbnailModel} from '../../models/thumbnail.model';
     }
   `,
   standalone: true,
-  imports: [RouterLink],
+  imports: [RouterLink, ScrollToTopOnNavigationEndDirective],
   styleUrl: 'project-nav.scss'
 })
 export class ProjectNav {

@@ -1,6 +1,6 @@
 [
   {
-    "id": "1",
+    "id": "continuum",
     "content": [
       {
         "type": "image",
@@ -8,7 +8,7 @@
         "width": 1890,
         "height": 1627,
         "description": {
-          "title": "CONTINUUM",
+          "title": "<i>CONTINUUM</i>",
           "medium": "akryl, farba tablicowa, kreda na płótnie",
           "size": "120 x 80 cm, 160 x 180 cm",
           "year": "2025"
@@ -17,7 +17,7 @@
     ]
   },
   {
-    "id": "2",
+    "id": "podstawy-zarzadzania",
     "content": [
       {
         "type": "image",
@@ -25,7 +25,7 @@
         "width": 979,
         "height": 1305,
         "description": {
-          "title": "Podstawy zarządzania",
+          "title": "<i>Bez tytułu (Podstawy zarządzania)</i>",
           "medium": "akryl na płótnie, obiekty",
           "size": "50 x 70 cm",
           "year": "2025"
@@ -40,7 +40,7 @@
     ]
   },
   {
-    "id": "3",
+    "id": "pojedynek",
     "content": [
       {
         "type": "image",
@@ -48,7 +48,7 @@
         "width": 2717,
         "height": 1811,
         "description": {
-          "title": "Pojedynek",
+          "title": "<i>Pojedynek</i>",
           "medium": "akryl na płótnie",
           "size": "210 x 60 cm",
           "year": "2026"
@@ -63,7 +63,24 @@
     ]
   },
   {
-    "id": "4",
+    "id": "bez-tytulu-1",
+    "content": [
+      {
+        "type": "image",
+        "image": "v1776006505/4_Bez_tytu%C5%82u_2026_akryl_na_p%C5%82%C3%B3tnie_200x100_wrybze.jpg",
+        "width": 2362,
+        "height": 1575,
+        "description": {
+          "title": "<i>Bez tytułu</i>",
+          "medium": "akryl na płótnie",
+          "size": "100 x 100 cm, 40 x 30 cm, 25 x 15 cm",
+          "year": "2026"
+        }
+      }
+    ]
+  },
+  {
+    "id": "o-szczesciu",
     "content": [
       {
         "type": "image",
@@ -71,7 +88,7 @@
         "width": 2656,
         "height": 1770,
         "description": {
-          "title": "O szczęściu",
+          "title": "<i>O szczęściu</i>",
           "medium": "akryl na płótnie, druk cyfrowy na papierze",
           "size": "40 x 50 cm każdy",
           "year": "2026"
@@ -86,14 +103,14 @@
       {
         "type": "image",
         "image": "v1776006507/Bandosz_Zuzanna_03_detal2_heno3e.jpg",
-        "width": 953,
-        "height": 1428
+        "width": 951,
+        "height": 1426
       },
       {
         "type": "image",
         "image": "v1776006507/Bandosz_Zuzanna_03_detal3_mnnuu3.jpg",
-        "width": 1000,
-        "height": 1500
+        "width": 951,
+        "height": 1426
       },
       {
         "type": "image",
@@ -101,7 +118,7 @@
         "width": 1500,
         "height": 1000,
         "description": {
-          "title": "O szczęściu",
+          "title": "<i>O szczęściu</i>",
           "size": "detal (cytat z <i>O szczęściu</i> W. Tatarkiewicza)",
           "year": "2026"
         }
@@ -109,7 +126,140 @@
     ]
   },
   {
-    "id": "5",
+    "id": "alea-iacta-sunt",
+    "content": [
+      {
+        "type": "paragraph",
+        "data":  "Praca powstała podczas Międzynarodowego Pleneru Artystycznego organizowanego we współpracy z Wyższą Szkołą Sztuki i Designu w Bratysławie prowadzonego pod hasłem Powtórzenie jako czynnik kształtujący nowe."},
+      {
+        "type": "gallery-grid",
+        "config": {
+          "width": 1920,
+          "height": 1080,
+          "orientation": "horizontal",
+          "gap": 20
+        },
+        "data": [
+          "v1782161076/3_cxmquc.jpg",
+          "v1782161076/5_d1nl9i.jpg",
+          "v1782161076/1_iitwji.jpg"
+        ],
+        "description": {
+          "title": "<i>Alea iacta sunt</i>",
+          "medium": "kadry z filmu",
+          "year": "2025"
+        }
+      },
+      {
+        "type": "image",
+        "image": "v1782161076/4_psubn0.jpg",
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "type": "image",
+        "image": "v1782161076/2_n3bh2d.jpg",
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "type": "video",
+        "src": "https://youtu.be/KxctungyYhA?si=VlirqRE1Hp4M8481",
+        "title": "<i>Alea iacta sunt (2025)</i>",
+        "aspectRatio": "16 / 9",
+        "controls": true
+      }
+    ]
+  },
+  {
+    "id": "bez-tytulu-2",
+    "content": [
+      {
+        "type": "image",
+        "image": "v1784487070/1_ba1cuc.jpg",
+        "width": 1833,
+        "height": 1374
+      },
+      {
+        "type": "image",
+        "image": "v1784487070/2_pwpsam.jpg",
+        "width": 1428,
+        "height": 1904
+      }
+    ]
+  },
+  {
+    "id": "zarzadzanie-ryzykiem",
+    "content": [
+      {
+        "type": "image",
+        "image": "v1782161604/1.1_ietak7.jpg",
+        "width": 3000,
+        "height": 2000,
+        "description": {
+          "title": "<i>Zarządzanie ryzykiem</i>",
+          "medium": "książki artystyczne",
+          "size": "24 x 16 cm",
+          "year": "2025"
+        }
+      },
+      {
+        "type": "image",
+        "image": "v1782161603/2.2_tmxelf.jpg",
+        "width": 1300,
+        "height": 867
+      },
+      {
+        "type": "gallery-grid",
+        "config": {
+          "width": 5248,
+          "height": 3499,
+          "orientation": "horizontal",
+          "gap": 20
+        },
+        "data": [
+          "v1782161605/5_cjg2v2.jpg",
+          "v1782161606/4_w4k9cz.jpg"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "proby-funkcjonalne",
+    "content": [
+      {
+        "type": "image",
+        "image": "v1776006528/pudelkaobrobione_an1buo.jpg",
+        "width": 3000,
+        "height": 2000,
+        "description": {
+          "title": "<i>Przekaźnik</i> z cyklu <i>Próby Funkcjonalne</i>",
+          "medium": "obiekty z papieru",
+          "year": "2025"
+        }
+      },
+      {
+        "type": "gallery-grid",
+        "config": {
+          "width": 3000,
+          "height": 2000,
+          "orientation": "horizontal",
+          "gap": 20
+        },
+        "data": [
+          "v1776006520/pudelka_a24lk3.jpg",
+          "v1776006521/pudelko_zgtsgw.jpg"
+        ],
+        "description": {
+          "title": "<i>Latarka przyczepna</i> z cyklu <i>Próby Funkcjonalne</i>",
+          "medium": "obiekty z papieru",
+          "year": "2025"
+        }
+      }
+    ]
+  },
+  {
+    "id": "rysunki-uziemione",
     "content": [
       {
         "type": "image",
@@ -117,7 +267,7 @@
         "width": 1846,
         "height": 1230,
         "description": {
-          "title": "Rysunki uziemione",
+          "title": "<i>Rysunki uziemione</i>",
           "medium": "technika własna",
           "size": "280 x 100 x 200 cm",
           "year": "2026"
@@ -144,7 +294,7 @@
     ]
   },
   {
-    "id": "6",
+    "id": "buty-dla-mojej-prababci",
     "content": [
       {
         "type": "paragraph",
@@ -164,7 +314,7 @@
           "v1776006509/buty3_g2ls9b.jpg"
         ],
         "description": {
-          "title": "Buty dla mojej prababci",
+          "title": "<i>Buty dla mojej prababci</i>",
           "medium": "technika własna",
           "size": "20 x 25 cm",
           "year": "2025"
@@ -173,62 +323,36 @@
     ]
   },
   {
-    "id": "7",
+    "id": "bez-tytulu-13",
     "content": [
+      {
+        "type": "image",
+        "image": "v1782161342/IMG_7311_1_mbau3m.jpg",
+        "width": 3000,
+        "height": 2000,
+        "description": {
+          "title": "<i>Bez tytułu</i>",
+          "medium": "technika własna",
+          "year": "2026"
+        }
+      },
       {
         "type": "gallery-grid",
         "config": {
-          "width": 1920,
-          "height": 1080,
+          "width": 1000,
+          "height": 1500,
           "orientation": "horizontal",
           "gap": 20
         },
         "data": [
-          "v1782161076/3_cxmquc.jpg",
-          "v1782161076/5_d1nl9i.jpg",
-          "v1782161076/1_iitwji.jpg"
+          "v1782161342/IMG_7317_1_ajlysq.jpg",
+          "v1782161345/IMG_7346_1_f20db0.jpg"
         ]
-      },
-      {
-        "type": "image",
-        "image": "v1782161076/4_psubn0.jpg",
-        "width": 1920,
-        "height": 1080
-      },
-      {
-        "type": "image",
-        "image": "v1782161076/2_n3bh2d.jpg",
-        "width": 1920,
-        "height": 1080
-      },
-      {
-        "type": "video",
-        "src": "https://youtu.be/KxctungyYhA?si=VlirqRE1Hp4M8481",
-        "title": "Alea iacta sunt (2025)",
-        "aspectRatio": "16 / 9",
-        "controls": true
       }
     ]
   },
   {
-    "id": "8",
-    "content": [
-      {
-        "type": "image",
-        "image": "v1776006505/4_Bez_tytu%C5%82u_2026_akryl_na_p%C5%82%C3%B3tnie_200x100_wrybze.jpg",
-        "width": 2362,
-        "height": 1575,
-        "description": {
-          "title": "Bez tytułu",
-          "medium": "akryl na płótnie",
-          "size": "100 x 100 cm, 40 x 30 cm, 25 x 15 cm",
-          "year": "2026"
-        }
-      }
-    ]
-  },
-  {
-    "id": "9",
+    "id": "bez-tytulu-9",
     "content": [
       {
         "type": "paragraph",
@@ -250,9 +374,8 @@
       },
       {
         "type": "quote",
-        "text": "„Nauczyciele w szkole mówili do nas, mówili, mówili… Nic nie rozumieliśmy. Potem pisali\njakieś słowa na tablicy, a my je przepisywaliśmy. (…) Potem uczyliśmy się tych słów na\npamięć, choć nie wiedzieliśmy, co znaczą.”\n„Kiedy jesteśmy sami ze sobą, głusi z głuchymi, możemy do siebie migać, nie czujemy się\ninni. (…) Jesteśmy niepełnosprawni tylko wtedy, gdy jesteśmy między wami, słyszącymi.”\n",
-        "author": "Anna Goc",
-        "cite": "Głusza - fragment książki"
+        "text": "Nauczyciele w szkole mówili do nas, mówili, mówili… Nic nie rozumieliśmy. Potem pisali\njakieś słowa na tablicy, a my je przepisywaliśmy. (…) Potem uczyliśmy się tych słów na pamięć, choć nie wiedzieliśmy, co znaczą. <br>Kiedy jesteśmy sami ze sobą, głusi z głuchymi, możemy do siebie migać, nie czujemy się\ninni. (…) Jesteśmy niepełnosprawni tylko wtedy, gdy jesteśmy między wami, słyszącymi.",
+        "cite": "fragment książki Anny Goc <i>Głusza</i>"
       },
       {
         "type": "image",
@@ -260,7 +383,7 @@
         "width": 1500,
         "height": 1000,
         "description": {
-          "title": "Bez tytułu",
+          "title": "<i>Bez tytułu</i>",
           "medium": "sok z cytryny, tkanina barwiona",
           "size": "1,5 x 10 m",
           "year": "2024"
@@ -293,77 +416,7 @@
     ]
   },
   {
-    "id": "10",
-    "content": [
-      {
-        "type": "image",
-        "image": "v1782161604/1.1_ietak7.jpg",
-        "width": 3000,
-        "height": 2000,
-        "description": {
-          "title": "Zarządzanie ryzykiem",
-          "medium": "książki artystyczne",
-          "size": "24 x 16 cm",
-          "year": "2025"
-        }
-      },
-      {
-        "type": "image",
-        "image": "v1782161603/2.2_tmxelf.jpg",
-        "width": 1300,
-        "height": 867
-      },
-      {
-        "type": "gallery-grid",
-        "config": {
-          "width": 5248,
-          "height": 3499,
-          "orientation": "horizontal",
-          "gap": 20
-        },
-        "data": [
-          "v1782161605/5_cjg2v2.jpg",
-          "v1782161606/4_w4k9cz.jpg"
-        ]
-      }
-    ]
-  },
-  {
-    "id": "11",
-    "content": [
-      {
-        "type": "image",
-        "image": "v1776006528/pudelkaobrobione_an1buo.jpg",
-        "width": 3000,
-        "height": 2000,
-        "description": {
-          "title": "Przekaźnik z cyklu Próby Funkcjonalne",
-          "medium": "obiekty z papieru",
-          "year": "2025"
-        }
-      },
-      {
-        "type": "gallery-grid",
-        "config": {
-          "width": 3000,
-          "height": 2000,
-          "orientation": "horizontal",
-          "gap": 20
-        },
-        "data": [
-          "v1776006520/pudelka_a24lk3.jpg",
-          "v1776006521/pudelko_zgtsgw.jpg"
-        ],
-        "description": {
-          "title": "? z cyklu Próby Funkcjonalne",
-          "medium": "obiekty z papieru",
-          "year": "2025"
-        }
-      }
-    ]
-  },
-  {
-    "id": "12",
+    "id": "slowa-klucze",
     "content": [
       {
         "type": "image",
@@ -371,7 +424,7 @@
         "width": 3000,
         "height": 2000,
         "description": {
-          "title": "Cykl Słowa Klucze",
+          "title": "Cykl <i>Słowa Klucze</i>",
           "medium": "książki artystyczne",
           "year": "2026"
         }
@@ -393,35 +446,6 @@
           "v1782162050/3_whgomj.jpg",
           "v1782162049/4_dyuudt.jpg",
           "v1782162050/5_ocb39k.jpg"
-        ]
-      }
-    ]
-  },
-  {
-    "id": "13",
-    "content": [
-      {
-        "type": "image",
-        "image": "v1782161342/IMG_7311_1_mbau3m.jpg",
-        "width": 3000,
-        "height": 2000,
-        "description": {
-          "title": "Bez tytułu",
-          "medium": "technika własna",
-          "year": "2026"
-        }
-      },
-      {
-        "type": "gallery-grid",
-        "config": {
-          "width": 1000,
-          "height": 1500,
-          "orientation": "horizontal",
-          "gap": 20
-        },
-        "data": [
-          "v1782161342/IMG_7317_1_ajlysq.jpg",
-          "v1782161345/IMG_7346_1_f20db0.jpg"
         ]
       }
     ]

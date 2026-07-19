@@ -7,7 +7,7 @@ import {ProjectNav} from '../../components/project-nav/project-nav';
   selector: `apw-project-page`,
   template: `
     <div class="page-wrapper">
-      <div class="ngx-ap-h1">{{ thumbnail()?.title }}</div>
+      <div class="ngx-ap-h1" [innerHtml]="thumbnail()?.title"></div>
       <apw-project-renderer [project]="project()"/>
       <apw-project-nav [previous]="previousThumbnail()" [next]="nextThumbnail()" />
     </div>

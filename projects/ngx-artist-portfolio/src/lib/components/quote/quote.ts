@@ -5,14 +5,14 @@ import {Component, Input} from '@angular/core';
   template: `
     @if (text) {
       <figure class="quote-wrapper">
-        <blockquote class="quote-text ngx-ap-body">{{ text }}</blockquote>
+        <blockquote class="quote-text ngx-ap-body" [innerHTML]="text"></blockquote>
         @if (author || cite) {
           <figcaption class="quote-caption ngx-ap-small">
             @if (author) {
               <span class="quote-author">{{ author }}</span>
             }
             @if (cite) {
-              <cite class="quote-cite">{{ cite }}</cite>
+              <cite class="quote-cite" [innerHTML]="cite"></cite>
             }
           </figcaption>
         }

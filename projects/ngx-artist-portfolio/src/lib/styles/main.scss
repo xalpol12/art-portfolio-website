@@ -42,6 +42,12 @@ main, ngx-artist-portfolio-full-height {
   }
 }
 
+.ngx-gallery-top-padding-mobile-only {
+  @include mixins.mobile {
+    padding-top: var(--ngx-ap-gutter);
+  }
+}
+
 .debug-full-width-height {
   @include mixins.debug;
 

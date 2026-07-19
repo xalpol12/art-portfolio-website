@@ -17,7 +17,7 @@ import {ThumbnailModel} from "../../models/thumbnail.model";
                placeholder
           />
         </div>
-        <div class="thumbnail-title ngx-ap-title">{{ thumbnail.title }}</div>
+        <div class="thumbnail-title ngx-ap-title" [innerHtml]="thumbnail.title"></div>
         <div class="">{{ thumbnail.description }}</div>
       </div>
     }

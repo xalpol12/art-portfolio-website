@@ -8,7 +8,7 @@ import {NgOptimizedImage} from '@angular/common';
            (click)="onBackdropClick($event)"
            (wheel)="onWheel($event)"
            (touchstart)="onTouchStart($event)"
-           (touchend)="onTouchEnd()"
+           (touchend)="onTouchEnd($event)"
            (touchmove)="onTouchMove($event)">
         <span class="close" (click)="closeModal()">&times;</span>
 
@@ -72,6 +72,7 @@ export class ImageLightbox {
   // Swipe state
   private touchStartX = 0;
   private touchEndX = 0;
+  private isMultiTouchGesture = false;
   private touchStartedOnControl = false;
   private readonly SWIPE_THRESHOLD = 50;
 
@@ -232,23 +233,34 @@ export class ImageLightbox {
   }
 
   onTouchStart(event: TouchEvent): void {
+    this.isMultiTouchGesture = event.touches.length > 1;
     this.touchStartX = event.changedTouches[0].screenX;
+    this.touchEndX = this.touchStartX;
     this.touchStartedOnControl = this.isInteractiveTouchTarget(event.target);
   }
 
   onTouchMove(event: TouchEvent): void {
+    if (event.touches.length > 1) {
+      this.isMultiTouchGesture = true;
+    }
     this.touchEndX = event.changedTouches[0].screenX;
   }
 
-  onTouchEnd(): void {
+  onTouchEnd(event: TouchEvent): void {
     if (this.touchStartedOnControl) {
       this.touchStartedOnControl = false;
       this.touchStartX = 0;
       this.touchEndX = 0;
+      this.isMultiTouchGesture = false;
       return;
     }
 
-    if (this.isZoomed()) return;
+    if (this.isZoomed() || this.isMultiTouchGesture || event.changedTouches.length > 1) {
+      this.touchStartX = 0;
+      this.touchEndX = 0;
+      this.isMultiTouchGesture = false;
+      return;
+    }
 
     const swipeDistance = this.touchStartX - this.touchEndX;
     if (Math.abs(swipeDistance) > this.SWIPE_THRESHOLD) {
@@ -256,6 +268,7 @@ export class ImageLightbox {
     }
     this.touchStartX = 0;
     this.touchEndX = 0;
+    this.isMultiTouchGesture = false;
   }
 
   private isInteractiveTouchTarget(target: EventTarget | null): boolean {

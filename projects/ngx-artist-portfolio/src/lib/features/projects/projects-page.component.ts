@@ -4,7 +4,7 @@ import {ProjectThumbnailsStore} from './project-thumbnails.store';
 
 @Component({
   selector: `apw-projects-page`, template: `
-    <div class="ngx-center ngx-page-padding-sides-only">
+    <div class="ngx-center ngx-page-padding-sides-only ngx-gallery-top-padding-mobile-only">
       @if (thumbnails()) {
         @for (thumbnail of thumbnails(); track $index) {
           <apw-thumbnail

@@ -8,6 +8,7 @@
   justify-content: space-between;
   align-items: center;
   gap: var(--ngx-ap-gutter);
+  overflow: hidden;
 }
 
 .project-link {
@@ -45,7 +46,12 @@
 
 @include mixins.mobile {
   .project-nav {
+    position: sticky;
+    bottom: 0;
+    z-index: 100;
+    background-color: var(--ngx-ap-bg-main);
     padding-top: var(--ngx-ap-gutter);
+    padding-bottom: calc(var(--ngx-ap-gutter) + env(safe-area-inset-bottom));
   }
 
 }
