@@ -1,7 +1,8 @@
-import {Component, Input} from '@angular/core';
+import {ChangeDetectionStrategy, Component, Input} from '@angular/core';
 import {NgClass} from '@angular/common';
 
 @Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
   selector: `apw-break`, template: `
     <div class="break" [ngClass]="'break--' + size"></div>
   `,

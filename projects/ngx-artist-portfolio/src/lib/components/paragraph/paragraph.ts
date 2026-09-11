@@ -1,8 +1,9 @@
-import {Component, Input} from '@angular/core';
+import {ChangeDetectionStrategy, Component, Input} from '@angular/core';
 import {NgClass} from '@angular/common';
 import {ParagraphConfig} from '../../models/project.model';
 
 @Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
   selector: `apw-paragraph`,
   template: `
     <p class="ngx-ap-body"

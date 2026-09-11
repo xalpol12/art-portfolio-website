@@ -1,7 +1,8 @@
-import {Component, Input, computed, inject} from '@angular/core';
+import {ChangeDetectionStrategy, Component, computed, inject, Input} from '@angular/core';
 import {DomSanitizer, SafeResourceUrl} from '@angular/platform-browser';
 
 @Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
   selector: `apw-video`,
   template: `
     @if (src) {

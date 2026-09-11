@@ -1,15 +1,16 @@
-import {Component, Input, signal} from '@angular/core';
+import {ChangeDetectionStrategy, Component, Input, signal} from '@angular/core';
 import {ImageDescriptionModel} from '../../models/project.model';
 import {ImageDescription} from '../image-description/image-description';
 import {NgOptimizedImage} from '@angular/common';
 
 @Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
   selector: `apw-img`, template: `
     @if (image) {
       <div class="image-wrapper"
            [class.fill-mode]="!galleryMode && (!width || !height)"
            [class.gallery-mode]="galleryMode"
-           [style.aspect-ratio]="!galleryMode && (!width || !height) ? aspectRatio : null"
+           [style.aspect-ratio]="!width || !height ? aspectRatio : null"
            [class.bottom-margin]="!galleryMode">
         @if (loading()) {
           <div class="spinner-wrapper">

@@ -1,12 +1,16 @@
 {
   "name": "@xalpol12/artist-portfolio",
+  "description": "Reusable Angular building blocks for artist portfolio sites: thumbnail grids, project detail pages composed from content blocks (paragraph/image/video/gallery/quote/link), Cloudinary image loading, and SEO wiring.",
+  "keywords": ["angular", "portfolio", "artist", "gallery", "cms"],
   "publishConfig": {
     "access": "public"
   },
   "version": "0.0.1",
   "peerDependencies": {
     "@angular/common": "^21.0.0",
-    "@angular/core": "^21.0.0"
+    "@angular/core": "^21.0.0",
+    "@angular/platform-browser": "^21.0.0",
+    "@angular/router": "^21.0.0"
   },
   "dependencies": {
     "tslib": "^2.3.0"

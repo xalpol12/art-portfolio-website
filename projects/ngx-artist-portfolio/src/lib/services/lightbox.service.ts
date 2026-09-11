@@ -1,7 +1,13 @@
 import {computed, inject, Injectable, signal} from '@angular/core';
-import {ContentModel, GalleryGridModel, ImageModel} from '../models/project.model';
+import {GalleryGridModel, ImageModel, ProjectContentBlock} from '../models/project.model';
 import {ContentType} from '../models/content-type';
 import {Store} from '../store.service';
+import {stripHtml} from '../utils/strip-html';
+
+export interface LightboxImage {
+  src: string;
+  alt: string;
+}
 
 @Injectable()
 export class LightboxService {
@@ -11,18 +17,26 @@ export class LightboxService {
   readonly isOpen = this._isOpen.asReadonly();
   private readonly _currentIndex = signal(0);
   readonly currentIndex = this._currentIndex.asReadonly();
-  private readonly _images = signal<string[]>([]);
+  private readonly _images = signal<LightboxImage[]>([]);
   readonly images = this._images.asReadonly();
 
-  readonly currentImage = computed(() => this._images()[this._currentIndex()] ?? '');
+  /** Element that had focus when the lightbox was opened, so it can be restored on close. */
+  triggerElement: HTMLElement | null = null;
 
-  loadImages(content: ContentModel[]): void {
-    const images: string[] = [];
+  readonly currentImage = computed(() => this._images()[this._currentIndex()]?.src ?? '');
+
+  loadImages(content: ProjectContentBlock[]): void {
+    const images: LightboxImage[] = [];
     for (const block of content) {
       if (block.type === ContentType.IMAGE) {
-        images.push((block as ImageModel).image);
+        const image = block as ImageModel;
+        images.push({src: image.image, alt: stripHtml(image.description?.title) || ''});
       } else if (block.type === ContentType.GALLERY_GRID) {
-        images.push(...((block as GalleryGridModel).data ?? []));
+        const gallery = block as GalleryGridModel;
+        const galleryAlt = stripHtml(gallery.description?.title);
+        (gallery.data ?? []).forEach((src, i) => {
+          images.push({src, alt: galleryAlt || `Gallery image ${i + 1}`});
+        });
       }
     }
     this._images.set(images);
@@ -30,7 +44,7 @@ export class LightboxService {
     this._isOpen.set(false);
   }
 
-  getStartIndexFor(block: ContentModel, content: ContentModel[]): number {
+  getStartIndexFor(block: ProjectContentBlock, content: ProjectContentBlock[]): number {
     let index = 0;
     for (const item of content) {
       if (item === block) break;
@@ -40,7 +54,9 @@ export class LightboxService {
     return index;
   }
 
-  open(index: number): void {
+  open(index: number, triggerElement?: EventTarget | null): void {
+    this.triggerElement = (triggerElement instanceof HTMLElement ? triggerElement : null)
+      ?? (document.activeElement as HTMLElement | null);
     this._currentIndex.set(index);
     this._isOpen.set(true);
   }

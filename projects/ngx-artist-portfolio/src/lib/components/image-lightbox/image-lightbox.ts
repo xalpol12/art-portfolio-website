@@ -1,16 +1,23 @@
-import {Component, computed, effect, HostListener, input, output, signal} from '@angular/core';
+import {ChangeDetectionStrategy, Component, computed, effect, ElementRef, HostListener, inject, input, output, signal, viewChild} from '@angular/core';
 import {NgOptimizedImage} from '@angular/common';
+import {LightboxImage, LightboxService} from '../../services/lightbox.service';
 
 @Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
   selector: `apw-img-lightbox`, template: `
     @if (isOpen()) {
       <div class="modal"
+           role="dialog"
+           aria-modal="true"
+           aria-label="Image viewer"
+           tabindex="-1"
+           #modal
            (click)="onBackdropClick($event)"
            (wheel)="onWheel($event)"
            (touchstart)="onTouchStart($event)"
            (touchend)="onTouchEnd($event)"
            (touchmove)="onTouchMove($event)">
-        <span class="close" (click)="closeModal()">&times;</span>
+        <button type="button" class="close" aria-label="Close" (click)="closeModal()">&times;</button>
 
         <div class="modal-content"
              [class.zoomed]="isZoomed()"
@@ -31,8 +38,8 @@ import {NgOptimizedImage} from '@angular/common';
         </div>
 
         @if (images() && images().length > 1) {
-          <a class="prev" (click)="nextSlide(-1)">&#10094;</a>
-          <a class="next" (click)="nextSlide(1)">&#10095;</a>
+          <button type="button" class="prev" aria-label="Previous image" (click)="nextSlide(-1)">&#10094;</button>
+          <button type="button" class="next" aria-label="Next image" (click)="nextSlide(1)">&#10095;</button>
           <div class="image-counter">{{ currentIndex() + 1 }} / {{ images().length }}</div>
         }
       </div>
@@ -42,13 +49,16 @@ import {NgOptimizedImage} from '@angular/common';
   ], styleUrl: 'image-lightbox.scss'
 })
 export class ImageLightbox {
-  images = input<string[]>([]);
+  images = input<LightboxImage[]>([]);
   currentIndex = input<number>(0);
   isOpen = input<boolean>(false);
   zoomDisabled = input<boolean>(false);
 
   closeOutput = output<void>();
   indexChanged = output<number>();
+
+  private readonly lightboxService = inject(LightboxService, {optional: true});
+  private readonly modalRef = viewChild<ElementRef<HTMLElement>>('modal');
 
   // Loading state
   protected loading = signal(true);
@@ -92,18 +102,25 @@ export class ImageLightbox {
       this.loading.set(true);
       this.resetZoom();
     });
+
+    // Move focus into the dialog when it opens, for keyboard/screen-reader users
+    effect(() => {
+      if (this.isOpen()) {
+        this.modalRef()?.nativeElement.focus();
+      }
+    });
   }
 
   currentImage = computed(() => {
     const imgs = this.images();
     const idx = this.currentIndex();
-    return imgs[idx] || '';
+    return imgs[idx]?.src ?? '';
   });
 
   currentAlt = computed(() => {
+    const imgs = this.images();
     const idx = this.currentIndex();
-    const total = this.images().length;
-    return `Image ${idx + 1} of ${total}`;
+    return imgs[idx]?.alt || `Image ${idx + 1} of ${imgs.length}`;
   });
 
   @HostListener('document:keydown', ['$event'])
@@ -135,12 +152,42 @@ export class ImageLightbox {
         this.resetZoom();
         event.preventDefault();
         break;
+      case 'Tab':
+        this.trapFocus(event);
+        break;
     }
   }
 
   closeModal(): void {
     this.resetZoom();
     this.closeOutput.emit();
+    this.lightboxService?.triggerElement?.focus();
+  }
+
+  private getFocusableElements(): HTMLElement[] {
+    const modal = this.modalRef()?.nativeElement;
+    if (!modal) {
+      return [];
+    }
+    return Array.from(modal.querySelectorAll<HTMLElement>('button, [href], [tabindex]:not([tabindex="-1"])'));
+  }
+
+  private trapFocus(event: KeyboardEvent): void {
+    const focusable = this.getFocusableElements();
+    if (focusable.length === 0) {
+      return;
+    }
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+    const active = document.activeElement;
+
+    if (event.shiftKey && active === first) {
+      last.focus();
+      event.preventDefault();
+    } else if (!event.shiftKey && active === last) {
+      first.focus();
+      event.preventDefault();
+    }
   }
 
   onImageLoaded(): void {

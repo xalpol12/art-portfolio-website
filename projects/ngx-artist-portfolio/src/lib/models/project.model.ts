@@ -1,11 +1,29 @@
 import {ContentType} from './content-type';
 
+/** A project's `id` doubles as its `/projects/:id` route param and lightbox/JSON-LD key — keep it URL-safe. */
 export interface ProjectModel {
   id: string;
-  content: ContentModel[];
+  content: ProjectContentBlock[];
 }
 
 export type ContentModel = BasicModel | ParagraphModel | QuoteModel | ImageModel | VideoModel | GalleryGridModel | LinkModel;
+
+/**
+ * Escape hatch for content block types not built into the library. Register a renderer
+ * for a custom `type` via `providePortfolio({ contentBlockExtensions: [...] })` — see
+ * `ContentBlockExtension` in `content-block-extensions.token.ts`.
+ */
+export interface CustomBlockModel {
+  type: string;
+
+  [key: string]: unknown;
+}
+
+/**
+ * What a project's `content` array may actually contain: any built-in block, or a custom
+ * one handled by a registered `ContentBlockExtension`.
+ */
+export type ProjectContentBlock = ContentModel | CustomBlockModel;
 
 export interface BasicModel {
   type: ContentType.BREAK;

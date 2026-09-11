@@ -1,8 +1,9 @@
-import {Component, inject, Input, OnChanges} from '@angular/core';
+import {ChangeDetectionStrategy, Component, inject, Input, OnChanges} from '@angular/core';
 import {ImageDescriptionModel} from '../../models/project.model';
 import {ArtworkDescriptionPipe} from '../../pipes/artwork-description-pipe';
 
 @Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
   selector: `apw-img-description`, template: `
     @if (description) {
       <div class="description ngx-ap-small">

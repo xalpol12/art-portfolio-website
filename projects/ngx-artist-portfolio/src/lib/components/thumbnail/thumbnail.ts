@@ -1,8 +1,9 @@
-import {Component, Input, output} from '@angular/core';
+import {ChangeDetectionStrategy, Component, Input, output} from '@angular/core';
 import {NgOptimizedImage} from '@angular/common';
 import {ThumbnailModel} from "../../models/thumbnail.model";
 
 @Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
   selector: `apw-thumbnail`, template: `
     @if (thumbnail) {
       <div class="thumbnail-container" (click)="clicked.emit(thumbnail.id)"
@@ -17,7 +18,7 @@ import {ThumbnailModel} from "../../models/thumbnail.model";
                placeholder
           />
         </div>
-        <div class="thumbnail-title ngx-ap-title" [innerHtml]="thumbnail.title"></div>
+        <h3 class="thumbnail-title ngx-ap-title" [innerHTML]="thumbnail.title"></h3>
         <div class="">{{ thumbnail.description }}</div>
       </div>
     }

@@ -11,6 +11,10 @@
   justify-content: center;
   cursor: zoom-out;
   overflow: hidden;
+
+  &:focus {
+    outline: none;
+  }
 }
 .modal-content {
   position: relative;
@@ -64,6 +68,20 @@
     transform: rotate(360deg);
   }
 }
+.close,
+.prev,
+.next {
+  background: none;
+  border: none;
+  font-family: inherit;
+  appearance: none;
+
+  &:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 2px;
+  }
+}
+
 .close {
   position: fixed;
   top: 1.25rem;

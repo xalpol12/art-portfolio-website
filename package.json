@@ -5,6 +5,8 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "sitemap": "node projects/showcase-app/scripts/generate-sitemap.mjs",
+    "build:showcase-app": "npm run sitemap && ng build showcase-app",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:art-portfolio": "node dist/art-portfolio/server/server.mjs"

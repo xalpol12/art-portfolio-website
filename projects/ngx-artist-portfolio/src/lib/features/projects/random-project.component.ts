@@ -1,13 +1,14 @@
-import {Component, computed, inject, Signal} from '@angular/core';
+import {ChangeDetectionStrategy, Component, effect, inject, signal, Signal, untracked} from '@angular/core';
 import {ThumbnailModel} from '../../models/thumbnail.model';
 import {Thumbnail} from '../../components/thumbnail/thumbnail';
 import {ProjectThumbnailsStore} from './project-thumbnails.store';
 import {Store} from '../../store.service';
 
 @Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
   selector: `apw-random-project`,
   template: `
-    @for (t of [thumbnail()]; track t.id) {
+    @if (thumbnail(); as t) {
       <apw-thumbnail class="ngx-center"
                      [thumbnail]="t"
                      [paddingBottom]="false"
@@ -22,25 +23,29 @@ import {Store} from '../../store.service';
   ]
 })
 export class RandomProjectComponent {
-  projectThumbnailsStore = new ProjectThumbnailsStore();
+  projectThumbnailsStore = inject(ProjectThumbnailsStore);
   private readonly store = inject(Store);
 
-  private readonly seeds = Array.from({length: 1000}, () => Math.floor(Math.random() * 10000));
+  private readonly _thumbnail = signal<ThumbnailModel | undefined>(undefined);
+  protected readonly thumbnail: Signal<ThumbnailModel | undefined> = this._thumbnail.asReadonly();
 
-  thumbnail: Signal<ThumbnailModel> = computed(() => {
-    const projects = this.projectThumbnailsStore.projects();
-    const thumbnails = this.projectThumbnailsStore.thumbnails();
-    const clickCount = this.store.homeClicks();
-    const count = projects.length;
+  constructor() {
+    effect(() => {
+      this.store.homeClicks();
+      const projects = this.projectThumbnailsStore.projects();
+      const thumbnails = this.projectThumbnailsStore.thumbnails();
 
-    const prevSeed = this.seeds[(clickCount - 1 + this.seeds.length) % this.seeds.length];
-    const currentIndex = count > 0 ? prevSeed % count : 0;
+      if (projects.length === 0) {
+        this._thumbnail.set(undefined);
+        return;
+      }
 
-    const seed = this.seeds[clickCount % this.seeds.length];
-    let nextIndex = seed % Math.max(count - 1, 1);
-    if (nextIndex >= currentIndex) nextIndex++;   // shift past the current slot
+      const lastId = untracked(() => this.store.lastRandomProjectId());
+      const candidates = projects.length > 1 ? projects.filter(p => p.id !== lastId) : projects;
+      const chosen = candidates[Math.floor(Math.random() * candidates.length)];
 
-    const safeIndex = count > 0 ? nextIndex % count : 0;
-    return thumbnails.find(t => t.id === projects[safeIndex].id)!;
-  });
+      this.store.lastRandomProjectId.set(chosen.id);
+      this._thumbnail.set(thumbnails.find(t => t.id === chosen.id));
+    });
+  }
 }

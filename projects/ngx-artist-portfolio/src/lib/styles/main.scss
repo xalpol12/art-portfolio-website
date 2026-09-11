@@ -15,7 +15,7 @@ body, .ngx-artist-portfolio-root {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background-color: (--ngx-ap-bg-main);
+  background-color: var(--ngx-ap-bg-main);
 }
 
 main, ngx-artist-portfolio-full-height {

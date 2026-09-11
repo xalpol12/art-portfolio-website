@@ -1,7 +1,7 @@
 :root {
-  /* Brand colors */
-  --ngx-ap-primary: ;
-  --ngx-ap-secondary: ;
+  /* Brand colors - override these to theme the library for your artist's brand */
+  --ngx-ap-primary: #000;
+  --ngx-ap-secondary: #808080;
   --ngx-ap-accent: #62a4ff;
   --ngx-ap-accent-opaque: rgba(98, 164, 255, 0.05);
   --ngx-ap-bg-main: #fafafa;
