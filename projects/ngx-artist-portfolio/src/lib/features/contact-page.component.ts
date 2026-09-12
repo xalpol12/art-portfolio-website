@@ -11,7 +11,6 @@ import {SeoService} from '../services/seo.service';
   selector: `apw-contact-page`,
   template: `
     <div class="page-wrapper">
-      <h1 class="ngx-ap-h1">{{ heading }}</h1>
       <div class="contact-grid">
         @if (contact.email; as email) {
           <a class="contact-tile" href="mailto:{{email}}" target="_blank" rel="noopener noreferrer">

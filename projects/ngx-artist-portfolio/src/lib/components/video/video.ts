@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component, computed, inject, Input} from '@angular/core';
+import {ChangeDetectionStrategy, Component, computed, inject, Input, signal} from '@angular/core';
 import {DomSanitizer, SafeResourceUrl} from '@angular/platform-browser';
 
 @Component({
@@ -8,13 +8,22 @@ import {DomSanitizer, SafeResourceUrl} from '@angular/platform-browser';
     @if (src) {
       <div class="video-wrapper" [style.aspect-ratio]="aspectRatio || '16 / 9'">
         @if (isEmbed()) {
-          <iframe
-            [src]="embedUrl()"
-            [title]="title || 'Project video'"
-            loading="lazy"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen>
-          </iframe>
+          @if (played()) {
+            <iframe
+              [src]="embedUrl()"
+              [title]="title || 'Project video'"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen>
+            </iframe>
+          } @else {
+            <button type="button" class="video-facade" [attr.aria-label]="'Play: ' + (title || 'video')"
+                    (click)="played.set(true)">
+              @if (facadePoster(); as posterUrl) {
+                <img [src]="posterUrl" [alt]="''" loading="lazy"/>
+              }
+              <span class="play-icon" aria-hidden="true"></span>
+            </button>
+          }
         } @else {
           <video
             [attr.poster]="poster || null"
@@ -45,6 +54,13 @@ export class Video {
 
   private readonly sanitizer = inject(DomSanitizer);
 
+  /**
+   * Whether the visitor has clicked play. Until then, YouTube/Vimeo embeds only render a
+   * lightweight poster + play button — the heavy embed iframe (and its own JS bundle) is
+   * never fetched, which matters most on metered mobile connections.
+   */
+  protected readonly played = signal(false);
+
   private readonly resolvedProvider = computed(() => this.resolveProvider(this.src, this.provider));
 
   protected readonly isEmbed = computed(() => this.resolvedProvider() !== 'file');
@@ -57,6 +73,18 @@ export class Video {
 
     const embedPath = this.buildEmbedPath(value, this.resolvedProvider());
     return embedPath ? this.sanitizer.bypassSecurityTrustResourceUrl(embedPath) : null;
+  });
+
+  /** The explicit `poster`, or a no-network-call fallback for YouTube; `null` otherwise (Vimeo has no such URL scheme). */
+  protected readonly facadePoster = computed<string | null>(() => {
+    if (this.poster) {
+      return this.poster;
+    }
+    if (this.resolvedProvider() === 'youtube' && this.src) {
+      const youtubeId = this.extractYouTubeId(this.src);
+      return youtubeId ? `https://img.youtube.com/vi/${youtubeId}/hqdefault.jpg` : null;
+    }
+    return null;
   });
 
   private resolveProvider(

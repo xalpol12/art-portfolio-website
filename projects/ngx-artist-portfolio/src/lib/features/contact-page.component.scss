@@ -2,6 +2,11 @@
 
 @include mixins.page-wrapper-padding;
 
+:host {
+  @include mixins.flex-fill;
+  justify-content: center;
+}
+
 .contact-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(160px, 200px));

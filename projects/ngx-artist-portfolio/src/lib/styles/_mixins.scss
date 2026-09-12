@@ -37,10 +37,13 @@
 }
 
 @mixin hover {
-  &:hover {
-    cursor: pointer;
-    color: var(--ngx-ap-accent);
-    @content
+  // Guarded so a tap on a touch device doesn't leave the element "stuck" in its hover state.
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      cursor: pointer;
+      color: var(--ngx-ap-accent);
+      @content
+    }
   }
 }
 

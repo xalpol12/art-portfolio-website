@@ -19,7 +19,7 @@
 .modal-content {
   position: relative;
   width: 90vw;
-  height: 90vh;
+  height: 90dvh;
   cursor: default;
   transition: transform 0.15s ease-out;
   transform-origin: center center;
@@ -84,8 +84,14 @@
 
 .close {
   position: fixed;
-  top: 1.25rem;
-  right: 1.75rem;
+  top: calc(0.75rem + env(safe-area-inset-top));
+  right: calc(0.75rem + env(safe-area-inset-right));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0.5rem;
   color: #fff;
   font-size: 2.5rem;
   font-weight: 300;
@@ -95,8 +101,11 @@
   opacity: 0.8;
   transition: opacity 0.2s;
   user-select: none;
-  &:hover {
-    opacity: 1;
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      opacity: 1;
+    }
   }
 }
 .prev,
@@ -113,19 +122,22 @@
   opacity: 0.7;
   transition: opacity 0.2s;
   user-select: none;
-  &:hover {
-    opacity: 1;
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      opacity: 1;
+    }
   }
 }
 .prev {
-  left: 0.5rem;
+  left: calc(0.5rem + env(safe-area-inset-left));
 }
 .next {
-  right: 0.5rem;
+  right: calc(0.5rem + env(safe-area-inset-right));
 }
 .image-counter {
   position: fixed;
-  bottom: 1.25rem;
+  bottom: calc(1.25rem + env(safe-area-inset-bottom));
   left: 50%;
   transform: translateX(-50%);
   color: #fff;

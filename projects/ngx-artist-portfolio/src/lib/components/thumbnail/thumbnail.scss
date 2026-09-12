@@ -5,8 +5,10 @@
   height: 100%;
   max-width: 1000px;
 
-  &:hover {
-    opacity: 0.9;
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      opacity: 0.9;
+    }
   }
 }
 
@@ -42,7 +44,7 @@
     overflow: visible;
 
     img {
-      max-height: calc(100vh - 11rem);
+      max-height: calc(100dvh - 11rem);
       width: auto;
       max-width: 100%;
       height: auto;

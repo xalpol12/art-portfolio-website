@@ -38,11 +38,14 @@
   }
 
   .hamburger {
+    // 44px tap target while keeping the same 28x20 icon, centered inside it.
     display: none;
     flex-direction: column;
-    justify-content: space-between;
-    width: 28px;
-    height: 20px;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    width: 44px;
+    height: 44px;
     background: none;
     border: none;
     cursor: pointer;
@@ -50,7 +53,7 @@
 
     span {
       display: block;
-      width: 100%;
+      width: 28px;
       height: 2px;
       background-color: currentColor;
       border-radius: 2px;
@@ -95,21 +98,26 @@
 
     .navigation {
       display: none;
+      gap: 0.5rem;
       flex-direction: column;
       width: 100%;
-      gap: 0.5rem;
       padding: 0.5rem 0 1rem;
 
-      .active {
-        position: relative;
-        display: inline-block;
+      li a {
+        display: block;
+        padding: 0.4rem 0;
+      }
+
+      li a.active {
+        display: block;
+        text-decoration: underline;
+        text-decoration-color: var(--ngx-ap-accent);
+        text-decoration-thickness: 4px;
+        text-underline-offset: 4px;
       }
 
       .active::after {
-        bottom: -4px;
-        left: 0;
-        width: 100%;
-        transform: none;
+        content: none;
       }
       &.open {
         display: flex;

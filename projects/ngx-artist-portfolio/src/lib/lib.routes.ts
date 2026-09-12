@@ -1,16 +1,15 @@
 import {Routes} from '@angular/router';
 import {HomePageComponent} from './features/home-page.component';
-import {BioPageComponent} from './features/bio-page.component';
-import {ProjectComponent} from './features/projects/project.component';
-import {ProjectsPageComponent} from './features/projects/projects-page.component';
-import {ContactPageComponent} from './features/contact-page.component';
-import {NotFoundPageComponent} from './features/not-found-page.component';
 import {PortfolioRoutesConfig} from './portfolio.config';
 
 /**
  * Builds the library's routes, optionally renaming the default `projects`/`bio`/`contact`
  * segments via `PortfolioConfig.routes`. Used internally by `providePortfolio()`; call it
  * directly if you need the route list without going through `providePortfolio`.
+ *
+ * Every route but home is lazy (`loadComponent`) so a visitor's initial JS payload doesn't
+ * include the lightbox/video/gallery/bio/contact code until they actually navigate there —
+ * this matters most on slower mobile CPUs/connections.
  */
 export function buildPortfolioRoutes(routes?: PortfolioRoutesConfig): Routes {
   const projects = routes?.projects ?? 'projects';
@@ -20,11 +19,26 @@ export function buildPortfolioRoutes(routes?: PortfolioRoutesConfig): Routes {
 
   return [
     {path: '', component: HomePageComponent},
-    {path: projects, component: ProjectsPageComponent},
-    {path: `${projectDetail}/:id`, component: ProjectComponent},
-    {path: bio, component: BioPageComponent},
-    {path: contact, component: ContactPageComponent},
-    {path: '**', component: NotFoundPageComponent},
+    {
+      path: projects,
+      loadComponent: () => import('./features/projects/projects-page.component').then(m => m.ProjectsPageComponent),
+    },
+    {
+      path: `${projectDetail}/:id`,
+      loadComponent: () => import('./features/projects/project.component').then(m => m.ProjectComponent),
+    },
+    {
+      path: bio,
+      loadComponent: () => import('./features/bio-page.component').then(m => m.BioPageComponent),
+    },
+    {
+      path: contact,
+      loadComponent: () => import('./features/contact-page.component').then(m => m.ContactPageComponent),
+    },
+    {
+      path: '**',
+      loadComponent: () => import('./features/not-found-page.component').then(m => m.NotFoundPageComponent),
+    },
   ];
 }
 

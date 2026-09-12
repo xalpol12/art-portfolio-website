@@ -6,6 +6,8 @@ body {
 .ngx-artist-portfolio-root {
   box-sizing: border-box;
   margin: 0;
+  // No hover-guard equivalent for the default mobile tap flash, so turn it off outright.
+  -webkit-tap-highlight-color: transparent;
 
   *, *::before, *::after {
     box-sizing: inherit;

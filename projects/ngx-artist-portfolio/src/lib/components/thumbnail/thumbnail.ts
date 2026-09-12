@@ -1,18 +1,20 @@
 import {ChangeDetectionStrategy, Component, Input, output} from '@angular/core';
 import {NgOptimizedImage} from '@angular/common';
 import {ThumbnailModel} from "../../models/thumbnail.model";
+import {clampDimensions} from '../../utils/clamp-dimensions';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
   selector: `apw-thumbnail`, template: `
     @if (thumbnail) {
+      @let size = clampDimensions(thumbnail.width, thumbnail.height);
       <div class="thumbnail-container" (click)="clicked.emit(thumbnail.id)"
            [class.padding-bottom]="paddingBottom"
            [class.constrain-to-viewport]="constrainToViewport">
         <div class="thumbnail-image-wrapper">
           <img [ngSrc]="thumbnail.imageUrl"
-               [width]="thumbnail.width"
-               [height]="thumbnail.height"
+               [width]="size.width"
+               [height]="size.height"
                [priority]="isPriority"
                [alt]="thumbnail.title"
                placeholder
@@ -34,4 +36,6 @@ export class Thumbnail {
   @Input() isPriority = false;
   @Input() constrainToViewport = false;
   clicked = output<string>();
+
+  protected readonly clampDimensions = clampDimensions;
 }

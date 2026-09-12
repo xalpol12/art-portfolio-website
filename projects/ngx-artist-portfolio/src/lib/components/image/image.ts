@@ -2,6 +2,7 @@ import {ChangeDetectionStrategy, Component, Input, signal} from '@angular/core';
 import {ImageDescriptionModel} from '../../models/project.model';
 import {ImageDescription} from '../image-description/image-description';
 import {NgOptimizedImage} from '@angular/common';
+import {clampDimensions} from '../../utils/clamp-dimensions';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -18,9 +19,10 @@ import {NgOptimizedImage} from '@angular/common';
           </div>
         }
         @if (width && height) {
+          @let size = clampDimensions(width, height);
           <img [ngSrc]="image"
-               [width]="width"
-               [height]="height"
+               [width]="size.width"
+               [height]="size.height"
                [alt]="alt ?? ''"
                [class.loaded]="!loading()"
                placeholder
@@ -60,4 +62,7 @@ export class Image {
   @Input() galleryMode: boolean = false;
 
   protected loading = signal(true);
+
+  /** Exposed for the template — see `clampDimensions` for why `width`/`height` are clamped before binding. */
+  protected readonly clampDimensions = clampDimensions;
 }
