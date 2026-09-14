@@ -11,8 +11,6 @@ import {PortfolioConfig, PORTFOLIO_CONFIG} from './portfolio.config';
 export class Store {
   config: PortfolioConfig;
   readonly homeClicks = signal(0);
-  /** Id of the project last shown by `RandomProjectComponent`, so it isn't immediately repeated. */
-  readonly lastRandomProjectId = signal<string | undefined>(undefined);
 
   onHomeClick(): void {
     this.homeClicks.update(v => v + 1);
