@@ -1,3 +1,7 @@
+> [!NOTE]
+> This repository contains component library `./ngx-artist-portfolio` available as a package on npm [@xalpol12/artist-portfolio](https://www.npmjs.com/package/@xalpol12/artist-portfolio).
+> See `projects/showcase-app` in this workspace for a working example.
+
 # @xalpol12/artist-portfolio
 
 Reusable Angular building blocks for artist portfolio sites: a thumbnail grid, project

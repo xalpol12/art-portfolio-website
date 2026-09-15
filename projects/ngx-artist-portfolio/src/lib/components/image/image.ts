@@ -63,6 +63,5 @@ export class Image {
 
   protected loading = signal(true);
 
-  /** Exposed for the template — see `clampDimensions` for why `width`/`height` are clamped before binding. */
   protected readonly clampDimensions = clampDimensions;
 }

@@ -39,7 +39,7 @@ export class RandomProjectComponent {
 
     const seed = this.seeds[clickCount % this.seeds.length];
     let nextIndex = seed % Math.max(count - 1, 1);
-    if (nextIndex >= currentIndex) nextIndex++;   // shift past the current slot
+    if (nextIndex >= currentIndex) nextIndex++;
 
     const safeIndex = count > 0 ? nextIndex % count : 0;
     return thumbnails.find(t => t.id === projects[safeIndex].id)!;
