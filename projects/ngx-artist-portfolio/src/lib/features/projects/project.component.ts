@@ -12,7 +12,7 @@ import {stripHtml} from '../../utils/strip-html';
   selector: `apw-project-page`,
   template: `
     <div class="page-wrapper">
-      <h1 class="ngx-ap-h1" [innerHTML]="thumbnail()?.title"></h1>
+      <h1 class="ngx-ap-h1" [innerHTML]="$safeNavigationMigration(thumbnail()?.title)"></h1>
       <apw-project-renderer [project]="project()"/>
       <apw-project-nav [previous]="previousThumbnail()" [next]="nextThumbnail()" />
     </div>

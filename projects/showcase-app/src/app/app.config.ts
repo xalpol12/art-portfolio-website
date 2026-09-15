@@ -1,5 +1,5 @@
 import { ApplicationConfig } from '@angular/core';
-import { provideClientHydration, withEventReplay } from '@angular/platform-browser';
+import { provideClientHydration, withEventReplay, withNoIncrementalHydration } from '@angular/platform-browser';
 import { providePortfolio, portfolioRoutes } from '@ngx-artist-portfolio';
 import { provideRouter, withComponentInputBinding } from '@angular/router';
 import projectsData from '../assets/data/projects.json';
@@ -9,7 +9,7 @@ import bioData from '../assets/data/bio.json';
 export const appConfig: ApplicationConfig = {
   providers: [
     provideRouter(portfolioRoutes, withComponentInputBinding()),
-    provideClientHydration(withEventReplay()),
+    provideClientHydration(withEventReplay(), withNoIncrementalHydration()),
     providePortfolio({
       config: {
         name: 'Zuzanna Bandosz',

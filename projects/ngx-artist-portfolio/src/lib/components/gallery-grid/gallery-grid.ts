@@ -21,7 +21,7 @@ import {stripHtml} from '../../utils/strip-html';
         }
       </div>
       @if (data?.description) {
-        <apw-img-description class="gallery-description" [description]="data?.description">
+        <apw-img-description class="gallery-description" [description]="$safeNavigationMigration(data?.description)">
         </apw-img-description>
       }
     </div>

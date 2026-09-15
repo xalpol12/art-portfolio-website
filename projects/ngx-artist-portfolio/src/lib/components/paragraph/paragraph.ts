@@ -7,7 +7,7 @@ import {ParagraphConfig} from '../../models/project.model';
   selector: `apw-paragraph`,
   template: `
     <p class="ngx-ap-body"
-       [ngClass]="{'no-bottom-margin': config?.noBottomMargin}"
+       [ngClass]="{'no-bottom-margin': $safeNavigationMigration(config?.noBottomMargin)}"
        [innerHTML]="content">
       <ng-content></ng-content>
     </p>`,
