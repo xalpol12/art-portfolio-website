@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component, computed, effect, inject, signal, Signal, untracked} from '@angular/core';
+import {ChangeDetectionStrategy, Component, computed, inject, Signal} from '@angular/core';
 import {ThumbnailModel} from '../../models/thumbnail.model';
 import {Thumbnail} from '../../components/thumbnail/thumbnail';
 import {ProjectThumbnailsStore} from './project-thumbnails.store';
