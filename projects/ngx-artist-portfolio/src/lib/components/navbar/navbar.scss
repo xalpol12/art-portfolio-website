@@ -90,6 +90,8 @@
       align-items: center;
       justify-content: space-between;
       flex-direction: row;
+      padding-left: var(--ngx-ap-gutter);
+      padding-right: var(--ngx-ap-gutter);
     }
 
     .hamburger {

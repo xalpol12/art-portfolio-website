@@ -6,7 +6,7 @@
 .ngx-artist-portfolio-theme {
   background-color: var(--ngx-ap-bg-main);
   color: var(--ngx-ap-text-primary);
-  min-height: 100dvh;
+  min-height: 100svh;
 }
 
 body, .ngx-artist-portfolio-root {
@@ -14,7 +14,7 @@ body, .ngx-artist-portfolio-root {
 
   display: flex;
   flex-direction: column;
-  min-height: 100dvh;
+  min-height: 100svh;
   background-color: var(--ngx-ap-bg-main);
 }
 
